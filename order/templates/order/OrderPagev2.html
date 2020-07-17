@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <title>Order Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="OrderPage.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <!-- navigation bar-->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <a class="navbar-brand" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Your Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Place Order</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!-- Place Order header -->
+    <header class="container-fluid text-center">
+      <p>Place Order</p>
+    </header>
+
+    <!-- Inner Divs -->
+    <div class="container-fluid text-center">
+      <!--<div class="row content">-->
+        <div class="d-flex flex-row align-content-between" id="InterDiv">
+
+          <!-- Dropdown Div -->
+          <div class="d-flex flex-column" id="InterLeft">
+            <div class="p-2">
+              <label for="orderdirection"><p id="DropDownLabel">Order Direction:</p></label><br>
+              <select name="Order Direction" id="SelectDropDown">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <option value="option4">Option 4</option>
+              </select>
+            </div>
+
+            <div class="p-2">
+              <label for="company"><p id="DropDownLabel">Company:</p></label><br>
+              <select name="Company" id="SelectDropDown">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <option value="option4">Option 4</option>
+              </select>
+            </div>
+
+            <div class="p-2">
+              <label for="ordertype"><p id="DropDownLabel">Order Type:</p></label><br>
+              <select name="Order Type" id="SelectDropDown">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <option value="option4">Option 4</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Textbox Div -->
+          <div class="d-flex flex-column"id="InterRight">
+            <div class="p-2">
+              <div class="form-group">
+                <label for="usr">Price:</label>
+                <input type="text" class="form-control" id="usr">
+              </div>
+            </div>
+            <div class="p-2">
+              <div class="form-group">
+                <label for="usr">Share Quantity:</label>
+                <input type="text" class="form-control" id="usr">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Place Order Button -->
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Place Order</button>
+
+    <!-- Active Order header -->
+    <header class="container-fluid text-center">
+      <p>Your Active Orders</p>
+    </header>
+
+    <!-- when reading from database, you can proabably go through a for loop and add multiple rows depending on the info -->
+    <div class="container-fluid" id="ActiveOrderInfoDiv">
+        <div class="row">
+              <div class="col">Company</div>
+              <div class="col">Order Direction</div>
+              <div class="col">Order Type</div>
+              <div class="col">Price</div>
+              <div class="col">Quantity</div>
+        </div>
+    </div>
+
+    <header class="container-fluid text-center">
+      <p>Current Orders Info</p>
+    </header>
+
+    <!-- Dropdown Menu -->
+    <div class="container-fluid text-center">
+      <div class="p-2">
+        <label for="selectcompany"><p id="SelectCompanyLabel">Select Company:</p></label>
+        <select name="Company" id="SelectDropDown">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Asks/Bids Div -->
+    <div class="container-fluid text-center">
+        <div class="d-flex flex-row align-content-between" id="AsksBidsDiv">
+          <div class="d-flex flex-column" id="AsksDiv">Asks</div>
+          <div class="d-flex flex-column" id="BidsDiv">Bids</div>
+    </div>
+    <br>
+    <br>
+
+  </body>
+</html>
