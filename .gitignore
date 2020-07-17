@@ -8,5 +8,3 @@ order/migrations/
 order/__pycache__/
 market_project/__pycache__/
 
-#settings file
-market_project/settings.py
