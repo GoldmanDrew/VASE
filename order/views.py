@@ -22,6 +22,6 @@ class OrderCreate(CreateView):
     #            HTML("""
     #                <p>We use notes to get better, <strong>please help us {{ username }}</strong></p>
     #            """),
-
+    #
     #        )
     #    )
