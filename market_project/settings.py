@@ -22,7 +22,7 @@ SECRET_KEY = '9uz8mb@juf93rtkf@5@qv1%^k9p$%dc_45)#9m&+&kmn$%565v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nombre de dominio o ip de instancia']
+ALLOWED_HOSTS = ['nombre de dominio o ip de instancia','localhost','127.0.0.1','127.0.0.0']
 
 
 # Application definition
