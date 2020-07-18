@@ -34,13 +34,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'market_project',
     'order',
     #'order.apps.OrderConfig', # I think I have to use one or the other (either 'order' or 'order.apps.OrderConfig'), not both
-=======
     'crispy_forms',
->>>>>>> master
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -81,7 +78,6 @@ WSGI_APPLICATION = 'market_project.wsgi.application'
 
 DATABASES = {
         'default': {
-<<<<<<< HEAD
             # 'ENGINE': 'django.db.backends.sqlite3',
             # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
@@ -100,14 +96,6 @@ DATABASES = {
             # 'PASSWORD' : 'password', # or try rewtY.901
             # 'HOST' : 'uva-database', # or try 192.168.2.11
             # 'PORT' : '22',
-=======
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'vase',
-            'USERNAME' : 'som',
-            'PASSWORD' : 'password',
-            'HOST' : 'localhost',
-            'PORT' : '8000',
->>>>>>> master
     }
 }
 
