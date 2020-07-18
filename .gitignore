@@ -1,0 +1,10 @@
+#macOS files
+.DS_Store
+
+#database migrations folder
+order/migrations/
+
+#pycache folders
+order/__pycache__/
+market_project/__pycache__/
+
