@@ -1,5 +1,20 @@
 from django.db import models
+<<<<<<< HEAD
 # Create your models here.
+=======
+from django.urls import reverse
+
+
+directions = (
+    ('A', 'Ask'),
+    ('B', 'Bid'),
+)
+types = (
+    ('M', 'Market'),
+    ('L', 'Limit'),
+)
+
+>>>>>>> master
 class Company(models.Model):
     Ticker = models.CharField(max_length=5, primary_key = True, null = False)
     Shares = models.IntegerField()
@@ -40,8 +55,13 @@ class Order(models.Model):
     OrderBookName = models.ForeignKey(Company, on_delete=models.CASCADE, null = False)
     Agent = models.ForeignKey(Agent, on_delete=models.CASCADE)
     OrderID = models.IntegerField(primary_key=True)
+<<<<<<< HEAD
     Type = models.CharField(max_length=1)
     Direction = models.CharField(max_length=20)
+=======
+    Type = models.CharField(max_length=1, choices = types)
+    Direction = models.CharField(max_length=20, choices = directions)
+>>>>>>> master
     Price = models.IntegerField()
     Quantity = models.IntegerField()
     QuantityToFill = models.IntegerField()
@@ -52,6 +72,12 @@ class Order(models.Model):
     def __str__(self):
         return str(self.OrderID)
 
+<<<<<<< HEAD
+=======
+    def get_absolute_url(self):
+        return "/order/"
+
+>>>>>>> master
     class Meta:
         db_table = 'orders'
 

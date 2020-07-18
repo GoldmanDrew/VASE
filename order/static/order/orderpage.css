@@ -1,0 +1,122 @@
+body {
+  background-color: white;
+}
+
+.navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: black;
+}
+
+header {
+  padding-top: 3%;
+  padding-bottom: 2%;
+  font-size: 50;
+  font-weight: bold;
+}
+
+#InterDiv {
+  background-color: black;
+  width: 70%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  border-radius: 1%;
+}
+
+#InterLeft {
+  background-color: #ececec;
+  width: 34%;
+  height: 100%;
+  float: left;
+  padding-top: 3%;
+  border-width: 1%;
+  border-style: solid;
+  border-color: black;
+}
+
+#InterRight {
+  background-color: #ececec;
+  width: 66%;
+  height: 100%;
+  float:right;
+  padding-top: 9%;
+  border-width: 1%;
+  border-style: solid;
+  border-color: black;
+}
+
+#dropdownMenuButton {
+  height: 25%;
+  width: 75%;
+  font-weight: bold;
+  background-color: #787878;
+}
+
+#dropdownMenuButton2 {
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  width: 20%;
+  height: 8%;
+  background-color: #787878;
+
+}
+
+#PlaceOrderButton {
+  background-color: black;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  border-color: black;
+  font-weight: bold;
+}
+
+#ActiveOrderInfoDiv {
+  background-color: black;
+  border-color: black;
+  border-width: 2%;
+  border-style: solid;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+#AsksBidsDiv {
+  background-color: black;
+  width: 70%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  border-radius: 1%;
+}
+
+#AsksDiv {
+  background-color: #ececec;
+  width: 50%;
+  height: 100%;
+  float: left;
+  padding-top: 3%;
+  border-width: 2%;
+  border-style: solid;
+  border-color: black;
+  font-size: 20;
+  font-weight: bold;
+}
+
+#BidsDiv {
+  background-color: #ececec;
+  width: 50%;
+  height: 100%;
+  float:right;
+  padding-top: 3%;
+  border-width: 2%;
+  border-style: solid;
+  border-color: black;
+  font-size: 20;
+  font-weight: bold;
+}
