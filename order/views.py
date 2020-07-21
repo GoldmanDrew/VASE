@@ -8,20 +8,40 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout
 
 
-# Create your views here. FOR THE ORDER APP (b/c this is the views.py file within the order app)
+class OrderForm(ModelForm):
+    class Meta:
+        model = Order
+        fields = ['Direction', 'OrderBookName', 'Type', 'Price', 'Quantity']
+        #fields = ['Direction', 'OrderBookName', 'Type', 'Price', 'Quantity', 'Agent', 'QuantityToFill', 'Filled']
 
-class OrderCreate(CreateView):
-    model = Order
-    fields = ['Direction', 'OrderBookName', 'Type', 'Price', 'Quantity']
+def orderpage(request):
+    all_orders = orderfilter(request)
+    all_companies = Company.objects.all()
+    all_asks = all_orders.filter(Direction="A")
+    all_bids = all_orders.filter(Direction="B")
+    all_orders = Order.objects.filter(Agent="alan")
 
-    #def __init__(self, *args, **kwargs):
-    #    super().__init__(*args, **kwargs)
-    #    self.helper = FormHelper()
-    #    self.helper.layout = Layout(
-    #        Fieldset(
-    #            HTML("""
-    #                <p>We use notes to get better, <strong>please help us {{ username }}</strong></p>
-    #            """),
-    #
-    #        )
-    #    )
+    form = OrderForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = OrderForm()
+
+    context = {
+        "all_asks" : all_asks,
+        "all_bids" : all_bids,
+        "all_orders" : all_orders,
+        "all_companies" : all_companies,
+        "form": form
+    }
+    return render(request, "order/orderpage.html", context)
+
+def orderfilter(request):
+    all_orders = Order.objects.filter(Agent="alan")
+    all_companies = Company.objects.all()
+    companies = request.GET.get('company_form')
+    print(companies)
+    if companies != "" and companies!= None:
+        all_orders = all_orders.filter(OrderBookName=companies)
+    return all_orders
+
+#def orderform(request):
