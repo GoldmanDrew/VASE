@@ -98,7 +98,13 @@ DATABASES = {
             # 'PASSWORD' : 'rewtY.901', # or try rewtY.901
             # 'HOST' : '192.168.2.11', # or try uva-database
             # 'PORT' : '22',
-        }
+            # 'ENGINE': 'django.db.backends.mysql',
+            # 'NAME': 'vase',
+            # 'USERNAME' : 'som',
+            # 'PASSWORD' : 'password',
+            # 'HOST' : 'localhost',
+            # 'PORT' : '8000',
+    }
 }
 
 
