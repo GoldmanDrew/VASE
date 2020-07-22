@@ -39,7 +39,6 @@ def orderfilter(request):
     all_orders = Order.objects.filter(Agent="alan")
     all_companies = Company.objects.all()
     companies = request.GET.get('company_form')
-    print(companies)
     if companies != "" and companies!= None:
         all_orders = all_orders.filter(OrderBookName=companies)
     return all_orders
