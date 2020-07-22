@@ -22,8 +22,8 @@ SECRET_KEY = '9uz8mb@juf93rtkf@5@qv1%^k9p$%dc_45)#9m&+&kmn$%565v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nombre de dominio o ip de instancia']
-
+#ALLOWED_HOSTS = ['localhost','127.0.0.1','127.0.0.0', '192.168.2.11']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -34,13 +34,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'market_project',
     'order',
+    'userinfo',
+    'landingpage',
     #'order.apps.OrderConfig', # I think I have to use one or the other (either 'order' or 'order.apps.OrderConfig'), not both
-=======
     'crispy_forms',
->>>>>>> master
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -81,7 +80,6 @@ WSGI_APPLICATION = 'market_project.wsgi.application'
 
 DATABASES = {
         'default': {
-<<<<<<< HEAD
             # 'ENGINE': 'django.db.backends.sqlite3',
             # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
@@ -96,18 +94,16 @@ DATABASES = {
             # Connecting to remote server
             # 'ENGINE': 'django.db.backends.mysql',
             # 'NAME': 'uva-database', # or try local host
-            # 'USERNAME' : 'som',  # or try root
-            # 'PASSWORD' : 'password', # or try rewtY.901
-            # 'HOST' : 'uva-database', # or try 192.168.2.11
+            # 'USERNAME' : 'root',  # or try root
+            # 'PASSWORD' : 'rewtY.901', # or try rewtY.901
+            # 'HOST' : '192.168.2.11', # or try uva-database
             # 'PORT' : '22',
-=======
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'vase',
-            'USERNAME' : 'som',
-            'PASSWORD' : 'password',
-            'HOST' : 'localhost',
-            'PORT' : '8000',
->>>>>>> master
+            # 'ENGINE': 'django.db.backends.mysql',
+            # 'NAME': 'vase',
+            # 'USERNAME' : 'som',
+            # 'PASSWORD' : 'password',
+            # 'HOST' : 'localhost',
+            # 'PORT' : '8000',
     }
 }
 
