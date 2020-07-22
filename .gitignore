@@ -7,3 +7,4 @@ order/migrations/
 #pycache folders
 order/__pycache__/
 market_project/__pycache__/
+*.pyc
