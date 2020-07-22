@@ -1,0 +1,121 @@
+{% extends 'order/base.html' %}
+
+{% block title %}Order Page{% endblock %}
+
+{% block body %}
+    <!-- Place Order header -->
+    <header class="container-fluid text-center">
+      <p>Place Order</p>
+    </header>
+
+    {% block form %} {% endblock form %}
+    <!-- Inner Divs -->
+    <div class="container-fluid text-center">
+      <!--<div class="row content">-->
+        <div class="d-flex flex-row align-content-between" id="InterDiv">
+
+          <!-- Dropdown Div -->
+          <div class="d-flex flex-column" id="InterLeft">
+            <div class="p-2">
+              <label for="orderdirection"><p id="DropDownLabel">Order Direction:</p></label><br>
+              <select name="Order Direction" id="SelectDropDown">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <option value="option4">Option 4</option>
+              </select>
+            </div>
+
+            <div class="p-2">
+              <label for="company"><p id="DropDownLabel">Company:</p></label><br>
+              <select name="Company" id="SelectDropDown">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <option value="option4">Option 4</option>
+              </select>
+            </div>
+
+            <div class="p-2">
+              <label for="ordertype"><p id="DropDownLabel">Order Type:</p></label><br>
+              <select name="Order Type" id="SelectDropDown">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <option value="option4">Option 4</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Textbox Div -->
+          <div class="d-flex flex-column"id="InterRight">
+            <div class="p-2">
+              <div class="form-group">
+                <label for="usr">Price:</label>
+                <input type="text" class="form-control" id="usr">
+              </div>
+            </div>
+            <div class="p-2">
+              <div class="form-group">
+                <label for="usr">Share Quantity:</label>
+                <input type="text" class="form-control" id="usr">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Place Order Button -->
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Place Order</button>
+
+    <!-- Active Order header -->
+    <header class="container-fluid text-center">
+      <p>Your Active Orders</p>
+    </header>
+
+    <!-- when reading from database, you can proabably go through a for loop and add multiple rows depending on the info -->
+    <div class="container-fluid" id="ActiveOrderInfoDiv">
+        <div class="row">
+              <div class="col">Company</div>
+              <div class="col">Order Direction</div>
+              <div class="col">Order Type</div>
+              <div class="col">Price</div>
+              <div class="col">Quantity</div>
+        </div>
+        {% block ActiveOrderInfo %}{% endblock %}
+    </div>
+
+    <header class="container-fluid text-center">
+      <p>Current Orders Info</p>
+    </header>
+
+    <!-- Dropdown Menu -->
+    <div class="container-fluid text-center">
+      <div class="p-2">
+        <label for="selectcompany"><p id="SelectCompanyLabel">Select Company:</p></label>
+        <select name="Company" id="SelectDropDown">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Asks/Bids Div -->
+    <div class="container-fluid text-center">
+        <div class="d-flex flex-row align-content-between" id="AsksBidsDiv">
+          <div class="d-flex flex-column" id="AsksDiv">Asks</div>
+          <div class="d-flex flex-column" id="BidsDiv">Bids</div>
+    </div>
+    <br>
+    <br>
+
+{% endblock body %}
