@@ -83,12 +83,12 @@ DATABASES = {
             # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
             #Connecting to my local server
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'vase',
-            'USERNAME' : 'root',
-            'PASSWORD' : 'password',
-            'HOST' : 'localhost',
-            'PORT' : '3305',
+            # 'ENGINE': 'django.db.backends.mysql',
+            # 'NAME': 'vase',
+            # 'USERNAME' : 'root',
+            # 'PASSWORD' : 'password',
+            # 'HOST' : 'localhost',
+            # 'PORT' : '3305',
 
             # Connecting to remote server
             # 'ENGINE': 'django.db.backends.mysql',
@@ -97,7 +97,14 @@ DATABASES = {
             # 'PASSWORD' : 'rewtY.901', # or try rewtY.901
             # 'HOST' : '192.168.2.11', # or try uva-database
             # 'PORT' : '22',
-        }
+
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'vase',
+            'USERNAME' : 'som',
+            'PASSWORD' : 'password',
+            'HOST' : 'localhost',
+            'PORT' : '8000',
+    }
 }
 
 
