@@ -55,8 +55,6 @@ class Order(models.Model):
     OrderID = models.IntegerField(primary_key=True)
     Type = models.CharField(max_length=1, choices = types)
     Direction = models.CharField(max_length=20, choices = directions)
-    Type = models.CharField(max_length=1, choices = types)
-    Direction = models.CharField(max_length=20, choices = directions)
     Price = models.IntegerField()
     Quantity = models.IntegerField()
     QuantityToFill = models.IntegerField()
