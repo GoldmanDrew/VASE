@@ -12,7 +12,7 @@ from .forms import UserForm     # imports the format for Login/Register
 
 
 
-# Create your views here. FOR THE LANDINGPAGE APP
+# Create your views here. FOR THE ORDER APP (b/c this is the views.py file within the order app)
 
 
 class UserFormView(View):
@@ -51,3 +51,6 @@ class UserFormView(View):
                     return redirect('order/')     # need to find another page to redirect to
 
         return render(request, self.template_name, {'form': form})
+
+
+# Create your views here.
