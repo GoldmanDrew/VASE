@@ -1,0 +1,36 @@
+
+{% extends 'landingpage/base.html' %}
+
+{% block title %}Landing Page{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Logo Image -->
+    <div class="container-fluid text-center" id="LogoDiv">
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Button Div -->
+    <div class="container-fluid text-center" id="ButtonDiv">
+            <div class="row">
+                  <div class="col">
+                      <!-- <button type="button" class="btn btn-primary btn-lg" id="Button1"><a href="url 'register'">Register</a></button> -->
+                      <a href="{% url 'landingpage:register_url' %}" class="btn btn-info" role="button" id="Button1">Register</a>
+                  </div>
+                  <div class="col">
+                      <a href="{% url 'landingpage:login_url' %}" class="btn btn-info" role="button" id="Button2">Login</a>
+                    <!-- <button type="button" class="btn btn-primary btn-lg" id="Button2">Login</button>-->
+                  </div>
+            </div>
+        </div>
+
+{% endblock body %}
