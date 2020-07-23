@@ -1,0 +1,17 @@
+{% extends 'landingpage/base.html' %}
+
+{% block title %}Registration Page{% endblock %}
+
+{% block body %}
+    <!-- Registration header -->
+    <br>
+    <br>
+    <header class="container-fluid text-center">
+      <p >Register</p>
+    </header>
+
+<div class="container-fluid" id="FormDiv">
+    {% block form %} {% endblock form %}
+    </div>
+
+{% endblock body %}

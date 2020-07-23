@@ -27,6 +27,7 @@ class Agent(models.Model):
     Agent = models.CharField(max_length=20, primary_key = True, null = False)
     Cash = models.IntegerField(default = 0)
     Wealth = models.IntegerField(default = 0)
+    Email = models.CharField(max_length=20 )
 
     def __str__(self):
         return self.Agent
