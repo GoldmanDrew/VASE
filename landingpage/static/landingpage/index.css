@@ -1,0 +1,77 @@
+body {
+  background-color: white;
+}
+
+.navbar {
+   margin-bottom: 0;
+   border-radius: 0;
+   background-color: black;
+}
+
+header {
+  padding-top: 3%;
+  padding-bottom: 2%;
+  font-size: 50;
+  font-weight: bold;
+}
+
+#LogoDiv {
+  background-color: black;
+  width: 18%;
+  height: 22%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  border-radius: 1%;
+}
+
+#FormDiv {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+#ColumnFormDiv {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+
+#ButtonDiv {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+#Button1 {
+  width: 50%;
+  height: 7%;
+  padding-top: 4%;
+  font-weight: bold;
+  background-color: black;
+  border-color: black;
+  /**background-color: #787878;
+  border-color: #787878;**/
+}
+
+#Button2 {
+  width: 50%;
+  height: 7%;
+  padding-top: 4%;
+  font-weight: bold;
+  background-color: black;
+  border-color: black;
+  /**background-color: #787878;
+  border-color: #787878;**/
+}
+
+#SubmitButton {
+  background-color: black;
+  border-color: black;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  font-weight: bold;
+}
