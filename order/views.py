@@ -12,7 +12,6 @@ class OrderForm(ModelForm):
     class Meta:
         model = Order
         fields = ['Direction', 'OrderBookName', 'Type', 'Price', 'Quantity']
-        #fields = ['Direction', 'OrderBookName', 'Type', 'Price', 'Quantity', 'Agent', 'QuantityToFill', 'Filled']
 
 def orderpage(request):
     all_orders = orderfilter(request)
@@ -42,5 +41,3 @@ def orderfilter(request):
     if companies != "" and companies!= None:
         all_orders = all_orders.filter(OrderBookName=companies)
     return all_orders
-
-#def orderform(request):
