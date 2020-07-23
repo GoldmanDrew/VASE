@@ -1,0 +1,21 @@
+{% extends 'landingpage/base.html' %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Login header -->
+    <header class="container-fluid text-center">
+      <p >Login</p>
+    </header>
+
+<div class="container-fluid" id = "FormDiv">
+    {% block form %} {% endblock form %}
+    </div>
+
+{% endblock body %}
+
+<!-- all of the css should be written in index.css -->
