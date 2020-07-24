@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'landingpage.apps.LandingpageConfig',   # supposed to work
+    'userinfo.apps.UserinfoConfig',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
