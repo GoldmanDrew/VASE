@@ -38,6 +38,16 @@
       </div>
     </nav>
 
+    <div id="content">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
     <!-- Place Order header -->
     <header class="container-fluid text-center">
       <p>Your Info</p>
@@ -97,3 +107,14 @@
         <h4>{{agent.Wealth}}</h4>
     {% endfor %}
   </div>
+
+    <script>
+      setTimeout(function(){
+      if($('#msg').length > 0) {
+      $('#msg').remove();
+      }
+      }, 4000)
+    </script>
+
+  </body>
+</html>
