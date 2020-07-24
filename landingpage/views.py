@@ -78,9 +78,6 @@ class RegisterView(View):
             for company in Company.objects.all():
                 b = AgentShare(Agent=a, Company=company, Shares=50, Borrowed=0, Collateral=0)
                 b.save()
-                print(company)
-
-            # still need to create new Agent
 
             user = authenticate(username=username, password=password)
 
