@@ -1,6 +1,9 @@
 #macOS files
 .DS_Store
 
+#settings
+market_project/settings.py
+
 #database migrations folder
 order/migrations/
 
