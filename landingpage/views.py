@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import RegistrationForm, LoginForm     # imports the format for Login/Register
+from .forms import RegistrationForm     # imports the format for Login/Register
 
 
 # Create your views here. FOR THE ORDER APP (b/c this is the views.py file within the order app)
