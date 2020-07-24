@@ -29,10 +29,10 @@ def orderpage(request):
         new_order = form.save(commit = False)
         new_order.Agent = getuser(request)
         new_order.QuantityToFill = new_order.Quantity
-        #if new_order.Type == "M" and new_order.Direction == "A":
-        #    new_order.Price = 0
-        #if new_order.Type == "M" and new_order.Direction == "B":
-        #    new_order.Price = 2147483647
+        if new_order.Type == "M" and new_order.Direction == "A":
+            new_order.Price = 0
+        if new_order.Type == "M" and new_order.Direction == "B":
+            new_order.Price = 2147483647
         new_order.save()
         form = OrderForm()
 
