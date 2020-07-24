@@ -80,7 +80,11 @@
               <div class="col">{{ order.OrderBookName }}</div>
               <div class="col">{{ order.Direction }}</div>
               <div class="col">{{ order.Type }}</div>
-              <div class="col">${{ order.Price }}.00</div>
+              {% if order.Price==2147483647 or order.Price==0 %}
+                <div class="col"></div>
+              {% else %}
+                <div class="col">${{ order.Price }}.00</div>
+              {% endif %}
               <div class="col">{{ order.Quantity }}</div>
         </div>
       {% endfor %}
