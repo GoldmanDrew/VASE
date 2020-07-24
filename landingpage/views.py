@@ -48,37 +48,6 @@ def logout_request(request):
     return redirect("landingpage:login_url")
 
 
-'''
-class LoginView(View):
-    
-    form_class = AuthenticationForm
-    template_name = 'landingpage/login_form.html'
-
-    def get(self, request):
-        form = self.form_class(None)
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request):
-        form = self.form_class(request.POST)    # request.POST saves the user-inputted fields
-
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(username=username, password=password)
-
-            if user is not None:
-                login(request, user)
-                messages.info(request, f"You are now logged in as {username}")
-                return redirect('order:order-index')  # need to find another page to redirect to
-            else:
-                messages.error(request, "Invalid username or password")
-        else:
-            messages.error(request, "Invalid username or password")
-
-        return render(request, self.template_name, {'form': form})
-'''
-
-
 class RegisterView(View):
     form_class = RegistrationForm
     template_name = 'landingpage/registration_form.html'    # need to create this file
@@ -105,13 +74,9 @@ class RegisterView(View):
             a = Agent(Agent=username, Cash=1000, Wealth=0, Email=email)
             a.save()
 
-
             for company in Company.objects.all():
                 b = AgentShare(Agent=a, Company=company, Shares=50, Borrowed=0, Collateral=0)
                 b.save()
-                print(company)
-
-            # still need to create new Agent
 
             user = authenticate(username=username, password=password)
 
@@ -121,6 +86,3 @@ class RegisterView(View):
                     return redirect('landingpage:login_url')     # need to find another page to redirect to
 
         return render(request, self.template_name, {'form': form})
-
-
-# Create your views here.
