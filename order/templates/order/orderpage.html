@@ -1,64 +1,143 @@
 {% extends 'order/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}Order Page{% endblock %}
 
 {% block body %}
-    <!-- Place Order header -->
-    <header class="container-fluid text-center">
-      <p>Place Order</p>
-    </header>
 
-    {% block form %} {% endblock form %}
-
-
-
-
-
-    <!-- Active Order header -->
-    <header class="container-fluid text-center">
-      <p>Your Active Orders</p>
-    </header>
-
-    <!-- when reading from database, you can proabably go through a for loop and add multiple rows depending on the info -->
-    <div class="container-fluid" id="ActiveOrderInfoDiv">
-        <div class="row">
-              <div class="col">Company</div>
-              <div class="col">Order Direction</div>
-              <div class="col">Order Type</div>
-              <div class="col">Price</div>
-              <div class="col">Quantity</div>
-        </div>
-        {% block ActiveOrderInfo %}{% endblock %}
-    </div>
-
-    <!-- Current Orders Info header -->
-    <header class="container-fluid text-center">
-      <p>Current Orders Info</p>
-    </header>
-
-    <!-- Dropdown Menu -->
+  <header class="container-fluid text-center">
+    <p>Place Order</p>
+  </header>
+  <form action="" method="post"> {% csrf_token %}
+    <!-- Inner Divs -->
     <div class="container-fluid text-center">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Select Company
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Option 1</a>
-          <a class="dropdown-item" href="#">Option 2</a>
-          <a class="dropdown-item" href="#">Option 3</a>
+      <!--<div class="row content">-->
+      <div class="d-flex flex-row align-content-between" id="InterDiv">
+
+        <!-- Dropdown Div -->
+        <div class="d-flex flex-column" id="InterLeft">
+          <div class="p-2">
+            <div class="dropdown">
+              {{ form.Direction|as_crispy_field }}
+            </div>
+          </div>
+
+          <div class="p-2">
+            <div class="dropdown">
+              {{ form.OrderBookName|as_crispy_field }}
+            </div>
+          </div>
+
+          <div class="p-2">
+            <div class="dropdown">
+              {{ form.Type|as_crispy_field }}
+            </div>
+          </div>
         </div>
+
+        <!-- Textbox Div -->
+        <div class="d-flex flex-column"id="InterRight">
+          <div class="p-2">
+            <div class="form-group">
+              {{ form.Price|as_crispy_field }}
+            </div>
+          </div>
+          <div class="p-2">
+            <div class="form-group">
+              {{ form.Quantity|as_crispy_field }}
+            </div>
+          </div>
+        </div>
+
       </div>
+
     </div>
 
     <br>
 
-    <!-- Asks/Bids Div -->
-    <div class="container-fluid text-center">
-        <div class="d-flex flex-row align-content-between" id="AsksBidsDiv">
-          <div class="d-flex flex-column" id="AsksDiv">Asks</div>
-          <div class="d-flex flex-column" id="BidsDiv">Bids</div>
+    <!-- Place Order Button -->
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Place Order</button>
+
+  </form>
+
+
+  <!-- Active Order header -->
+  <header class="container-fluid text-center">
+    <p>Your Active Orders</p>
+  </header>
+
+  <!-- when reading from database, you can proabably go through a for loop and add multiple rows depending on the info -->
+  <div class="container-fluid" id="ActiveOrderInfoDiv">
+      <div class="row bg-dark text-light">
+            <div class="col">Company</div>
+            <div class="col">Order Direction</div>
+            <div class="col">Order Type</div>
+            <div class="col">Price</div>
+            <div class="col">Quantity</div>
+      </div>
+      {% for order in all_orders %}
+        <div class="row">
+              <div class="col">{{ order.OrderBookName }}</div>
+              <div class="col">{{ order.Direction }}</div>
+              <div class="col">{{ order.Type }}</div>
+              <div class="col">${{ order.Price }}.00</div>
+              <div class="col">{{ order.Quantity }}</div>
+        </div>
+      {% endfor %}
+  </div>
+
+  <header class="container-fluid text-center">
+    <p>Current Orders Info</p>
+  </header>
+
+  <!-- Dropdown Menu -->
+  <div class="container-fluid text-center">
+    <div class="p-2">
+      <label for="selectcompany"><p id="SelectCompanyLabel">Select Company:</p></label>
+      <form action = "" method="GET">
+        <select id="SelectDropDown" name="company_form" onchange="this.form.submit()">
+          <option value="">...</option>
+          {% for company in all_companies %}
+            <option value="{{ company.Ticker }}">{{ company.Ticker }}</option>
+          {% endfor %}
+        </select>
+        <!--<input type="submit" name="submit" value="Submit">-->
+      </form>
     </div>
-    <br>
-    <br>
+  </div>
+
+  <br>
+
+  <!-- Asks/Bids Div -->
+  <div class="container-fluid text-center" id="ActiveOrderInfoDiv">
+    <div class="row">
+    <div class="col" id="AsksDiv">
+      <div class="row bg-dark text-light">
+        <div class = "col">Shares</div>
+        <div class = "col">Asks</div>
+      </div>
+      {% for asks in all_asks%}
+        <div class="row">
+          <div class = "col">{{ asks.Quantity }}</div>
+          <div class = "col">${{ asks.Price }}.00</div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="col" id="BidsDiv">
+      <div class="row bg-dark text-light">
+        <div class = "col">Bids</div>
+        <div class = "col">Shares</div>
+      </div>
+      {% for bids in all_bids%}
+        <div class="row">
+          <div class = "col">${{ bids.Price }}.00</div>
+          <div class = "col">{{ bids.Quantity }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    </div>
+  </div>
+  <br>
+  <br>
 
 {% endblock body %}
