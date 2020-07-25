@@ -77,10 +77,10 @@
                 <div class="col">Collateral</div>
           </div>
           {% for share in agentShares %}
-            <h1>{{agentShares.Company}}<h1>
-            <h1>{{agentShares.Shares}}<h1>
-            <h1>{{agentShares.Borrowed}}<h1>
-            <h1>{{agentShares.Collateral}}<h1>
+            <h1>{{share.Company}}<h1>
+            <h1>{{share.Shares}}<h1>
+            <h1>{{share.Borrowed}}<h1>
+            <h1>{{share.Collateral}}<h1>
           {% endfor %}
       </div>
 
