@@ -22,9 +22,7 @@
     <!-- UserName Div -->
     <div class="container-fluid text-center">
       <h1>Username</h1>
-      {% for agent in agentTable %}
-          <h4>{{agent.Agent}}</h4>
-      {% endfor %}
+      <h4>{{current_agent}}</h4>
     </div>
 
     <br>
@@ -33,9 +31,7 @@
     <!-- Cash Div -->
     <div class="container-fluid text-center">
       <h1>Cash</h1>
-      {% for agent in agentTable %}
-          <h4>{{agent.Cash}}</h4>
-      {% endfor %}
+      <h4>{{current_agent.Cash}}</h4>
     </div>
 
     <br>
@@ -53,14 +49,15 @@
                 <div class="col">Borrowed</div>
                 <div class="col">Collateral</div>
           </div>
-          {% for share in agentShares %}
-            <h1>{{agentShares.Company}}</h1>
-            <h1>{{agentShares.Shares}}</h1>
-            <h1>{{agentShares.Borrowed}}</h1>
-            <h1>{{agentShares.Collateral}}</h1>
+          {% for share in current_agent_shares %}
+            <div class="row">
+                <div class = "col">{{ share.Company }}</div>
+                <div class = "col">${{ share.Shares }}</div>
+                <div class = "col">${{ share.Borrowed }}</div>
+                <div class = "col">${{ share.Collateral }}</div>
+            </div>
           {% endfor %}
       </div>
-
   </div>
 
   <br>
@@ -69,9 +66,7 @@
   <!-- Portfolio Div -->
   <div class="container-fluid text-center">
     <h1>Portfolio Value</h1>
-    {% for agent in agentTable %}
-        <h4>{{agent.Wealth}}</h4>
-    {% endfor %}
+    <h4>{{current_agent.Wealth}}</h4>
   </div>
 
     <script>
@@ -83,4 +78,3 @@
     </script>
 
 {% endblock body %}
-
