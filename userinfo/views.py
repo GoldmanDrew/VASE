@@ -10,10 +10,15 @@ from crispy_forms.layout import Layout
 
 # Create your views here.
 
+
 def agentDisplay(request):
     agentTable = Agent.objects.all()
-    return render( request, "userinfo/YourInfo.html" , {'agentTable' : agentTable })
+    agentShares = AgentShare.objects.all()
+    context = {'agentTable': agentTable, 'agentShares': agentShares}
+    return render(request, "userinfo/YourInfo.html", context)
 
+'''
 def sharesDisplay(request):
     agentShares = AgentShare.objects.all()
-    return render( request, "userinfo/YourInfo.html" , {'agentShares' : agentShares })
+    return render(request, "userinfo/YourInfo.html", {'agentShares' : agentShares })
+'''
