@@ -5,6 +5,6 @@ from . import views
 app_name = "userinfo"
 
 urlpatterns = [
-    path('' , views.agentDisplay, name = "agent-display"),
-    path('' , views.sharesDisplay, name = "agent-shares-display"),
+    path('', views.agentDisplay, name="userinfo-display"),
+    # path('' , views.sharesDisplay, name = "agent-shares-display"),
 ]

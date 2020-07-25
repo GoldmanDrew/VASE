@@ -75,59 +75,24 @@ header {
 }
 
 #ActiveOrderInfoDiv {
-  background-color: black;
+  background-color: white;
   border-color: black;
-  border-width: 2%;
+  border-width: 2px;
   border-style: solid;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  color: white;
-}
-
-#YourInfoDiv {
-    background-color: black;
-    border-color: black;
-    border-width: 2%;
-    border-style: solid;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-}
-
-#AsksBidsDiv {
-  background-color: black;
-  width: 70%;
-  height: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1%;
-  border-radius: 1%;
+  color: black;
 }
 
 #AsksDiv {
-  background-color: #ececec;
-  width: 50%;
-  height: 100%;
-  float: left;
-  padding-top: 3%;
-  border-width: 2%;
-  border-style: solid;
-  border-color: black;
-  font-size: 20;
-  font-weight: bold;
+  border-right: 1px solid #292b2c;
 }
 
 #BidsDiv {
-  background-color: #ececec;
-  width: 50%;
-  height: 100%;
-  float:right;
-  padding-top: 3%;
-  border-width: 2%;
-  border-style: solid;
-  border-color: black;
-  font-size: 20;
-  font-weight: bold;
+  border-left: 1px solid #292b2c;
+}
+
+.table{
+  width: 70%;
 }
