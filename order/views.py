@@ -1,7 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from order.models import Company # have to import each of our models (here, we are importing the Company class from models.py)
-from django.contrib import messages
 from django.views import generic
 from django.forms import ModelForm
 from django.urls import reverse_lazy

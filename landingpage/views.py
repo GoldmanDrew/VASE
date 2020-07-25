@@ -86,3 +86,6 @@ class RegisterView(View):
                     return redirect('landingpage:login_url')     # need to find another page to redirect to
 
         return render(request, self.template_name, {'form': form})
+
+
+# Create your views here.
