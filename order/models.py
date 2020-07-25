@@ -38,15 +38,20 @@ class Agent(models.Model):
 
 
 class AgentShare(models.Model):
-    Agent = models.ForeignKey(Agent, on_delete=models.CASCADE, null=False)
-    Company = models.ForeignKey(Company, on_delete=models.CASCADE, null=False)
+    Agent= models.ForeignKey(Agent, on_delete=models.CASCADE, null=False)
+    Company= models.ForeignKey(Company, on_delete=models.CASCADE, null=False)
     Shares = models.IntegerField(default = 0)
     Borrowed = models.IntegerField(default = 0)
     Collateral = models.IntegerField(default = 0)
+    #id = models.AutoField(primary_key = True, null=False) # I think you use .AutoField if you want the field to auto increment, so id is
+                                                          # auto incrementing, is the primary key, and is not null
+
+    # def __int__(self):
+    #     return self.id
 
     class Meta:
         db_table = 'agentshares'
-        unique_together = (("Agent", "Company"),)
+        unique_together = (("Agent_id", "Company_id"),)
 
 
 class Order(models.Model):
