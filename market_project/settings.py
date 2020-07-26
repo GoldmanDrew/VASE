@@ -86,7 +86,7 @@ DATABASES = {
             #Connecting to my local server
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'vase',
-            'USERNAME' : 'root',
+            'USER' : 'som',
             'PASSWORD' : 'password',
             'HOST' : 'localhost',
             'PORT' : '3305',
