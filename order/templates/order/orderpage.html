@@ -5,139 +5,159 @@
 
 {% block body %}
 
-  <header class="container-fluid text-center">
-    <p>Place Order</p>
-  </header>
-  <form action="" method="post"> {% csrf_token %}
-    <!-- Inner Divs -->
-    <div class="container-fluid text-center">
-      <!--<div class="row content">-->
-      <div class="d-flex flex-row align-content-between" id="InterDiv">
-
-        <!-- Dropdown Div -->
-        <div class="d-flex flex-column" id="InterLeft">
-          <div class="p-2">
-            <div class="dropdown">
-              {{ form.Direction|as_crispy_field }}
-            </div>
-          </div>
-
-          <div class="p-2">
-            <div class="dropdown">
-              {{ form.OrderBookName|as_crispy_field }}
-            </div>
-          </div>
-
-          <div class="p-2">
-            <div class="dropdown">
-              {{ form.Type|as_crispy_field }}
-            </div>
-          </div>
-        </div>
-
-        <!-- Textbox Div -->
-        <div class="d-flex flex-column"id="InterRight">
-          <div class="p-2">
-            <div class="form-group">
-              {{ form.Price|as_crispy_field }}
-            </div>
-          </div>
-          <div class="p-2">
-            <div class="form-group">
-              {{ form.Quantity|as_crispy_field }}
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <br>
-
-    <!-- Place Order Button -->
-    <button type="submit" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Place Order</button>
-
-  </form>
-
-
-  <!-- Active Order header -->
-  <header class="container-fluid text-center">
-    <p>Your Active Orders</p>
-  </header>
-
-  <!-- when reading from database, you can proabably go through a for loop and add multiple rows depending on the info -->
-  <div class="container-fluid" id="ActiveOrderInfoDiv">
-      <div class="row bg-dark text-light">
-            <div class="col">Company</div>
-            <div class="col">Order Direction</div>
-            <div class="col">Order Type</div>
-            <div class="col">Price</div>
-            <div class="col">Quantity</div>
-      </div>
-      {% for order in all_orders %}
-        <div class="row">
-              <div class="col">{{ order.OrderBookName }}</div>
-              <div class="col">{{ order.Direction }}</div>
-              <div class="col">{{ order.Type }}</div>
-              <div class="col">${{ order.Price }}.00</div>
-              <div class="col">{{ order.Quantity }}</div>
-        </div>
-      {% endfor %}
-  </div>
-
-  <header class="container-fluid text-center">
-    <p>Current Orders Info</p>
-  </header>
-
-  <!-- Dropdown Menu -->
+<header class="container-fluid text-center">
+  <p>Place Order</p>
+  <script>
+    function deleteOrder() {
+      $(document).on('click', ':button', function () {
+        $(this).parent().remove();
+      });
+    }
+  </script>
+</header>
+<form action="" method="post"> {% csrf_token %}
+  <!-- Inner Divs -->
   <div class="container-fluid text-center">
-    <div class="p-2">
-      <label for="selectcompany"><p id="SelectCompanyLabel">Select Company:</p></label>
-      <form action = "" method="GET">
-        <select id="SelectDropDown" name="company_form" onchange="this.form.submit()">
-          <option value="">...</option>
-          {% for company in all_companies %}
-            <option value="{{ company.Ticker }}">{{ company.Ticker }}</option>
-          {% endfor %}
-        </select>
-        <!--<input type="submit" name="submit" value="Submit">-->
-      </form>
+    <!--<div class="row content">-->
+    <div class="d-flex flex-row align-content-between" id="InterDiv">
+
+      <!-- Dropdown Div -->
+      <div class="d-flex flex-column" id="InterLeft">
+        <div class="p-2">
+          <div class="dropdown">
+            {{ form.Direction|as_crispy_field }}
+          </div>
+        </div>
+
+        <div class="p-2">
+          <div class="dropdown">
+            {{ form.OrderBookName|as_crispy_field }}
+          </div>
+        </div>
+
+        <div class="p-2">
+          <div class="dropdown">
+            {{ form.Type|as_crispy_field }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Textbox Div -->
+      <div class="d-flex flex-column" id="InterRight">
+        <div class="p-2" id="PriceTextBox">
+          <div class="form-group">
+            {{ form.Price|as_crispy_field }}
+          </div>
+        </div>
+        <div class="p-2">
+          <div class="form-group">
+            {{ form.Quantity|as_crispy_field }}
+          </div>
+        </div>
+      </div>
+
     </div>
+
   </div>
 
   <br>
 
-  <!-- Asks/Bids Div -->
-  <div class="container-fluid text-center" id="ActiveOrderInfoDiv">
-    <div class="row">
+  <!-- Place Order Button -->
+  <button type="submit" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Place Order</button>
+
+</form>
+
+
+<!-- Active Order header -->
+<header class="container-fluid text-center">
+  <p>Your Active Orders</p>
+</header>
+
+<!-- when reading from database, you can probably go through a for loop and add multiple rows depending on the info -->
+<div class="container-fluid" id="ActiveOrderInfoDiv">
+  <div class="row bg-dark text-light">
+    <div class="col">Company</div>
+    <div class="col">Order Direction</div>
+    <div class="col">Order Type</div>
+    <div class="col">Price</div>
+    <div class="col">Quantity</div>
+    <div class="col">ID</div>
+  </div>
+  {% for order in all_orders %}
+  <div class="row">
+    <div class="col">{{ order.OrderBookName }}</div>
+    <div class="col">{{ order.Direction }}</div>
+    <div class="col">{{ order.Type }}</div>
+    <div class="col">${{ order.Price }}.00</div>
+    <div class="col">{{ order.Quantity }}</div>
+    <div class="col">{{ order.OrderID }}</div>
+    <!-- <form action="" method="POST">
+      {% csrf_token %} -->
+      <form action="{% url 'order:cancel_order' pk=order.OrderID %}" method="POST">
+        {% csrf_token %}
+      <button type="submit" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </form>
+    <!-- </form> -->
+  </div>
+  {% endfor %}
+</div>
+
+<header class="container-fluid text-center">
+  <p>Current Orders Info</p>
+</header>
+
+<!-- Dropdown Menu -->
+<div class="container-fluid text-center">
+  <div class="p-2">
+    <label for="selectcompany">
+      <p id="SelectCompanyLabel">Select Company:</p>
+    </label>
+    <form action="" method="GET">
+      <select id="SelectDropDown" name="company_form" onchange="this.form.submit()">
+        <option value="">...</option>
+        {% for company in all_companies %}
+        <option value="{{ company.Ticker }}">{{ company.Ticker }}</option>
+        {% endfor %}
+      </select>
+      <!--<input type="submit" name="submit" value="Submit">-->
+    </form>
+  </div>
+</div>
+
+<br>
+
+<!-- Asks/Bids Div -->
+<div class="container-fluid text-center" id="ActiveOrderInfoDiv">
+  <div class="row">
     <div class="col" id="AsksDiv">
       <div class="row bg-dark text-light">
-        <div class = "col">Shares</div>
-        <div class = "col">Asks</div>
+        <div class="col">Shares</div>
+        <div class="col">Asks</div>
       </div>
       {% for asks in all_asks%}
-        <div class="row">
-          <div class = "col">{{ asks.Quantity }}</div>
-          <div class = "col">${{ asks.Price }}.00</div>
-        </div>
+      <div class="row">
+        <div class="col">{{ asks.Quantity }}</div>
+        <div class="col">${{ asks.Price }}.00</div>
+      </div>
       {% endfor %}
     </div>
     <div class="col" id="BidsDiv">
       <div class="row bg-dark text-light">
-        <div class = "col">Bids</div>
-        <div class = "col">Shares</div>
+        <div class="col">Bids</div>
+        <div class="col">Shares</div>
       </div>
       {% for bids in all_bids%}
-        <div class="row">
-          <div class = "col">${{ bids.Price }}.00</div>
-          <div class = "col">{{ bids.Quantity }}</div>
-        </div>
+      <div class="row">
+        <div class="col">${{ bids.Price }}.00</div>
+        <div class="col">{{ bids.Quantity }}</div>
+      </div>
       {% endfor %}
     </div>
-    </div>
   </div>
-  <br>
-  <br>
+</div>
+<br>
+<br>
 
 {% endblock body %}
