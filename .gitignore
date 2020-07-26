@@ -12,4 +12,5 @@ order/__pycache__/
 market_project/__pycache__/
 landingpage/__pycache__/
 order/__pycache__/
+userinfo/__pycache__/
 *.pyc
