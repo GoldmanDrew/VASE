@@ -46,7 +46,7 @@ def orderpage(request):
     return render(request, "order/orderpage.html", context)
 
 def orderfilter(request):
-    all_orders = Order.objects.filter(Agent=getuser(request))
+    all_orders = Order.objects.all()
     all_companies = Company.objects.all()
     companies = request.GET.get('company_form')
     if companies != "" and companies!= None:
