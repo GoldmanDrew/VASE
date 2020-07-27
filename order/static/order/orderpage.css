@@ -64,6 +64,10 @@ header {
 
 }
 
+/* #PriceTextBox {
+  opacity: 0;
+} */
+
 #PlaceOrderButton {
   background-color: black;
   width: 65%;
