@@ -19,7 +19,6 @@ class OrderForm(ModelForm):
         }
     def clean(self):
         order_type = self.cleaned_data.get('Type', None)
-        print(order_type)
         if order_type == "L":
             # validate that price is empty
             price = self.cleaned_data.get('Price', None)
