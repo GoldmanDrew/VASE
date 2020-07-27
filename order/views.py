@@ -9,7 +9,7 @@ from crispy_forms.layout import Layout
 class OrderForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(OrderForm, self).__init__(*args, **kwargs)
-        self.fields['Type'].help_text = "leave tooltip here"
+        # self.fields['Type'].help_text = "" # replaced by tooltip
         self.fields['Price'].required = False
     class Meta:
         model = Order
