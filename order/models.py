@@ -1,4 +1,5 @@
 from django.db import models
+# Create your models here.
 from django.urls import reverse
 
 
@@ -37,16 +38,21 @@ class Agent(models.Model):
 
 
 class AgentShare(models.Model):
-    id = models.IntegerField(primary_key=True)
+    UniqueID = models.IntegerField(primary_key=True)
     Agent = models.ForeignKey(Agent, on_delete=models.CASCADE, null=False)
     Company = models.ForeignKey(Company, on_delete=models.CASCADE, null=False)
     Shares = models.IntegerField(default = 0)
     Borrowed = models.IntegerField(default = 0)
     Collateral = models.IntegerField(default = 0)
+    #id = models.AutoField(primary_key = True, null=False) # I think you use .AutoField if you want the field to auto increment, so id is
+                                                          # auto incrementing, is the primary key, and is not null
+
+    def __int__(self):
+        return self.Agent
 
     class Meta:
         db_table = 'agentshares'
-        unique_together = (("Agent", "Company"),)
+        unique_together = (("Agent_id", "Company_id"),)
 
 
 class Order(models.Model):
@@ -64,6 +70,7 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.OrderID)
+
 
     def get_absolute_url(self):
         return "/order/"
