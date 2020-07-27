@@ -15,6 +15,7 @@
     }
   </script>
 </header>
+
 <form action="" method="post"> {% csrf_token %}
   <!-- Inner Divs -->
   <div class="container-fluid text-center">
@@ -22,7 +23,7 @@
     <div class="d-flex flex-row align-content-between" id="InterDiv">
 
       <!-- Dropdown Div -->
-      <div class="d-flex flex-column" id="InterLeft">
+      <div class="d-flex flex-column" id="InterLeft" data-toggle="tooltip" title="Hooray!">
         <div class="p-2">
           <div class="dropdown">
             {{ form.Direction|as_crispy_field }}
@@ -55,14 +56,12 @@
           </div>
         </div>
       </div>
-
+  <!-- Place Order Button -->
     </div>
 
   </div>
 
   <br>
-
-  <!-- Place Order Button -->
   <button type="submit" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Place Order</button>
 
 </form>
@@ -83,6 +82,7 @@
     <div class="col">Quantity</div>
     <div class="col">ID</div>
   </div>
+  <br>
   {% for order in all_orders %}
   <div class="row">
     <div class="col">{{ order.OrderBookName }}</div>

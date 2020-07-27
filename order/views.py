@@ -6,17 +6,35 @@ from .models import *
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout
 
-
 class OrderForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(OrderForm, self).__init__(*args, **kwargs)
+        self.fields['Type'].help_text = "leave tooltip here"
+        self.fields['Price'].required = False
     class Meta:
         model = Order
         fields = ['Direction', 'OrderBookName', 'Type', 'Price', 'Quantity']
+        labels = {
+            'OrderBookName': 'Class',
+        }
+    def clean(self):
+        order_type = self.cleaned_data.get('Type', None)
+        print(order_type)
+        if order_type == "L":
+            # validate that price is empty
+            price = self.cleaned_data.get('Price', None)
+            if price == None:
+                self._errors['Price'] = self.error_class([
+                    'Price is required'])
+        return super().clean()
+        
 
 def getuser(request):
     current_agent = Agent.objects.get(Agent=request.user)
     return current_agent
 
 def orderpage(request):
+    current_agent = Agent.objects.get(Agent=request.user)
     all_orders = orderfilter(request)
     all_companies = Company.objects.all()
     all_asks = all_orders.filter(Direction="A")
@@ -40,6 +58,7 @@ def orderpage(request):
         "all_bids" : all_bids,
         "all_orders" : all_orders,
         "all_companies" : all_companies,
+        "current_agent": current_agent,
         "form": form
     }
     return render(request, "order/orderpage.html", context)

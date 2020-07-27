@@ -78,7 +78,6 @@ class Order(models.Model):
     class Meta:
         db_table = 'orders'
 
-
 class Price(models.Model):
     OrderBookName = models.CharField(max_length=20)
     Price = models.IntegerField()
