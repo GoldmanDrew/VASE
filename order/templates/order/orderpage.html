@@ -7,13 +7,13 @@
 
 <header class="container-fluid text-center">
   <p>Place Order</p>
-  <script>
+  <!-- <script>
     function deleteOrder() {
       $(document).on('click', ':button', function () {
         $(this).parent().remove();
       });
     }
-  </script>
+  </script> -->
 </header>
 
 <form action="" method="post"> {% csrf_token %}
@@ -23,7 +23,7 @@
     <div class="d-flex flex-row align-content-between" id="InterDiv">
 
       <!-- Dropdown Div -->
-      <div class="d-flex flex-column" id="InterLeft" data-toggle="tooltip" title="Hooray!">
+      <div class="d-flex flex-column" id="InterLeft">
         <div class="p-2">
           <div class="dropdown">
             {{ form.Direction|as_crispy_field }}
@@ -36,7 +36,9 @@
           </div>
         </div>
 
-        <div class="p-2">
+        <div class="p-2" data-toggle="tooltip" title="Note: choosing limit means you set your maximum buy price or
+        minimum sell price (recommended). Choosing market means you want to buy from the current
+            lowest seller or want to sell to the current highest buyer.">
           <div class="dropdown">
             {{ form.Type|as_crispy_field }}
           </div>
