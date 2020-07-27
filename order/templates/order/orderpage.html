@@ -80,7 +80,11 @@
               <div class="col">{{ order.OrderBookName }}</div>
               <div class="col">{{ order.Direction }}</div>
               <div class="col">{{ order.Type }}</div>
-              <div class="col">${{ order.Price }}.00</div>
+              {% if order.Price == 2147483647 or order.Price == 0 %}
+                <div class="col"></div>
+              {% else %}
+                <div class="col">${{ order.Price }}.00</div>
+              {% endif %}
               <div class="col">{{ order.Quantity }}</div>
         </div>
       {% endfor %}
@@ -119,7 +123,11 @@
       {% for asks in all_asks%}
         <div class="row">
           <div class = "col">{{ asks.Quantity }}</div>
-          <div class = "col">${{ asks.Price }}.00</div>
+          {% if asks.Price == 2147483647 or asks.Price == 0 %}
+            <div class="col"></div>
+          {% else %}
+            <div class="col">${{ asks.Price }}.00</div>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
@@ -130,7 +138,11 @@
       </div>
       {% for bids in all_bids%}
         <div class="row">
-          <div class = "col">${{ bids.Price }}.00</div>
+          {% if bids.Price == 2147483647 or bids.Price == 0 %}
+            <div class="col"></div>
+          {% else %}
+            <div class="col">${{ bids.Price }}.00</div>
+          {% endif %}
           <div class = "col">{{ bids.Quantity }}</div>
         </div>
       {% endfor %}
