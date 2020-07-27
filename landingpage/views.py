@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import RegistrationForm, LoginForm     # imports the format for Login/Register
+from .forms import RegistrationForm     # imports the format for Login/Register
 
 
 # Create your views here. FOR THE ORDER APP (b/c this is the views.py file within the order app)
@@ -30,8 +30,8 @@ def login_request(request):
 
             if user is not None:
                 login(request, user)
-                messages.info(request, f"You are now logged in as {username}")
-                return redirect('order:order-index')  # need to find another page to redirect to
+                messages.success(request, f"You are now logged in as {username}")
+                return redirect('userinfo:userinfo-display')  # need to find another page to redirect to
             else:
                 messages.error(request, "Invalid username or password")
         else:
@@ -44,7 +44,7 @@ def login_request(request):
 
 def logout_request(request):
     logout(request)
-    messages.info(request, "Logged out successfully")
+    messages.success(request, "Logged out successfully")
     return redirect("landingpage:login_url")
 
 
