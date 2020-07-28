@@ -1,0 +1,22 @@
+{% extends 'class/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Classes{% endblock %}
+
+{% block body %}
+
+<section class="section" style="margin:7rem">
+  <div class="container" id="classview">
+    <div class="row justify-content-center">
+      {% for classes in all_classes%}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="class-cards {{classes.Department}}">
+            <h3>{{classes.ClassName}}</h3>
+            <p class="class-subtitle">{{classes.Department}}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock body %}
