@@ -1,4 +1,4 @@
-{% extends 'landingpage/loginpage.html' %}
+{% extends 'landingpage/index.html' %}
 {% load crispy_forms_tags %}
 
 {% block form %}
@@ -30,7 +30,14 @@
     <br>
 
     <!-- Place Order Button -->
-    <button type="submit" class="btn btn-primary btn-lg btn-block" id="SubmitButton">Login</button>
+    <div class="control text-center">
+    <button type="submit" class="button button-primary button-block" id="SubmitButton">Login</button>
+    </div>
 
   </form>
+
+<br>
+<p>Don't have an account? Register <a href="{% url 'landingpage:register_url' %}">Here</a>!</p>
+<br>
+
 {% endblock form %}

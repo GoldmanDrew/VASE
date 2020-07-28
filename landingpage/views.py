@@ -38,8 +38,8 @@ def login_request(request):
             messages.error(request, "Invalid username or password")
 
     form = AuthenticationForm()
+    # return render(request, "landingpage/index.html", {'form': form})
     return render(request, "landingpage/login_form.html", {'form': form})
-    # return render(request, 'landingpage/loginpage.html')
 
 
 def logout_request(request):
