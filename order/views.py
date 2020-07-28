@@ -69,7 +69,7 @@ def cancelorder(request, pk):
     return redirect("/order")
 
 def orderfilter(request):
-    all_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
+    all_orders = Order.objects.all()
     all_companies = Company.objects.all()
     companies = request.GET.get('company_form')
     if companies != "" and companies!= None:

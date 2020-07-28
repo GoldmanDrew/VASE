@@ -80,7 +80,7 @@
 </header>
 
 <!-- when reading from database, you can probably go through a for loop and add multiple rows depending on the info -->
-<div class="container-fluid" id="ActiveOrderInfoDiv">
+<div class="container-fluid notification" id="ActiveOrderInfoDiv">
   <div class="row bg-dark text-light">
     <div class="col">Company</div>
     <div class="col">Order Direction</div>
@@ -146,10 +146,14 @@
         <div class="col">Asks</div>
       </div>
       {% for asks in all_asks%}
-      <div class="row">
-        <div class="col">{{ asks.Quantity }}</div>
-        <div class="col">${{ asks.Price }}.00</div>
-      </div>
+        <div class="row">
+          <div class = "col">{{ asks.Quantity }}</div>
+          {% if asks.Price == 2147483647 or asks.Price == 0 %}
+            <div class="col"></div>
+          {% else %}
+            <div class="col">${{ asks.Price }}.00</div>
+          {% endif %}
+        </div>
       {% endfor %}
     </div>
     <div class="col" id="BidsDiv">
@@ -158,10 +162,14 @@
         <div class="col">Shares</div>
       </div>
       {% for bids in all_bids%}
-      <div class="row">
-        <div class="col">${{ bids.Price }}.00</div>
-        <div class="col">{{ bids.Quantity }}</div>
-      </div>
+        <div class="row">
+          {% if bids.Price == 2147483647 or bids.Price == 0 %}
+            <div class="col"></div>
+          {% else %}
+            <div class="col">${{ bids.Price }}.00</div>
+          {% endif %}
+          <div class = "col">{{ bids.Quantity }}</div>
+        </div>
       {% endfor %}
     </div>
   </div>
