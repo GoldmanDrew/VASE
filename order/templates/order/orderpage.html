@@ -62,7 +62,7 @@
           </div>
         </div>
       </div>
-  <!-- Place Order Button -->
+      <!-- Place Order Button -->
     </div>
 
   </div>
@@ -95,17 +95,21 @@
     <div class="col">{{ order.OrderBookName }}</div>
     <div class="col">{{ order.Direction }}</div>
     <div class="col">{{ order.Type }}</div>
+    {% if order.Price == 2147483647 or order.Price == 0 %}
+    <div class="col"></div>
+    {% else %}
     <div class="col">${{ order.Price }}.00</div>
+    {% endif %}
     <div class="col">{{ order.Quantity }}</div>
     <div class="col">{{ order.OrderID }}</div>
     <!-- <form action="" method="POST">
       {% csrf_token %} -->
-      <form action="{% url 'order:cancel_order' pk=order.OrderID %}" method="POST">
-        {% csrf_token %}
+    <form action="{% url 'order:cancel_order' pk=order.OrderID %}" method="POST">
+      {% csrf_token %}
       <button type="submit" class="close" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-      </form>
+    </form>
     <!-- </form> -->
   </div>
   {% endfor %}
@@ -114,7 +118,7 @@
 <br><br><br>
 
 <header class="container-fluid text-center">
-  <p>All Current Orders</p>
+  <p>All Active Orders</p>
 </header>
 
 <!-- Dropdown Menu -->
@@ -146,14 +150,14 @@
         <div class="col">Asks</div>
       </div>
       {% for asks in all_asks%}
-        <div class="row">
-          <div class = "col">{{ asks.Quantity }}</div>
-          {% if asks.Price == 2147483647 or asks.Price == 0 %}
-            <div class="col"></div>
-          {% else %}
-            <div class="col">${{ asks.Price }}.00</div>
-          {% endif %}
-        </div>
+      <div class="row">
+        <div class="col">{{ asks.Quantity }}</div>
+        {% if asks.Price == 2147483647 or asks.Price == 0 %}
+        <div class="col"></div>
+        {% else %}
+        <div class="col">${{ asks.Price }}.00</div>
+        {% endif %}
+      </div>
       {% endfor %}
     </div>
     <div class="col" id="BidsDiv">
@@ -162,14 +166,14 @@
         <div class="col">Shares</div>
       </div>
       {% for bids in all_bids%}
-        <div class="row">
-          {% if bids.Price == 2147483647 or bids.Price == 0 %}
-            <div class="col"></div>
-          {% else %}
-            <div class="col">${{ bids.Price }}.00</div>
-          {% endif %}
-          <div class = "col">{{ bids.Quantity }}</div>
-        </div>
+      <div class="row">
+        {% if bids.Price == 2147483647 or bids.Price == 0 %}
+        <div class="col"></div>
+        {% else %}
+        <div class="col">${{ bids.Price }}.00</div>
+        {% endif %}
+        <div class="col">{{ bids.Quantity }}</div>
+      </div>
       {% endfor %}
     </div>
   </div>
