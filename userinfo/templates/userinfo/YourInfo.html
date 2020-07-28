@@ -4,77 +4,119 @@
 
 {% block body %}
 
-    <div id="content">
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
-            {{ message }}
-          </div>
-        {% endfor %}
-      {% endif %}
-    </div>
+<div id="content">
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+    {{ message }}
+  </div>
+  {% endfor %}
+  {% endif %}
+</div>
 
-    <!-- Place Order header -->
-    <header class="container-fluid text-center">
-      <p>Your Info</p>
-    </header>
 
-    <!-- UserName Div -->
-    <div class="container-fluid text-center">
-      <h1>Username</h1>
-      <h4>{{current_agent}}</h4>
-    </div>
 
-    <br>
-    <br>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-    <!-- Cash Div -->
-    <div class="container-fluid text-center">
-      <h1>Cash</h1>
-      <h4>{{current_agent.Cash}}</h4>
-    </div>
-
-    <br>
-    <br>
-
-    <!-- Shares Div -->
-    <!-- when reading from database, you can proabably go through a for loop and add multiple rows depending on the info -->
-<div class="container-fluid text-center">
-    <h1>Shares</h1>
-    <br>
-      <div id="SharesDiv">
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 mt-5">
+      <div class="card">
+        <div class="card-body">
           <div class="row">
-                <div class="col">Company</div>
-                <div class="col">Shares</div>
-                <div class="col">Borrowed</div>
-                <div class="col">Collateral</div>
-          </div>
-          {% for share in current_agent_shares %}
-            <div class="row">
-                <div class = "col">{{ share.Company }}</div>
-                <div class = "col">${{ share.Shares }}</div>
-                <div class = "col">${{ share.Borrowed }}</div>
-                <div class = "col">${{ share.Collateral }}</div>
+            <div class="col-md-12">
+              <h4>Your Profile</h4>
+              <hr>
             </div>
-          {% endfor %}
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <form>
+                <div class="form-group row">
+                  <label for="username" class="col-4 col-form-label">User Name</label>
+                  <div class="col-8">
+                    <input id="username" name="username" placeholder="{{current_agent}}" class="form-control here"
+                      type="text">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="email" class="col-4 col-form-label">Email</label>
+                  <div class="col-8">
+                    <input id="email" name="email" placeholder="{{current_agent.Email}}" class="form-control here"
+                      type="text">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="cash" class="col-4 col-form-label">Cash</label>
+                  <div class="col-8 mt-2">
+                    <p>${{current_agent.Cash}}</p>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="shares" class="col-4 col-form-label">Shares</label>
+                  <div class="col-8">
+                    <div id="SharesDiv">
+                      <div class="row font-weight-bold">
+                        <div class="col">Company</div>
+                        <div class="col">Shares</div>
+                        <div class="col">Borrowed</div>
+                        <div class="col">Collateral</div>
+                      </div>
+                      {% for share in current_agent_shares %}
+                      <div class="row">
+                        <div class="col">{{ share.Company }}</div>
+                        <div class="col">{{ share.Shares }}</div>
+                        <div class="col">{{ share.Borrowed }}</div>
+                        <div class="col">${{ share.Collateral }}</div>
+                      </div>
+                      {% endfor %}
+                    </div>
+
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="portfoliovalue" class="col-4 col-form-label">Portfolio Value (Updated Daily)</label>
+                  <div class="col-8 mt-2">
+                    <p>${{current_agent.Wealth}}</p>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="newpass" class="col-4 col-form-label">New Password</label>
+                  <div class="col-8">
+                    <input id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="text">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="newpass" class="col-4 col-form-label">Confirm Password</label>
+                  <div class="col-8">
+                    <input id="newpass" name="newpass" placeholder="Confirm Password" class="form-control here" type="text">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                  <div class="offset-4 col-8">
+                    <button name="submit" type="submit" class="btn btn-primary">Update Profile</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
       </div>
+    </div>
   </div>
+</div>
 
-  <br>
-  <br>
-
-  <!-- Portfolio Div -->
-  <div class="container-fluid text-center">
-    <h1>Portfolio Value</h1>
-    <h4>{{current_agent.Wealth}}</h4>
-  </div>
-
-    <script>
-      setTimeout(function(){
-      if($('#msg').length > 0) {
+<script>
+  setTimeout(function () {
+    if ($('#msg').length > 0) {
       $('#msg').remove();
-      }
-      }, 4000)
-    </script>
+    }
+  }, 4000)
+</script>
 
 {% endblock body %}

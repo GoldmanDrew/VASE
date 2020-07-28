@@ -16,12 +16,13 @@ header {
 }
 
 #InterDiv {
-  background-color: black;
+  background-color: #ececec;
   width: 70%;
   height: 50%;
   margin-left: auto;
   margin-right: auto;
   padding: 1%;
+  padding-bottom: 32%;
   border-radius: 1%;
 }
 
@@ -33,7 +34,7 @@ header {
   padding-top: 3%;
   border-width: 1%;
   border-style: solid;
-  border-color: black;
+  border-color: #ececec;
 }
 
 #InterRight {
@@ -44,7 +45,7 @@ header {
   padding-top: 9%;
   border-width: 1%;
   border-style: solid;
-  border-color: black;
+  border-color: #ececec;
 }
 
 #dropdownMenuButton {
@@ -79,8 +80,8 @@ header {
 }
 
 #ActiveOrderInfoDiv {
-  background-color: white;
-  border-color: black;
+  background-color: #ececec;
+  border-color: #ececec;
   border-width: 2px;
   border-style: solid;
   width: 70%;
