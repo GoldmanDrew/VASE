@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'order',
     'userinfo',
     'landingpage',
+    'class',
     #'order.apps.OrderConfig', # I think I have to use one or the other (either 'order' or 'order.apps.OrderConfig'), not both
     'crispy_forms',
 ]
