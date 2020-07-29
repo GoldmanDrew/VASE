@@ -50,19 +50,26 @@
       success: function(data){
         var ctx = document.getElementById('myChart').getContext('2d');
         var graph_data = [];
-        data.forEach(element => graph_data.push({"x": element["fields"]["Time"], "y": element["fields"]["Price"]}));
-        data.forEach(element => console.log(element["fields"]["Price"]));
-        data.forEach(element => console.log(element["fields"]["Time"]));
+        var time = [];
+        //for (element in data){
+        //  graph_data.push({"x": element["fields"]["Time"], "y": element["fields"]["Price"]});
+        //  console.log(element["fields"]["Price"]);
+        //  console.log(element["fields"]["Time"]);
+        //}
+        data.forEach(element => graph_data.push({"x": new Date(element["fields"]["Time"]), "y": element["fields"]["Price"]}));
+        data.forEach(element => time.push(new Date(element["fields"]["Time"])));
         console.log(graph_data);
+        console.log(time);
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
+                labels: time,
                 datasets: [{
                     lineTension: 0,
                     fill: false,
                     borderWidth: 3,
                     borderColor: "rgba(0, 0, 0, 0.3)",
-                    label: '# of Votes',
+                    label: 'Prices',
                     data: graph_data,
                     backgroundColor: "rgba(0, 0, 0, 0.3)"
                 }]
@@ -87,7 +94,16 @@
                             display: true,
                             labelString: 'Date',
                             fontSize: 16
-                        }
+                        },
+                        type: 'time',
+                        time: {
+                          unit: 'hour',
+                          unitStepSize: 1,
+                          displayFormats: {
+                            'hour': 'MM/DD/YY h:00',
+                          },
+                          distribution: 'linear'
+                      }
                     }]
                 },
             }
