@@ -4,7 +4,74 @@
 {% block title %}Order Page{% endblock %}
 
 {% block body %}
-
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+<script>
+  /*
+      On submitting the form, send the POST ajax
+      request to server and after successfull submission
+      display the object.
+  */
+  // $(document).ready(function () {
+  // $("#order_form").submit(function (e) {
+  $(document).on("submit", "#order_form", function (e) {
+    // prevent page reload and default actions
+    e.preventDefault();
+    // serialize the data for sending the form data.
+    var serializedData = $(this).serialize();
+    // make POST ajax call
+    $.ajax({
+      type: 'POST',
+      url: "{% url 'order:post_order' %}",
+      data: serializedData,
+      success: function (response) {
+        // clear the form
+        $("#order_form").trigger('reset');
+      },
+      error: function (response) {
+      }
+    });
+    $.ajax({
+      url: "{% url 'order:your_orders' %}",
+      success: function (response) {
+        $("#YourOrdersDiv").load("/order/yourorders/");
+      },
+      error: function (response) {
+      }
+    });
+    $.ajax({
+      url: "{% url 'order:all_orders' %}",
+      success: function (response) {
+        $("#AllOrdersDiv").load("/order/allorders/");
+      },
+      error: function (response) {
+      }
+    });
+  });
+  // TODO: in the future turn all these AJAX calls into a function that accepts a URL as a parameter
+  $(document).on("submit", "#cancel_button", function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: e.target.action,
+      success: function (response) {
+        $("#YourOrdersDiv").load("/order/yourorders/");
+      },
+      error: function (response) {
+      }
+    });
+    $.ajax({
+      url: e.target.action,
+      success: function (response) {
+        $("#AllOrdersDiv").load("/order/allorders/");
+      },
+      error: function (response) {
+      }
+    });
+  });
+</script>
 <header class="container-fluid text-center">
   <p>Place Order</p>
   <!-- <script>
@@ -14,14 +81,9 @@
       });
     }
   </script> -->
-  <script>
-    $(document).ready(function () {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
-  </script>
 </header>
 
-<form method="post" id="order_form"> {% csrf_token %}
+<form method="POST" id="order_form"> {% csrf_token %}
   <!-- Inner Divs -->
   <div class="container text-center">
     <!--<div class="row content">-->
@@ -80,39 +142,8 @@
 </header>
 
 <!-- when reading from database, you can probably go through a for loop and add multiple rows depending on the info -->
-<div class="container-fluid notification" id="ActiveOrderInfoDiv">
-  <div class="row bg-dark text-light">
-    <div class="col">Company</div>
-    <div class="col">Order Direction</div>
-    <div class="col">Order Type</div>
-    <div class="col">Price</div>
-    <div class="col">Quantity</div>
-    <div class="col">ID</div>
-  </div>
-  <br>
-  {% for order in all_orders %}
-  <div class="row">
-    <div class="col">{{ order.OrderBookName }}</div>
-    <div class="col">{{ order.Direction }}</div>
-    <div class="col">{{ order.Type }}</div>
-    {% if order.Price == 2147483647 or order.Price == 0 %}
-    <div class="col"></div>
-    {% else %}
-    <div class="col">${{ order.Price }}.00</div>
-    {% endif %}
-    <div class="col">{{ order.Quantity }}</div>
-    <div class="col">{{ order.OrderID }}</div>
-    <!-- <form action="" method="POST">
-      {% csrf_token %} -->
-    <form action="{% url 'order:cancel_order' pk=order.OrderID %}" method="POST">
-      {% csrf_token %}
-      <button type="submit" class="close" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </form>
-    <!-- </form> -->
-  </div>
-  {% endfor %}
+<div class="container-fluid ActiveOrderInfoDiv" id="YourOrdersDiv">
+  {% include 'order/yourorders.html' %}
 </div>
 
 <br><br><br>
@@ -142,41 +173,8 @@
 <br>
 
 <!-- Asks/Bids Div -->
-<div class="container-fluid text-center" id="ActiveOrderInfoDiv">
-  <div class="row">
-    <div class="col" id="AsksDiv">
-      <div class="row bg-dark text-light">
-        <div class="col">Shares</div>
-        <div class="col">Asks</div>
-      </div>
-      {% for asks in all_asks%}
-      <div class="row">
-        <div class="col">{{ asks.Quantity }}</div>
-        {% if asks.Price == 2147483647 or asks.Price == 0 %}
-        <div class="col"></div>
-        {% else %}
-        <div class="col">${{ asks.Price }}.00</div>
-        {% endif %}
-      </div>
-      {% endfor %}
-    </div>
-    <div class="col" id="BidsDiv">
-      <div class="row bg-dark text-light">
-        <div class="col">Bids</div>
-        <div class="col">Shares</div>
-      </div>
-      {% for bids in all_bids%}
-      <div class="row">
-        {% if bids.Price == 2147483647 or bids.Price == 0 %}
-        <div class="col"></div>
-        {% else %}
-        <div class="col">${{ bids.Price }}.00</div>
-        {% endif %}
-        <div class="col">{{ bids.Quantity }}</div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
+<div class="container-fluid text-center ActiveOrderInfoDiv" id="AllOrdersDiv">
+  {% include 'order/allorders.html' %}
 </div>
 <br>
 <br>

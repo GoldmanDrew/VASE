@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col" id="AsksDiv">
+      <div class="row bg-dark text-light">
+        <div class="col">Shares</div>
+        <div class="col">Asks</div>
+      </div>
+      {% for asks in all_asks%}
+      <div class="row">
+        <div class="col">{{ asks.Quantity }}</div>
+        {% if asks.Price == 2147483647 or asks.Price == 0 %}
+        <div class="col"></div>
+        {% else %}
+        <div class="col">${{ asks.Price }}.00</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="col" id="BidsDiv">
+      <div class="row bg-dark text-light">
+        <div class="col">Bids</div>
+        <div class="col">Shares</div>
+      </div>
+      {% for bids in all_bids%}
+      <div class="row">
+        {% if bids.Price == 2147483647 or bids.Price == 0 %}
+        <div class="col"></div>
+        {% else %}
+        <div class="col">${{ bids.Price }}.00</div>
+        {% endif %}
+        <div class="col">{{ bids.Quantity }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
