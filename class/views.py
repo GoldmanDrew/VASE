@@ -15,7 +15,8 @@ def classview(request):
 
 def priceview(request):
     if request.method == 'GET':
-        class_ticker = request.GET['class']
+        class_name = request.GET['class']
+        class_ticker = Company.objects.get(ClassName = class_name)
         all_prices = Price.objects.filter(OrderBookName = class_ticker)
         context = {
             "all_prices" : all_prices
