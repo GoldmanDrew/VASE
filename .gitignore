@@ -12,8 +12,7 @@ order/__pycache__/
 market_project/__pycache__/
 landingpage/__pycache__/
 order/__pycache__/
-<<<<<<< HEAD
-=======
 userinfo/__pycache__/
->>>>>>> som
+landingpage/migrations/__pycache__/
+userinfo/migrations/__pycache__/
 *.pyc
