@@ -1,0 +1,64 @@
+.class-cards{
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #284B63;
+  width: 100%;
+  padding: 15px 20px;
+  margin: 10px;
+  color: black;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.class-cards h3{
+  font-size: 1.5rem!important;
+}
+
+.class-subtitle{
+  opacity: 70%;
+}
+
+.Mathematics{
+  background-color: #E7E7E77F;
+}
+
+.Applied.Mathematics{
+  background-color: #E7E7E73F;
+}
+
+.Engineering{
+  background-color: #84B0823F;
+}
+
+.Computer.Science{
+  background-color: #84B0827F;
+}
+
+.class-modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 90%;
+  overflow: hidden;
+}
+
+.class-modal-box{
+  width: 1200px;
+  max-width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow: visible;
+}
+
+.class-modal-body{
+  height: 100%;
+  overflow: hidden;
+}
+
+.price-chart{
+  padding: 10px;
+}
