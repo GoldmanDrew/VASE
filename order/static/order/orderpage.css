@@ -79,7 +79,7 @@ header {
   font-weight: bold;
 }
 
-#ActiveOrderInfoDiv {
+.ActiveOrderInfoDiv {
   background-color: #ececec;
   border-color: #ececec;
   border-width: 2px;
