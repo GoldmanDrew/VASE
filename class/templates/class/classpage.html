@@ -10,13 +10,93 @@
     <div class="row justify-content-center">
       {% for classes in all_classes%}
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="class-cards {{classes.Department}}">
-            <h3>{{classes.ClassName}}</h3>
+          <button type="button" class="class-cards {{classes.Department}}" data-toggle="modal" data-target="#class-modal">
+            <h3 id="button-classname">{{classes.ClassName}}</h3>
             <p class="class-subtitle">{{classes.Department}}</p>
-          </div>
+            <p hidden id = "class-ticker" class="class-subtitle">{{classes.Ticker}}</p>
+          </button>
         </div>
       {% endfor %}
+    </div>
+    <div class="modal fade class-modal" id="class-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog class-modal-box" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modal-label"></h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body class-modal-body">
+            <canvas id="myChart" class="price-chart"></canvas>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 {% endblock body %}
+
+{% block javascript %}
+<script>
+  $('#class-modal').on('shown.bs.modal', function () {
+    var classname = document.getElementById("button-classname").innerHTML;
+    document.getElementById("modal-label").innerHTML = classname;
+    $.ajax({
+      type:"GET",
+      url: "/class/get_prices",
+      data:{"class":document.getElementById("class-ticker").innerHTML},
+      dataType: 'json',
+      success: function(data){
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var graph_data = [];
+        data.forEach(element => graph_data.push({"x": element["fields"]["Time"], "y": element["fields"]["Price"]}));
+        data.forEach(element => console.log(element["fields"]["Price"]));
+        data.forEach(element => console.log(element["fields"]["Time"]));
+        console.log(graph_data);
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    lineTension: 0,
+                    fill: false,
+                    borderWidth: 3,
+                    borderColor: "rgba(0, 0, 0, 0.3)",
+                    label: '# of Votes',
+                    data: graph_data,
+                    backgroundColor: "rgba(0, 0, 0, 0.3)"
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Price',
+                            fontSize: 16
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Date',
+                            fontSize: 16
+                        }
+                    }]
+                },
+            }
+        });
+      },
+      error: function(data) {
+        console.log("error");
+      },
+     })
+  });
+</script>
+{% endblock %}
