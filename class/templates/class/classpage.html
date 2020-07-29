@@ -35,17 +35,17 @@
     </div>
   </div>
 </section>
-{% endblock body %}
 
 {% block javascript %}
 <script>
-  $('#class-modal').on('shown.bs.modal', function () {
-    var classname = document.getElementById("button-classname").innerHTML;
+  $('#class-modal').on('shown.bs.modal', function (event) {
+    var button = event.relatedTarget;
+    var classname = button.id;
     document.getElementById("modal-label").innerHTML = classname;
     $.ajax({
       type:"GET",
       url: "/class/get_prices",
-      data:{"class":document.getElementById("class-ticker").innerHTML},
+      data:{"class":button.id},
       dataType: 'json',
       success: function(data){
         var ctx = document.getElementById('myChart').getContext('2d');
@@ -116,3 +116,5 @@
   });
 </script>
 {% endblock %}
+
+{% endblock body %}

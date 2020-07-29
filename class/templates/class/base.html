@@ -23,32 +23,48 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
+  
+        <ul class="navbar-nav ml-auto mr-5">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'userinfo:userinfo-display' %}">Your Info</a>
+            <a class="nav-link" href="{% url 'class:class-index' %}">Classes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'order:order-index' %}">Place Order</a>
           </li>
-        </ul>
-
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'landingpage:logout_url' %}">Logout</a>
+          <li class="nav-item dropdown mr-5">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Account</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{% url 'userinfo:userinfo-display' %}">Profile</a>
+              <a class="dropdown-item" href="{% url 'landingpage:logout_url' %}">Logout</a>
+            </div>
+  
           </li>
         </ul>
-
+  
       </div>
     </nav>
-
+  
+    <div id="content">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  
     {% if user.is_authenticated %}
-        {% block body %}
-        {% endblock %}
+    {% block body %}
+    {% endblock %}
     {% else %}
-      <br>
-      <br>
-      <p>Login <a href="{% url 'landingpage:login_url' %}">Here</a></p>
+    <br>
+    <br>
+    <p>Login <a href="{% url 'landingpage:login_url' %}">Here</a></p>
     {% endif %}
-    {% block javascript %}{% endblock %}
-  </body>
+  
+  </body>  
+
 </html>
