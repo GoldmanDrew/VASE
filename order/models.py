@@ -40,7 +40,6 @@ class Agent(models.Model):
 
 
 class AgentShare(models.Model):
-    #UniqueID = models.IntegerField(primary_key=True)
     Agent = models.ForeignKey(Agent, on_delete=models.CASCADE, null=False)
     Company = models.ForeignKey(Company, on_delete=models.CASCADE, null=False)
     Shares = models.IntegerField(default = 0)
