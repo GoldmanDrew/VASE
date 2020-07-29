@@ -8,8 +8,43 @@ body {
     margin: 0
 }
 
+.navbar
+{
+    background-color:#84b082;  /*whichever you want*/
+    color: #fff;
+}
+
+.navbar-light {
+    color: #fff;
+}
+
 article, aside, footer, header, nav, section {
     display: block
+}
+
+.main-title {
+    font-size: 3em;
+    text-align: center;
+}
+
+.form-div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-fill {
+    background-color: #ce796b;
+}
+
+.form-column {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.submit-button
+{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -208,7 +243,7 @@ html {
 }
 
 body {
-    background: #fff;
+    background: #fffbfa;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased
 }
@@ -217,7 +252,7 @@ hr {
     border: 0;
     display: block;
     height: 1px;
-    background: #D2DAF0;
+    background: #669abd;
     background: linear-gradient(to right, rgba(210, 218, 240, 0.1) 0, rgba(210, 218, 240, 0.6) 50%, rgba(210, 218, 240, 0.1) 100%);
     margin-top: 24px;
     margin-bottom: 24px
@@ -282,7 +317,7 @@ table {
 }
 
 tr {
-    border-bottom: 1px solid #D2DAF0
+    border-bottom: 1px solid #669abd
 }
 
 th {
@@ -315,7 +350,7 @@ html {
 }
 
 body {
-    color: #565678;
+    color: #fffbfa;
     font-size: 1rem
 }
 
@@ -324,20 +359,33 @@ body, button, input, select, textarea {
 }
 
 a {
-    color: #4950F6;
+    color: #84b082;
     text-decoration: none
 }
 
 a:hover, a:active {
     outline: 0;
+    color: #ce796b;
     text-decoration: underline
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     clear: both;
-    color: #11103E;
+    color: #fffbfa;
     font-family: Fira Sans, serif;
     font-weight: 600
+}
+
+.powerful {
+    color: #284b63;
+}
+
+.at-tags {
+    color: #284b63;
+}
+
+.feature-text {
+    color: #284b63;
 }
 
 h1, .h1 {
@@ -423,6 +471,10 @@ h4, h5, h6, .h4, .h5, .h6 {
     color: rgba(255, 255, 255, 0.4)
 }
 
+.text-dark {
+    color: #284b63;
+}
+
 .text-light a {
     color: rgba(255, 255, 255, 0.4)
 }
@@ -468,7 +520,7 @@ dfn, cite, em, i {
 }
 
 blockquote {
-    color: #ABABC9;
+    color: #537891;
     font-style: italic;
     margin-top: 24px;
     margin-bottom: 24px;
@@ -488,10 +540,10 @@ blockquote p {
 }
 
 address {
-    color: #565678;
+    color: #284b63;
     border-width: 1px 0;
     border-style: solid;
-    border-color: #D2DAF0;
+    border-color: #669abd;
     padding: 24px 0;
     margin: 0 0 24px
 }
@@ -592,7 +644,7 @@ button, input, select, textarea, label {
     text-transform: uppercase;
     line-height: 16px;
     text-decoration: none;
-    background-color: #fff;
+    background-color: #fffbfa;
     color: #4950F6 !important;
     border: none;
     height: auto;
@@ -640,7 +692,7 @@ button, input, select, textarea, label {
     width: 100%;
     display: block;
     height: 1px;
-    background: #D2DAF0;
+    background: #669abd;
     background: linear-gradient(to right, rgba(210, 218, 240, 0.1) 0, rgba(210, 218, 240, 0.6) 50%, rgba(210, 218, 240, 0.1) 100%)
 }
 
@@ -656,7 +708,7 @@ button, input, select, textarea, label {
     width: 100%;
     display: block;
     height: 1px;
-    background: #D2DAF0;
+    background: #669abd;
     background: linear-gradient(to right, rgba(210, 218, 240, 0.1) 0, rgba(210, 218, 240, 0.6) 50%, rgba(210, 218, 240, 0.1) 100%)
 }
 
@@ -1033,38 +1085,38 @@ button, input, select, textarea, label {
 }
 
 .input, .textarea {
-    background-color: #fff;
+    background-color: #fffbfa;
     border-width: 1px;
     border-style: solid;
-    border-color: #D2DAF0;
+    border-color: #669abd;
     border-radius: 2px;
-    color: #565678;
+    color: #284b63;
     max-width: 100%;
     width: 100%
 }
 
 .input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder {
-    color: #ABABC9
+    color: #537891
 }
 
 .input:-ms-input-placeholder, .textarea:-ms-input-placeholder {
-    color: #ABABC9
+    color: #537891
 }
 
 .input::-ms-input-placeholder, .textarea::-ms-input-placeholder {
-    color: #ABABC9
+    color: #537891
 }
 
 .input::placeholder, .textarea::placeholder {
-    color: #ABABC9
+    color: #537891
 }
 
 .input::-ms-input-placeholder, .textarea::-ms-input-placeholder {
-    color: #ABABC9
+    color: #537891
 }
 
 .input:-ms-input-placeholder, .textarea:-ms-input-placeholder {
-    color: #ABABC9
+    color: #537891
 }
 
 .input:hover, .textarea:hover {
@@ -1139,7 +1191,7 @@ button, input, select, textarea, label {
     line-height: 16px;
     text-decoration: none !important;
     background-color: #fff;
-    color: #4950F6 !important;
+    color: #284B63 !important;
     border: none;
     border-radius: 2px;
     cursor: pointer;
@@ -1169,11 +1221,11 @@ button, input, select, textarea, label {
 }
 
 .button-primary {
-    background: #4950F6
+    background: #ce796b
 }
 
 .button-primary:hover {
-    background: #3f47f6
+    background: #a35c52
 }
 
 .button-block {
@@ -1182,7 +1234,7 @@ button, input, select, textarea, label {
 
 .site-header {
     position: relative;
-    padding: 24px 0
+    /** padding: 24px 0 **/
 }
 
 .header-shape {
@@ -1284,6 +1336,7 @@ button, input, select, textarea, label {
 
 .hero-illustration {
     position: relative;
+    top: 80px;
     margin-top: 48px
 }
 
@@ -1306,12 +1359,16 @@ button, input, select, textarea, label {
         display: flex
     }
     .hero-copy {
+        position: relative;
+        top: -40px;
+        left: -20px;
         padding-right: 48px;
         min-width: 512px
     }
     .hero-form {
         margin: 0
     }
+
     .hero-illustration {
         margin-top: -143px;
         padding-bottom: 0
@@ -1344,16 +1401,38 @@ button, input, select, textarea, label {
     position: relative
 }
 
-.features::before {
+/** .hero::before {
     content: '';
     width: 100%;
     height: 400px;
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #EEF1FA;
-    background: linear-gradient(to bottom, #EEF1FA, rgba(238, 241, 250, 0))
-}
+    background: #284b63;
+    background: linear-gradient(to bottom, #284b63, #a35c52)
+}**/
+
+/** .features::before {
+    content: '';
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #284b63;
+    background: linear-gradient(to top, #a35c52, #284b63)
+} **/
+
+/**.testimonials::before {
+    content: '';
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #284b63;
+    background: linear-gradient(to bottom, #284b63, #a35c52)
+} **/
 
 .features-wrap {
     display: flex;
@@ -1382,7 +1461,7 @@ button, input, select, textarea, label {
 .feature-inner {
     position: relative;
     height: 100%;
-    background: #fff;
+    background: #bedbbd;
     padding: 48px 24px 72px
 }
 
@@ -1408,7 +1487,7 @@ button, input, select, textarea, label {
 .feature-icon::before {
     content: '';
     display: block;
-    background: #fff;
+    background: #284b63;
     width: 64px;
     height: 64px;
     position: absolute;
@@ -1512,7 +1591,7 @@ button, input, select, textarea, label {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    background: #fff;
+    background: #8baec4;
     padding: 52px 24px 24px
 }
 
@@ -1604,7 +1683,7 @@ button, input, select, textarea, label {
 
 .newsletter {
     position: relative;
-    background-color: #11103E
+    background-color: #84b082
 }
 
 .newsletter::before {
@@ -1636,11 +1715,11 @@ button, input, select, textarea, label {
 }
 
 .is-boxed {
-    background: #EEF1FA
+    background: #284b63
 }
 
 .body-wrap {
-    background: #fff;
+    background: /**#f0d0cc;**/#284b63;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1675,8 +1754,8 @@ main {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0px;
-    color: #ABABC9;
-    background-color: #11103E
+    color: #284b63;
+    background-color: #84b082
 }
 
 .site-footer::before {
@@ -1691,12 +1770,12 @@ main {
 }
 
 .site-footer a {
-    color: #ABABC9;
+    color: #284b63;
     text-decoration: none
 }
 
 .site-footer a:hover, .site-footer a:active {
-    color: #fff;
+    color: #fffbfa;
     text-decoration: underline
 }
 
@@ -1709,7 +1788,7 @@ main {
 }
 
 .site-footer-inner.has-top-divider::before {
-    background: #565678;
+    background: #284b63;
     background: linear-gradient(to right, rgba(86, 86, 120, 0.1) 0, rgba(86, 86, 120, 0.6) 50%, rgba(86, 86, 120, 0.1) 100%)
 }
 

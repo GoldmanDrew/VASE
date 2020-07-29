@@ -68,24 +68,30 @@ class RegisterView(View):
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            user.set_password(password)
-            user.save()
+            verify_password = form.cleaned_data['verify_password']
 
-            a = Agent(Agent=username, Cash=1000, Wealth=0, Email=email)
-            a.save()
+            if password != verify_password:
+                messages.error(request, "Your passwords do not match")
+            else:
 
-            for company in Company.objects.all():
-                b = AgentShare(Agent=a, Company=company, Shares=50, Borrowed=0, Collateral=0)
-                b.save()
+                user.set_password(password)
+                user.save()
 
-            user = authenticate(username=username, password=password)
+                a = Agent(Agent=username, Cash=1000, Wealth=0, Email=email)
+                a.save()
 
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return redirect('landingpage:login_url')     # need to find another page to redirect to
+                for company in Company.objects.all():
+                    b = AgentShare(Agent=a, Company=company, Shares=50, Borrowed=0, Collateral=0)
+                    b.save()
 
-        return render(request, self.template_name, {'form': form})
+                user = authenticate(username=username, password=password)
+
+                if user is not None:
+                    if user.is_active:
+                        login(request, user)
+                        return redirect('landingpage:login_url')     # need to find another page to redirect to
+
+            return render(request, self.template_name, {'form': form})
 
 
 # Create your views here.
