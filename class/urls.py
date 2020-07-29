@@ -6,5 +6,5 @@ app_name = "class"
 
 urlpatterns = [
     path('', views.classview, name="class-index"),
-    path('get_prices', views.priceview, name="class-index"),
+    path('get_prices', views.priceview, name="class-getprice"),
 ]
