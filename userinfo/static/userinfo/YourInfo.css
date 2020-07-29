@@ -18,12 +18,9 @@ header {
 }
 
 #SharesDiv {
-  background-color: black;
-  border-color: black;
-  border-width: 2%;
+  background-color: #ececec;
+  border-color: #ececec;
+  border-width: 2px;
   border-style: solid;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
+  color: black;
 }
