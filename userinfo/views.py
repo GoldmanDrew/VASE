@@ -1,19 +1,56 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.forms import ModelForm
 from django.urls import reverse_lazy
 from .models import *
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout
-
-
-# Create your views here.
-
+from .forms import UpdateUserForm
+from django.forms import ModelForm
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.contrib import messages
 
 
 def agentDisplay(request):
-    current_agent = Agent.objects.get(Agent=request.user)  # can now access all the agent, cash, wealth, and email fields of the specific user that is logged in
+    current_agent = Agent.objects.get(Agent=request.user)
     current_agent_shares = AgentShare.objects.filter(Agent=current_agent)
-    context = {"current_agent": current_agent , "current_agent_shares": current_agent_shares}
-    return render(request, "userinfo/YourInfo.html", context )
+
+    if request.method == "POST":
+        form_user = UpdateUserForm(request.POST, instance=request.user)
+        form_pass = PasswordChangeForm(user=request.user, data=request.POST)
+        if form_pass.is_valid():
+            print(request.user)
+            form_pass.save()
+            update_session_auth_hash(request, form_pass.user)
+
+        if form_user.is_valid():
+            user = form_user.save(commit=False)
+            if form_user.cleaned_data['username'] != "":
+                current_agent.Agent = form_user.cleaned_data['username']
+                current_agent.save()
+                for curr_share in current_agent_shares:
+                    if curr_share.Agent != current_agent:
+                        curr_share.Agent = current_agent
+                        curr_share.save()
+                        print(curr_share)
+            else:
+                user.username = current_agent.Agent
+
+            if form_user.cleaned_data['email'] != "":
+                current_agent.Email = form_user.cleaned_data['email']
+                current_agent.save()
+            else:
+                user.email = current_agent.Email
+
+            user.save()
+            return redirect('/userinfo/')
+
+    else:
+        form_user = UpdateUserForm(instance=request.user)
+        form_pass = PasswordChangeForm(user=request.user)
+
+    context = {
+        "current_agent": current_agent,
+        "current_agent_shares": current_agent_shares,
+        "form_user": form_user,
+        "form_pass": form_pass
+    }
+    return render(request, "userinfo/yourinfo.html", context )
