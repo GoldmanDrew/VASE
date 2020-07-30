@@ -1,3 +1,7 @@
+.section-formatting{
+  margin: 2rem 7rem 7rem;
+}
+
 .class-cards{
   border-radius: 10px;
   border-width: 2px;
@@ -57,6 +61,11 @@
 .class-modal-body{
   height: 100%;
   overflow: hidden;
+}
+
+.all-price-chart{
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .price-chart{
