@@ -8,6 +8,7 @@ from crispy_forms.layout import Layout
 from django.http import JsonResponse
 from django.core import serializers
 from django.contrib import messages
+from django.forms import ValidationError
 
 
 class OrderForm(ModelForm):
@@ -33,6 +34,7 @@ class OrderForm(ModelForm):
                     'Price is required'])
         return super().clean()
 
+
 def goToOrder(request, className):
     form_class = OrderForm
     form = form_class(initial={'OrderBookName': className})
@@ -40,6 +42,7 @@ def goToOrder(request, className):
         'form': form,
     }
     return render(request, 'order/orderpage.html', context)
+
 
 def getuser(request):
     current_agent = Agent.objects.get(Agent=request.user)
@@ -95,7 +98,7 @@ def postorder(request):
 
 def cancelorder(request, pk):
     print("at least this is working")
-    if request.is_ajax: # and request.method == "POST":
+    if request.is_ajax:  # and request.method == "POST":
         order = Order.objects.get(pk=pk)
         order.Filled = "C"
         instance = order.save(update_fields=["Filled"])
