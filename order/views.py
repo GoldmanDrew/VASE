@@ -33,6 +33,14 @@ class OrderForm(ModelForm):
                     'Price is required'])
         return super().clean()
 
+def goToOrder(request, className):
+    form_class = OrderForm
+    form = form_class(initial={'OrderBookName': className})
+    context = {
+        'form': form,
+    }
+    return render(request, 'order/orderpage.html', context)
+
 def getuser(request):
     current_agent = Agent.objects.get(Agent=request.user)
     return current_agent
