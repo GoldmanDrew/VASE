@@ -1,0 +1,8 @@
+{% extends 'landingpage/index.html' %}
+{% load crispy_forms_tags %}
+
+{% block form %}
+
+    <p>An account confirmation link has been sent to {{ email }}. Please click on this link to complete the registration.</p>
+
+{% endblock form %}
