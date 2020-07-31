@@ -6,9 +6,26 @@
 {% block body %}
 
 <section class="section section-formatting">
-  <div class="container" id="classview">
-    <canvas id="all_chart" class="all-price-chart"></canvas>
-    <div class="row justify-content-center">
+  <div class="container container-formatting" id="classview">
+    <div class="row all-graph-row">
+      <div class = "col-lg-10 col-md-12">
+        <canvas id="all_chart" class="all-price-chart"></canvas>
+      </div>
+      <div id="checkbox-list" class="d-none d-lg-block col-lg-2 class-checkboxes">
+        <div class= "form-checkboxes">
+          <h4 style = "padding-bottom: 10px;">Filter</h4>
+          <form action="" id="checkbox-form-id">
+            {% for classes in all_classes %}
+              <div class="form-group">
+                <input type="checkbox" class="form-check-input" id="check_{{classes.Ticker}}" checked>
+                <label class="form-check-label" for="check_{{classes.Ticker}}">{{classes.ClassName}}</label>
+              </div>
+            {% endfor %}
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center" style="margin:4rem;">
       {% for classes in all_classes%}
         <div class="col-lg-3 col-md-4 col-sm-6">
           <button id = "{{classes.ClassName}}" type="button" class="class-cards {{classes.Department}}" data-toggle="modal" data-target="#class-modal">
@@ -40,6 +57,12 @@
 
 {% block javascript %}
 <script>
+  document.getElementById('checkbox-list').setAttribute("style","height:"+(document.getElementById('all_chart').offsetHeight-20));
+  window.onresize = resize_scroll;
+  function resize_scroll(e) {
+    document.getElementById('checkbox-list').setAttribute("style","height:"+(document.getElementById('all_chart').offsetHeight-20));
+  }
+
   $('#class-modal').on('shown.bs.modal', function (event) {
     var button = event.relatedTarget;
     var classname = button.id;
@@ -177,24 +200,36 @@
       }
   });
 
-  for (var ticker in price_data) {
-      var red = Math.floor(Math.random() * Math.floor(256));
-      var green = Math.floor(Math.random() * Math.floor(256));
-      var blue = Math.floor(Math.random() * Math.floor(256));
-      if (price_data.hasOwnProperty(ticker)) {
-        console.log(price_data[ticker])
-        allChart.data.datasets.push({
-            lineTension: 0,
-            fill: false,
-            borderWidth: 3,
-            borderColor: "rgba(" + red + ", " + green + ", " + blue + ", " + "0.3)",
-            label: ticker,
-            data: price_data[ticker],
-            backgroundColor: "rgba(" + red + ", " + green + ", " + blue + ", " + "0.7)",
-        });
-      }
-  }
-  window.allChart.update();
+  populate_data();
 
+  $('#checkbox-form-id').change(function(){
+    populate_data();
+  });
+
+  function populate_data(){
+    allChart.data.datasets = [];
+    for (var ticker in price_data) {
+        var checkbox_html = document.getElementById("check_"+ticker);
+        console.log(ticker);
+        console.log(checkbox_html.checked);
+        if(checkbox_html.checked){
+          var red = Math.floor(Math.random() * Math.floor(256));
+          var green = Math.floor(Math.random() * Math.floor(256));
+          var blue = Math.floor(Math.random() * Math.floor(256));
+          if (price_data.hasOwnProperty(ticker)) {
+            allChart.data.datasets.push({
+                lineTension: 0,
+                fill: false,
+                borderWidth: 3,
+                borderColor: "rgba(" + red + ", " + green + ", " + blue + ", " + "0.3)",
+                label: ticker,
+                data: price_data[ticker],
+                backgroundColor: "rgba(" + red + ", " + green + ", " + blue + ", " + "0.7)",
+            });
+          }
+        }
+    }
+    window.allChart.update();
+  }
 </script>
 {% endblock %}
