@@ -8,8 +8,11 @@ from django.core import serializers
 def classview(request):
     all_companies = Company.objects.all()
     all_prices = Price.objects.all()
+    all_prices_json = serializers.serialize('json', all_prices)
     context = {
         "all_classes" : all_companies,
+        "all_prices" : all_prices,
+        "all_prices_json" : all_prices_json,
     }
     return render(request, "class/classpage.html", context)
 

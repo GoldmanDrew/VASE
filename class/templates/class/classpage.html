@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block title %}Classes{% endblock %}
 {% load static %}
@@ -10,10 +11,29 @@
 {% endblock %}
 
 {% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'class/classpage.css' %}"/>
 
-<section class="section" style="margin:7rem">
-  <div class="container" id="classview">
-    <div class="row justify-content-center">
+<section class="section section-formatting">
+  <div class="container container-formatting" id="classview">
+    <div class="row">
+      <div class = "col-lg-10 col-md-12">
+        <canvas id="all_chart" class="all-price-chart"></canvas>
+      </div>
+      <div id="checkbox-list" class="d-none d-lg-block col-lg-2 class-checkboxes">
+        <div class= "form-checkboxes">
+          <h4 style = "padding-bottom: 10px;">Filter</h4>
+          <form action="" id="checkbox-form-id">
+            {% for classes in all_classes %}
+              <div class="form-group">
+                <input type="checkbox" class="form-check-input" id="check_{{classes.Ticker}}" checked>
+                <label class="form-check-label" id="label_{{classes.Ticker}}" for="check_{{classes.Ticker}}">{{classes.ClassName}}</label>
+              </div>
+            {% endfor %}
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center" style="margin: 0rem 3rem;">
       {% for classes in all_classes%}
       <div class="col-lg-3 col-md-4 col-sm-6">
         <button id="{{classes.ClassName}}" type="button" class="{{classes.Ticker}} class-cards {{classes.Department}} domain-box" data-toggle="modal"
@@ -49,83 +69,10 @@
 </section>
 
 {% block javascript %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-<script>
-  $('#class-modal').on('shown.bs.modal', function (event) {
-    var button = event.relatedTarget;
-    var classname = button.id;
-    var classticker = button.classList[0];
-    document.getElementById("modal-label").innerHTML = classname;
-    document.getElementById("redirectToOrder").action = "/order/gotoorder/" + classticker;
-    $.ajax({
-      type: "GET",
-      url: "/class/get_prices",
-      data: { "class": button.id },
-      dataType: 'json',
-      success: function (data) {
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var graph_data = [];
-        var time = [];
-        data.forEach(element => graph_data.push({ "x": new Date(element["fields"]["Time"]), "y": element["fields"]["Price"] }));
-        data.forEach(element => time.push(new Date(element["fields"]["Time"])));
-        console.log(graph_data);
-        console.log(time);
-        var myChart = new Chart(ctx, {
-          type: 'line',
-          data: {
-            labels: time,
-            datasets: [{
-              lineTension: 0,
-              fill: false,
-              borderWidth: 3,
-              borderColor: "rgba(0, 0, 0, 0.3)",
-              label: 'Prices',
-              data: graph_data,
-              backgroundColor: "rgba(0, 0, 0, 0.3)"
-            }]
-          },
-          options: {
-            legend: {
-              display: false
-            },
-            scales: {
-              yAxes: [{
-                ticks: {
-                  beginAtZero: true
-                },
-                scaleLabel: {
-                  display: true,
-                  labelString: 'Price',
-                  fontSize: 16
-                }
-              }],
-              xAxes: [{
-                scaleLabel: {
-                  display: true,
-                  labelString: 'Date',
-                  fontSize: 16
-                },
-                type: 'time',
-                time: {
-                  unit: 'hour',
-                  unitStepSize: 1,
-                  displayFormats: {
-                    'hour': 'MM/DD/YY h:00',
-                  },
-                  distribution: 'linear'
-                }
-              }]
-            },
-          }
-        });
-      },
-      error: function (data) {
-        console.log("error");
-      },
-    })
-  });
-</script>
+  <script>
+    var all_prices = JSON.parse('{{all_prices_json|safe}}');
+  </script>
+  <script src="{% static 'class/classes.js' %}"></script>
 {% endblock %}
 
 {% endblock body %}
