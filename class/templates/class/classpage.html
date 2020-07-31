@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
       {% for classes in all_classes%}
       <div class="col-lg-3 col-md-4 col-sm-6">
-        <button id="{{classes.ClassName}}" type="button" class="{{classes.Ticker}} class-cards {{classes.Department}}" data-toggle="modal"
+        <button id="{{classes.ClassName}}" type="button" class="{{classes.Ticker}} class-cards {{classes.Department}} domain-box" data-toggle="modal"
           data-target="#class-modal">
           <h3 id="button-classname">{{classes.ClassName}}</h3>
           <p class="class-subtitle">{{classes.Department}}</p>
