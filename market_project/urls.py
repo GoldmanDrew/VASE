@@ -23,4 +23,5 @@ urlpatterns = [
     path('order/', include('order.urls')),
     path('userinfo/' , include('userinfo.urls')),
     path('' , include('landingpage.urls')),
+    path('class/' , include('class.urls')),
 ]

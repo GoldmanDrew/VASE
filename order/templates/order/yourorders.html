@@ -1,0 +1,29 @@
+<div class="row bg-dark text-light">
+    <div class="col">Company</div>
+    <div class="col">Order Direction</div>
+    <div class="col">Order Type</div>
+    <div class="col">Price</div>
+    <div class="col">Quantity</div>
+    <div class="col">ID</div>
+  </div>
+  <br>
+  {% for order in all_orders %}
+  <div class="row">
+    <div class="col">{{ order.OrderBookName }}</div>
+    <div class="col">{{ order.Direction }}</div>
+    <div class="col">{{ order.Type }}</div>
+    {% if order.Price == 2147483647 or order.Price == 0 %}
+    <div class="col"></div>
+    {% else %}
+    <div class="col">${{ order.Price }}.00</div>
+    {% endif %}
+    <div class="col">{{ order.Quantity }}</div>
+    <div class="col">{{ order.OrderID }}</div>
+    <form action="{% url 'order:cancel_order' pk=order.OrderID %}" id="cancel_button" method="POST">
+      {% csrf_token %}
+      <button type="submit" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </form>
+  </div>
+  {% endfor %}

@@ -14,6 +14,8 @@ types = (
 
 class Company(models.Model):
     Ticker = models.CharField(max_length=5, primary_key = True, null = False)
+    ClassName = models.CharField(max_length=100)
+    Department = models.CharField(max_length=50)
     Shares = models.IntegerField()
     ShortFee = models.FloatField(default = 0.00)
 
@@ -38,7 +40,6 @@ class Agent(models.Model):
 
 
 class AgentShare(models.Model):
-
     # UniqueID = models.IntegerField(primary_key=True)
 
     id = models.IntegerField(primary_key=True)
@@ -48,7 +49,7 @@ class AgentShare(models.Model):
     Borrowed = models.IntegerField(default = 0)
     Collateral = models.IntegerField(default = 0)
     # id = models.AutoField(primary_key = True, null=False) # I think you use .AutoField if you want the field to auto increment, so id is
-                                                          # auto incrementing, is the primary key, and is not null
+    id = models.AutoField(primary_key = True, null=False) # I think you use .AutoField if you want the field to auto increment, so id is                                                          # auto incrementing, is the primary key, and is not null
 
     def __int__(self):
         return self.Agent
