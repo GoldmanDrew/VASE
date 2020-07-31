@@ -1,5 +1,5 @@
 .section-formatting{
-  margin: 3rem 2rem 7rem;
+  margin: 3rem 3rem 7rem;
 }
 
 .container-formatting{
@@ -88,8 +88,4 @@
 
 .form-checkboxes{
   height: inherit;
-}
-
-.all-graph-row{
-  margin-bottom: 2rem;
 }
