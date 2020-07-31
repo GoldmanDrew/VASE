@@ -30,7 +30,6 @@ def agentDisplay(request):
                     if curr_share.Agent != current_agent:
                         curr_share.Agent = current_agent
                         curr_share.save()
-                        print(curr_share)
             else:
                 user.username = current_agent.Agent
 
