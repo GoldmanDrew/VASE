@@ -26,10 +26,6 @@ def agentDisplay(request):
             if form_user.cleaned_data['username'] != "":
                 current_agent.Agent = form_user.cleaned_data['username']
                 current_agent.save()
-                for curr_share in current_agent_shares:
-                    if curr_share.Agent != current_agent:
-                        curr_share.Agent = current_agent
-                        curr_share.save()
             else:
                 user.username = current_agent.Agent
 
