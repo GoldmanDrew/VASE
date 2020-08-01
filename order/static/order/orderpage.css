@@ -1,22 +1,14 @@
-body {
-  background-color: white;
-}
-
-.navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      background-color: black;
-}
 
 header {
   padding-top: 3%;
   padding-bottom: 2%;
   font-size: 50;
   font-weight: bold;
+  color: #fffbfa;
 }
 
 #InterDiv {
-  background-color: #ececec;
+  background-color: #e7e7e7;
   width: 70%;
   height: 50%;
   margin-left: auto;
@@ -27,32 +19,32 @@ header {
 }
 
 #InterLeft {
-  background-color: #ececec;
+  background-color: #e7e7e7;
   width: 34%;
   height: 100%;
   float: left;
   padding-top: 3%;
   border-width: 1%;
   border-style: solid;
-  border-color: #ececec;
+  border-color: #e7e7e7;
 }
 
 #InterRight {
-  background-color: #ececec;
+  background-color: #e7e7e7;
   width: 66%;
   height: 100%;
   float:right;
   padding-top: 9%;
   border-width: 1%;
   border-style: solid;
-  border-color: #ececec;
+  border-color: #e7e7e7;
 }
 
 #dropdownMenuButton {
   height: 25%;
   width: 75%;
   font-weight: bold;
-  background-color: #787878;
+  background-color: #e7e7e7;
 }
 
 #dropdownMenuButton2 {
@@ -61,7 +53,7 @@ header {
   font-weight: bold;
   width: 20%;
   height: 8%;
-  background-color: #787878;
+  background-color: #e7e7e7;
 
 }
 
@@ -70,18 +62,18 @@ header {
 } */
 
 #PlaceOrderButton {
-  background-color: black;
-  width: 65%;
+  background-color: #ce796b;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   padding: 1%;
-  border-color: black;
+  border-color: #ce796b;
   font-weight: bold;
 }
 
 .ActiveOrderInfoDiv {
-  background-color: #ececec;
-  border-color: #ececec;
+  background-color: #e7e7e7;
+  border-color: #e7e7e7;
   border-width: 2px;
   border-style: solid;
   width: 70%;
@@ -100,4 +92,17 @@ header {
 
 .table{
   width: 70%;
+}
+
+.table-color {
+    background-color: #84b082;
+    color: #284b63;
+}
+
+.headings {
+    color: #284b63;
+}
+
+p {
+    color: #fffbfa;
 }

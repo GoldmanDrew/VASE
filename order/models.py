@@ -49,7 +49,7 @@ class AgentShare(models.Model):
     Borrowed = models.IntegerField(default = 0)
     Collateral = models.IntegerField(default = 0)
     # id = models.AutoField(primary_key = True, null=False) # I think you use .AutoField if you want the field to auto increment, so id is
-    id = models.AutoField(primary_key = True, null=False) # I think you use .AutoField if you want the field to auto increment, so id is                                                          # auto incrementing, is the primary key, and is not null
+    # id = models.AutoField(primary_key = True, null=False) # I think you use .AutoField if you want the field to auto increment, so id is                                                          # auto incrementing, is the primary key, and is not null
 
     def __int__(self):
         return self.Agent

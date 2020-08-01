@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}Your Info Page{% endblock %}
-
+{% load static %}
 {% block body %}
 
 <div id="content">
@@ -15,16 +15,22 @@
 </div>
 
 
-
+{% block css%}
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="{% static 'userinfo/YourInfo.css' %}"/>
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+{% endblock %}
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-9 mt-5 mb-5">
-      <div class="card">
+  <div class="row div-center">
+    <div class="col-md-9 mt-5 mb-5 div-center">
+      <div class="card div-center">
         <div class="card-body">
           <div class="row">
             <div class="col-md-12">
@@ -98,7 +104,7 @@
                 <br>
                 <div class="form-group row">
                   <div class="offset-4 col-8">
-                    <button name="submit" type="submit" class="btn btn-primary">Update Profile</button>
+                    <button name="submit" type="submit" class="btn btn-primary button">Update Profile</button>
                   </div>
                 </div>
               </form>
