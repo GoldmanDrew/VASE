@@ -2,12 +2,12 @@ from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse_lazy
 from .models import *
-from .forms import UpdateUserForm
+from .forms import UpdateUserForm, UpdateUserForm2
 from django.forms import ModelForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
-
+from django.contrib.auth import authenticate, login, logout
 
 def agentDisplay(request):
     current_agent = Agent.objects.get(Agent=request.user)
