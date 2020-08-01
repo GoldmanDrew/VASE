@@ -1,4 +1,4 @@
-// Chart.defaults.global.defaultFontColor = '#fffbfa'
+Chart.defaults.global.defaultFontColor = '#ce796b'
 
 
 document.getElementById('checkbox-list').setAttribute("style","height:"+(document.getElementById('all_chart').offsetHeight-20));
