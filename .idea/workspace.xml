@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f339c3e8-ef7c-47d5-8b77-ae5157fecf7a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/class/static/class/classes.js" beforeDir="false" afterPath="$PROJECT_DIR$/class/static/class/classes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/market_project/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/market_project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="132" column="1" lean-forward="true" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
+            <state relative-caret-position="205">
+              <caret line="140" column="16" lean-forward="true" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -86,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/class/static/class/classes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="49" selection-start-column="49" selection-end-column="49" />
+            <state relative-caret-position="345">
+              <caret line="23" column="64" lean-forward="true" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -177,7 +177,6 @@
         <option value="$PROJECT_DIR$/landingpage/views.py" />
         <option value="$PROJECT_DIR$/landingpage/templates/landingpage/index.html" />
         <option value="$PROJECT_DIR$/order/models.py" />
-        <option value="$PROJECT_DIR$/market_project/settings.py" />
         <option value="$PROJECT_DIR$/static/base.css" />
         <option value="$PROJECT_DIR$/order/templates/order/orderpage.html" />
         <option value="$PROJECT_DIR$/order/templates/order/allorders.html" />
@@ -189,6 +188,7 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/class/static/class/classpage.css" />
         <option value="$PROJECT_DIR$/class/static/class/classes.js" />
+        <option value="$PROJECT_DIR$/market_project/settings.py" />
       </list>
     </option>
   </component>
@@ -517,13 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/market_project/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="132" column="1" lean-forward="true" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/landingpage/static/landingpage/dist/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -629,8 +622,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/class/static/class/classes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="49" selection-start-column="49" selection-end-column="49" />
+        <state relative-caret-position="345">
+          <caret line="23" column="64" lean-forward="true" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/market_project/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="140" column="16" lean-forward="true" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
         </state>
       </provider>
     </entry>
