@@ -1,118 +1,73 @@
-{% extends 'class/base.html' %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block title %}Classes{% endblock %}
+{% load static %}
 
 {% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'class/classpage.css' %}"/>
 
-<section class="section" style="margin:7rem">
-  <div class="container" id="classview">
-    <div class="row justify-content-center">
-      {% for classes in all_classes%}
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <button type="button" class="class-cards {{classes.Department}}" data-toggle="modal" data-target="#class-modal">
-            <h3 id="button-classname">{{classes.ClassName}}</h3>
-            <p class="class-subtitle">{{classes.Department}}</p>
-            <p hidden id = "class-ticker" class="class-subtitle">{{classes.Ticker}}</p>
-          </button>
+<section class="section section-formatting">
+  <div class="container container-formatting" id="classview">
+    <div class="row">
+      <div class = "col-lg-10 col-md-12">
+        <canvas id="all_chart" class="all-price-chart"></canvas>
+      </div>
+      <div id="checkbox-list" class="d-none d-lg-block col-lg-2 class-checkboxes">
+        <div class= "form-checkboxes">
+          <h4 style = "padding-bottom: 10px;">Filter</h4>
+          <form action="" id="checkbox-form-id">
+            {% for classes in all_classes %}
+              <div class="form-group">
+                <input type="checkbox" class="form-check-input" id="check_{{classes.Ticker}}" checked>
+                <label class="form-check-label" id="label_{{classes.Ticker}}" for="check_{{classes.Ticker}}">{{classes.ClassName}}</label>
+              </div>
+            {% endfor %}
+          </form>
         </div>
+      </div>
+    </div>
+    <div class="row justify-content-center" style="margin: 0rem 3rem;">
+      {% for classes in all_classes%}
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <button id="{{classes.ClassName}}" type="button" class="{{classes.Ticker}} class-cards {{classes.Department}} domain-box" data-toggle="modal"
+          data-target="#class-modal">
+          <h3 id="button-classname">{{classes.ClassName}}</h3>
+          <p class="class-subtitle">{{classes.Department}}</p>
+          <p hidden="true" id="class-ticker" class="class-subtitle">{{classes.Ticker}}</p>
+        </button>
+      </div>
       {% endfor %}
     </div>
-    <div class="modal fade class-modal" id="class-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade class-modal" id="class-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog class-modal-box" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title" id="modal-label"></h3>
+            <form id="redirectToOrder" action="">
+              <button type="submit" class="btn btn-primary ml-5">Buy/Sell</button>
+            </form>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body class-modal-body">
             <canvas id="myChart" class="price-chart"></canvas>
+            <br>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-{% endblock body %}
 
 {% block javascript %}
-<script>
-  $('#class-modal').on('shown.bs.modal', function () {
-    var classname = document.getElementById("button-classname").innerHTML;
-    document.getElementById("modal-label").innerHTML = classname;
-    $.ajax({
-      type:"GET",
-      url: "/class/get_prices",
-      data:{"class":document.getElementById("class-ticker").innerHTML},
-      dataType: 'json',
-      success: function(data){
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var graph_data = [];
-        var time = [];
-        //for (element in data){
-        //  graph_data.push({"x": element["fields"]["Time"], "y": element["fields"]["Price"]});
-        //  console.log(element["fields"]["Price"]);
-        //  console.log(element["fields"]["Time"]);
-        //}
-        data.forEach(element => graph_data.push({"x": new Date(element["fields"]["Time"]), "y": element["fields"]["Price"]}));
-        data.forEach(element => time.push(new Date(element["fields"]["Time"])));
-        console.log(graph_data);
-        console.log(time);
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: time,
-                datasets: [{
-                    lineTension: 0,
-                    fill: false,
-                    borderWidth: 3,
-                    borderColor: "rgba(0, 0, 0, 0.3)",
-                    label: 'Prices',
-                    data: graph_data,
-                    backgroundColor: "rgba(0, 0, 0, 0.3)"
-                }]
-            },
-            options: {
-                legend: {
-                    display: false
-                },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Price',
-                            fontSize: 16
-                        }
-                    }],
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Date',
-                            fontSize: 16
-                        },
-                        type: 'time',
-                        time: {
-                          unit: 'hour',
-                          unitStepSize: 1,
-                          displayFormats: {
-                            'hour': 'MM/DD/YY h:00',
-                          },
-                          distribution: 'linear'
-                      }
-                    }]
-                },
-            }
-        });
-      },
-      error: function(data) {
-        console.log("error");
-      },
-     })
-  });
-</script>
+  <script>
+    var all_prices = JSON.parse('{{all_prices_json|safe}}');
+  </script>
+  <script src="{% static 'class/classes.js' %}"></script>
 {% endblock %}
+
+{% endblock body %}
