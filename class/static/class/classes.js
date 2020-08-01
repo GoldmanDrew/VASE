@@ -1,4 +1,4 @@
-Chart.defaults.global.defaultFontColor = '#fffbfa'
+// Chart.defaults.global.defaultFontColor = '#fffbfa'
 
 
 document.getElementById('checkbox-list').setAttribute("style","height:"+(document.getElementById('all_chart').offsetHeight-20));
@@ -35,8 +35,8 @@ $('#class-modal').on('shown.bs.modal', function (event) {
                   lineTension: 0,
                   fill: false,
                   borderWidth: 3,
-                  // borderColor: #fffbfa;
-                  borderColor: "rgba(0, 0, 0, 0.3)",
+                  borderColor: "#84b082",
+                  // borderColor: "rgba(0, 0, 0, 0.3)",
                   label: 'Prices',
                   data: graph_data,
                   backgroundColor: "rgba(0, 0, 0, 0.3)"

@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f339c3e8-ef7c-47d5-8b77-ae5157fecf7a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/static/class/classes.js" beforeDir="false" afterPath="$PROJECT_DIR$/class/static/class/classes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/static/class/classpage.css" beforeDir="false" afterPath="$PROJECT_DIR$/class/static/class/classpage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/templates/class/classpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/class/templates/class/classpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/market_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/static/order/orderpage.css" beforeDir="false" afterPath="$PROJECT_DIR$/order/static/order/orderpage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/templates/order/allorders.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/order/allorders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/templates/order/orderpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/order/orderpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/templates/order/yourorders.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/order/yourorders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userinfo/static/userinfo/YourInfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/userinfo/static/userinfo/YourInfo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userinfo/templates/userinfo/YourInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/userinfo/templates/userinfo/YourInfo.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+            <state relative-caret-position="227">
+              <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -80,11 +69,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userinfo/static/userinfo/YourInfo.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+            <state relative-caret-position="-10">
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/class/static/class/classpage.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/class/static/class/classes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1765">
+              <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -92,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/class/templates/class/classpage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="12" selection-start-line="8" selection-end-line="9" />
+            <state relative-caret-position="169">
+              <caret line="33" column="94" selection-start-line="33" selection-start-column="83" selection-end-line="33" selection-end-column="94" />
               <folding>
                 <element signature="n#style#0;n#h4#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
@@ -113,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>284b63</find>
       <find>body</find>
       <find>::before</find>
       <find>section</find>
@@ -143,6 +149,7 @@
       <find>date</find>
       <find>color</find>
       <find>filter</find>
+      <find>class-cards</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,16 +180,16 @@
         <option value="$PROJECT_DIR$/order/models.py" />
         <option value="$PROJECT_DIR$/market_project/settings.py" />
         <option value="$PROJECT_DIR$/static/base.css" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/order/templates/order/orderpage.html" />
         <option value="$PROJECT_DIR$/order/templates/order/allorders.html" />
         <option value="$PROJECT_DIR$/order/templates/order/yourorders.html" />
         <option value="$PROJECT_DIR$/order/static/order/orderpage.css" />
         <option value="$PROJECT_DIR$/class/templates/class/classpage.html" />
-        <option value="$PROJECT_DIR$/class/static/class/classpage.css" />
-        <option value="$PROJECT_DIR$/class/static/class/classes.js" />
         <option value="$PROJECT_DIR$/userinfo/templates/userinfo/YourInfo.html" />
         <option value="$PROJECT_DIR$/userinfo/static/userinfo/YourInfo.css" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/class/static/class/classpage.css" />
+        <option value="$PROJECT_DIR$/class/static/class/classes.js" />
       </list>
     </option>
   </component>
@@ -203,6 +210,29 @@
             <path>
               <item name="VASE" type="b2602c69:ProjectViewProjectNode" />
               <item name="VASE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VASE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VASE" type="462c0819:PsiDirectoryNode" />
+              <item name="class" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VASE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VASE" type="462c0819:PsiDirectoryNode" />
+              <item name="class" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VASE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VASE" type="462c0819:PsiDirectoryNode" />
+              <item name="class" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="class" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VASE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VASE" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="VASE" type="b2602c69:ProjectViewProjectNode" />
@@ -265,11 +295,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22142857" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22142857" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.28882834" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.28882834" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -481,13 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/base.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -558,35 +581,11 @@
     <entry file="file://$PROJECT_DIR$/class/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/class/static/class/classes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/class/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class/static/class/classpage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class/templates/class/classpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="12" selection-start-line="8" selection-end-line="9" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -600,8 +599,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/userinfo/static/userinfo/YourInfo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+        <state relative-caret-position="-10">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/templates/class/classpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="33" column="94" selection-start-line="33" selection-start-column="83" selection-end-line="33" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/static/class/classpage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/static/class/classes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1765">
+          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
         </state>
       </provider>
     </entry>
