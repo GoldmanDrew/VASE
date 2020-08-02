@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f339c3e8-ef7c-47d5-8b77-ae5157fecf7a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/market_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/market_project/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="f339c3e8-ef7c-47d5-8b77-ae5157fecf7a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/market_project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="140" column="16" lean-forward="true" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
+            <state relative-caret-position="340">
+              <caret line="149" column="38" lean-forward="true" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -629,8 +627,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/market_project/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="140" column="16" lean-forward="true" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
+        <state relative-caret-position="340">
+          <caret line="149" column="38" lean-forward="true" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
         </state>
       </provider>
     </entry>
