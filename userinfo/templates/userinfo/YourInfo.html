@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 
 {% block title %}Your Info Page{% endblock %}
 {% load static %}
@@ -26,6 +25,7 @@
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
   <div class="row div-center">
@@ -40,15 +40,19 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <form action="" method="post"> {% csrf_token %}
+              <form>
                 <div class="form-group row">
+                  <label for="username" class="col-4 col-form-label">User Name</label>
                   <div class="col-8">
-                    {{ form_user.username|as_crispy_field }}
+                    <input id="username" name="username" placeholder="{{current_agent}}" class="form-control here"
+                      type="text">
                   </div>
                 </div>
                 <div class="form-group row">
+                  <label for="email" class="col-4 col-form-label">Email</label>
                   <div class="col-8">
-                    {{ form_user.email|as_crispy_field }}
+                    <input id="email" name="email" placeholder="{{current_agent.Email}}" class="form-control here"
+                      type="text">
                   </div>
                 </div>
                 <div class="form-group row">
@@ -86,18 +90,15 @@
                   </div>
                 </div>
                 <div class="form-group row">
+                  <label for="newpass" class="col-4 col-form-label">New Password</label>
                   <div class="col-8">
-                    {{ form_pass.old_password|as_crispy_field }}
+                    <input id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="text">
                   </div>
                 </div>
                 <div class="form-group row">
+                  <label for="newpass" class="col-4 col-form-label">Confirm Password</label>
                   <div class="col-8">
-                    {{ form_pass.new_password1|as_crispy_field }}
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-8">
-                    {{ form_pass.new_password2|as_crispy_field }}
+                    <input id="newpass" name="newpass" placeholder="Confirm Password" class="form-control here" type="text">
                   </div>
                 </div>
                 <br>
@@ -109,6 +110,7 @@
               </form>
             </div>
           </div>
+
         </div>
       </div>
     </div>
