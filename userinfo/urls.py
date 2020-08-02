@@ -6,4 +6,5 @@ app_name = "userinfo"
 
 urlpatterns = [
     path('', views.agentDisplay, name="userinfo-display"),
+    # path('' , views.sharesDisplay, name = "agent-shares-display"),
 ]

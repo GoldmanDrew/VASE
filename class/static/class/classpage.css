@@ -1,3 +1,4 @@
+
 .section-formatting{
   margin: 3rem 3rem 7rem;
 }
@@ -12,17 +13,19 @@
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
-  border-color: #284B63;
+  border-color: #759e73;
   width: 100%;
   padding: 15px 20px;
   margin: 10px;
-  color: black;
+  color: #284b63;
   text-align: left;
+  background-color: #84b082;
   vertical-align: middle;
 }
 
 .class-cards:hover {
-  border: 2px solid #84b082;
+  border: 2px solid #628760;
+  background-color: #759e73;
 }
 
 .class-cards h3{
@@ -34,19 +37,19 @@
 }
 
 .Mathematics{
-  background-color: #E7E7E77F;
+  background-color: #E7E7E7;
 }
 
 .Applied.Mathematics{
-  background-color: #E7E7E73F;
+  background-color: #E7E7E7;
 }
 
 .Engineering{
-  background-color: #84B0823F;
+  background-color: #84B082;
 }
 
 .Computer.Science{
-  background-color: #84B0827F;
+  background-color: #84B082;
 }
 
 .class-modal{
@@ -92,4 +95,8 @@
 
 .form-checkboxes{
   height: inherit;
+}
+
+.white {
+    color: #fffbfa;
 }
