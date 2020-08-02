@@ -16,12 +16,12 @@
       </div>
       <div id="checkbox-list" class="d-none d-lg-block col-lg-2 class-checkboxes">
         <div class= "form-checkboxes">
-          <h4 style = "padding-bottom: 10px;">Filter</h4>
+          <h4 class="white" style = "padding-bottom: 10px;">Filter</h4>
           <form action="" id="checkbox-form-id">
             {% for classes in all_classes %}
               <div class="form-group">
                 <input type="checkbox" class="form-check-input" id="check_{{classes.Ticker}}" checked>
-                <label class="form-check-label" id="label_{{classes.Ticker}}" for="check_{{classes.Ticker}}">{{classes.ClassName}}</label>
+                <label class="form-check-label white" id="label_{{classes.Ticker}}" for="check_{{classes.Ticker}}">{{classes.ClassName}}</label>
               </div>
             {% endfor %}
           </form>

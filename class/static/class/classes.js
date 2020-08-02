@@ -1,3 +1,6 @@
+Chart.defaults.global.defaultFontColor = '#ce796b'
+
+
 document.getElementById('checkbox-list').setAttribute("style","height:"+(document.getElementById('all_chart').offsetHeight-20));
 window.onresize = resize_scroll;
 function resize_scroll(e) {
@@ -26,12 +29,14 @@ $('#class-modal').on('shown.bs.modal', function (event) {
       var myChart = new Chart(ctx, {
           type: 'line',
           data: {
+            lineColor: "#fffbfa",
               labels: time,
               datasets: [{
                   lineTension: 0,
                   fill: false,
                   borderWidth: 3,
-                  borderColor: "rgba(0, 0, 0, 0.3)",
+                  borderColor: "#84b082",
+                  // borderColor: "rgba(0, 0, 0, 0.3)",
                   label: 'Prices',
                   data: graph_data,
                   backgroundColor: "rgba(0, 0, 0, 0.3)"
@@ -96,6 +101,7 @@ var ctx2 = document.getElementById('all_chart').getContext('2d');
 window.allChart = new Chart(ctx2, {
     type: 'line',
     data: {
+      lineColor: "#fffbfa",
       labels: time,
       datasets: [],
     },
