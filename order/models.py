@@ -28,7 +28,7 @@ class Company(models.Model):
 
 class Agent(models.Model):
     id = models.AutoField(primary_key = True, null=False)
-    Agent = models.CharField(max_length=20, null = False)
+    Agent = models.CharField(max_length=20, null = False, unique=True)
     Cash = models.IntegerField(default = 0)
     Wealth = models.IntegerField(default = 0)
     Email = models.CharField(max_length=20, default="")
@@ -47,8 +47,6 @@ class AgentShare(models.Model):
     Shares = models.IntegerField(default = 0)
     Borrowed = models.IntegerField(default = 0)
     Collateral = models.IntegerField(default = 0)
-    # id = models.AutoField(primary_key = True, null=False) # I think you use .AutoField if you want the field to auto increment, so id is
-    # id = models.AutoField(primary_key = True, null=False) # I think you use .AutoField if you want the field to auto increment, so id is                                                          # auto incrementing, is the primary key, and is not null
 
     def __int__(self):
         return self.Agent
