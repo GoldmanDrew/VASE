@@ -51,8 +51,10 @@ def getuser(request):
 
 def orderpage(request):
     current_agent = Agent.objects.get(Agent=request.user)
+    your_orders = orderfilter(request)
+    your_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
     all_orders = orderfilter(request)
-    all_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
+    all_orders = Order.objects.filter(Filled="N")
     all_companies = Company.objects.all()
     all_asks = all_orders.filter(Direction="A")
     all_bids = all_orders.filter(Direction="B")
@@ -60,6 +62,7 @@ def orderpage(request):
     form = OrderForm(request.POST or None)
 
     context = {
+        "your_orders": your_orders,
         "all_asks": all_asks,
         "all_bids": all_bids,
         "all_orders": all_orders,
@@ -97,7 +100,6 @@ def postorder(request):
 
 
 def cancelorder(request, pk):
-    print("at least this is working")
     if request.is_ajax:  # and request.method == "POST":
         order = Order.objects.get(pk=pk)
         order.Filled = "C"
@@ -108,15 +110,19 @@ def cancelorder(request, pk):
 
 def yourorders(request):
     current_agent = Agent.objects.get(Agent=request.user)
+    your_orders = orderfilter(request)
+    your_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
     all_orders = orderfilter(request)
     all_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
     all_companies = Company.objects.all()
     all_asks = all_orders.filter(Direction="A")
     all_bids = all_orders.filter(Direction="B")
     context = {
+        "your_orders": your_orders,
         "all_orders": all_orders,
         "all_companies": all_companies,
         "current_agent": current_agent,
+        # "form": form,
     }
     return render(request, "order/yourorders.html", context)
 
@@ -124,7 +130,7 @@ def yourorders(request):
 def allorders(request):
     current_agent = Agent.objects.get(Agent=request.user)
     all_orders = orderfilter(request)
-    all_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
+    all_orders = Order.objects.filter(Filled="N")
     all_companies = Company.objects.all()
     all_asks = all_orders.filter(Direction="A")
     all_bids = all_orders.filter(Direction="B")

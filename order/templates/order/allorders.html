@@ -1,11 +1,13 @@
 <div class="row">
     <div class="col" id="AsksDiv">
       <div class="row text-light table-color">
+        <div class="col headings">Class</div>
         <div class="col headings">Shares</div>
         <div class="col headings">Asks</div>
       </div>
       {% for asks in all_asks%}
       <div class="row">
+        <div class="col">{{ asks.OrderBookName }}</div>
         <div class="col">{{ asks.Quantity }}</div>
         {% if asks.Price == 2147483647 or asks.Price == 0 %}
         <div class="col"></div>
@@ -19,6 +21,7 @@
       <div class="row text-light table-color">
         <div class="col headings">Bids</div>
         <div class="col headings">Shares</div>
+        <div class="col headings">Class</div>
       </div>
       {% for bids in all_bids%}
       <div class="row">
@@ -28,6 +31,7 @@
         <div class="col">${{ bids.Price }}.00</div>
         {% endif %}
         <div class="col">{{ bids.Quantity }}</div>
+        <div class="col">{{ bids.OrderBookName }}</div>
       </div>
       {% endfor %}
     </div>
