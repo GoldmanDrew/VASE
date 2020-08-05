@@ -56,8 +56,8 @@ def orderpage(request):
     all_orders = orderfilter(request)
     all_orders = Order.objects.filter(Filled="N")
     all_companies = Company.objects.all()
-    all_asks = all_orders.filter(Direction="A")
-    all_bids = all_orders.filter(Direction="B")
+    all_asks = all_orders.filter(Direction="A").order_by('-Type', 'Price')
+    all_bids = all_orders.filter(Direction="B").order_by('-Type', '-Price')
 
     form = OrderForm(request.POST or None)
 
@@ -132,8 +132,8 @@ def allorders(request):
     all_orders = orderfilter(request)
     all_orders = Order.objects.filter(Filled="N")
     all_companies = Company.objects.all()
-    all_asks = all_orders.filter(Direction="A")
-    all_bids = all_orders.filter(Direction="B")
+    all_asks = all_orders.filter(Direction="A").order_by('-Type', 'Price')
+    all_bids = all_orders.filter(Direction="B").order_by('-Type', '-Price')
     context = {
         "all_asks": all_asks,
         "all_bids": all_bids,

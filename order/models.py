@@ -4,8 +4,8 @@ from django.urls import reverse
 
 
 directions = (
-    ('A', 'Ask'),
-    ('B', 'Bid'),
+    ('A', 'Buy'),
+    ('B', 'Sell'),
 )
 types = (
     ('M', 'Market'),
@@ -59,14 +59,14 @@ class AgentShare(models.Model):
 class Order(models.Model):
     OrderBookName = models.ForeignKey(Company, on_delete=models.CASCADE, null = False)
     Agent = models.ForeignKey(Agent, on_delete=models.CASCADE)
-    OrderID = models.IntegerField(primary_key=True)
+    OrderID = models.AutoField(primary_key=True)
     Type = models.CharField(max_length=1, choices = types)
     Direction = models.CharField(max_length=20, choices = directions)
     Price = models.IntegerField()
     Quantity = models.IntegerField()
     QuantityToFill = models.IntegerField()
     Filled = models.CharField(max_length=1, default = 'N')
-    IDtoCancel = models.IntegerField()
+    IDtoCancel = models.IntegerField(null=True)
     Time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

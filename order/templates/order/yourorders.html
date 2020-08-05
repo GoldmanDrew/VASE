@@ -10,13 +10,20 @@
   {% for order in your_orders %}
   <div class="row">
     <div class="col">{{ order.OrderBookName }}</div>
-    <div class="col">{{ order.Direction }}</div>
-    <div class="col">{{ order.Type }}</div>
-    {% if order.Price == 2147483647 or order.Price == 0 %}
-    <div class="col"></div>
+    {% if order.Direction == "A" %}
+      <div class="col">Buy</div>
     {% else %}
-    <div class="col">${{ order.Price }}.00</div>
+      <div class="col">Sell</div>
     {% endif %}
+
+    <div class="col">{{ order.Type }}</div>
+
+    {% if order.Price == 2147483647 or order.Price == 0 %}
+      <div class="col"></div>
+    {% else %}
+      <div class="col">${{ order.Price }}.00</div>
+    {% endif %}
+
     <div class="col">{{ order.Quantity }}</div>
     <div class="col">{{ order.OrderID }}</div>
     <form action="{% url 'order:cancel_order' pk=order.OrderID %}" id="cancel_button" method="POST">
