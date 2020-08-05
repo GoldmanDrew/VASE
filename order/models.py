@@ -27,7 +27,8 @@ class Company(models.Model):
 
 
 class Agent(models.Model):
-    Agent = models.CharField(max_length=20, primary_key = True, null = False)
+    id = models.AutoField(primary_key=True)
+    Agent = models.CharField(max_length=20, null = False)
     Cash = models.IntegerField(default = 0)
     Wealth = models.IntegerField(default = 0)
     Email = models.CharField(max_length=20 )
@@ -42,7 +43,7 @@ class Agent(models.Model):
 class AgentShare(models.Model):
     # UniqueID = models.IntegerField(primary_key=True)
 
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     Agent = models.ForeignKey(Agent, on_delete=models.CASCADE, null=False)
     Company = models.ForeignKey(Company, on_delete=models.CASCADE, null=False)
     Shares = models.IntegerField(default = 0)
