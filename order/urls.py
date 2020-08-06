@@ -11,4 +11,6 @@ urlpatterns = [
     path('yourorders/', views.yourorders, name="your_orders"),
     path('allorders/', views.allorders, name="all_orders"),
     path('gotoorder/<str:className>/', views.goToOrder, name="goto_order"),
+    path('orderfilter/', views.orderfilter, name="order_filter"),
+    path('activefilter/', views.activefilter, name="active_filter"),
 ]

@@ -9,6 +9,7 @@ from django.http import JsonResponse
 from django.core import serializers
 from django.contrib import messages
 from django.forms import ValidationError
+from django.http import HttpResponse
 
 
 class OrderForm(ModelForm):
@@ -109,44 +110,52 @@ def cancelorder(request, pk):
 
 
 def yourorders(request):
-    current_agent = Agent.objects.get(Agent=request.user)
-    your_orders = orderfilter(request)
     your_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
-    all_orders = orderfilter(request)
-    all_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
-    all_companies = Company.objects.all()
-    all_asks = all_orders.filter(Direction="A")
-    all_bids = all_orders.filter(Direction="B")
     context = {
         "your_orders": your_orders,
-        "all_orders": all_orders,
-        "all_companies": all_companies,
-        "current_agent": current_agent,
-        # "form": form,
     }
     return render(request, "order/yourorders.html", context)
 
+def activefilter(request):
+    if request.method == "GET":
+        company = request.GET.get('company')
+        if company == "" or company == None:
+            your_orders = Order.objects.filter(Filled="N")
+        else:
+            your_orders = Order.objects.filter(OrderBookName = company, Filled="N")
+        #your_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
+        context = {
+            "your_orders": your_orders,
+        }
+        return render(request, "order/yourorders.html", context)
+    else:
+        return HttpResponse("unsuccesful")
+
 
 def allorders(request):
-    current_agent = Agent.objects.get(Agent=request.user)
-    all_orders = orderfilter(request)
     all_orders = Order.objects.filter(Filled="N")
-    all_companies = Company.objects.all()
     all_asks = all_orders.filter(Direction="A").order_by('-Type', 'Price')
     all_bids = all_orders.filter(Direction="B").order_by('-Type', '-Price')
     context = {
         "all_asks": all_asks,
         "all_bids": all_bids,
-        "all_companies": all_companies,
-        "current_agent": current_agent,
     }
     return render(request, "order/allorders.html", context)
 
 
 def orderfilter(request):
-    all_orders = Order.objects.all()
-    all_companies = Company.objects.all()
-    companies = request.GET.get('company_form')
-    if companies != "" and companies != None:
-        all_orders = all_orders.filter(OrderBookName=companies)
-    return all_orders
+    if request.method == "GET":
+        company = request.GET.get('company')
+        if company == "" or company == None:
+            all_orders = Order.objects.filter(Filled="N")
+        else:
+            all_orders = Order.objects.filter(OrderBookName = company, Filled="N")
+        all_asks = all_orders.filter(Direction="A").order_by('-Type', 'Price')
+        all_bids = all_orders.filter(Direction="B").order_by('-Type', '-Price')
+        context = {
+            "all_asks": all_asks,
+            "all_bids": all_bids,
+        }
+        return render(request, "order/allorders.html", context)
+    else:
+        return HttpResponse("unsuccesful")

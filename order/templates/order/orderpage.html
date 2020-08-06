@@ -10,7 +10,6 @@
 {% endblock %}
 
 {% block body %}
-<script src="{% static 'order/ajaxscript.js' %}"></script>
 <script>
   $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
@@ -85,6 +84,22 @@
   <p>Your Active Orders</p>
 </header>
 
+<div id="ActiveOrders" class="container-fluid text-center">
+ <div class="p-2">
+    <form id="aselect_dropdown" action="" method="GET">
+      <label for="aselectcompany">
+        <p id="aSelectCompanyLabel">Select Company:  </p>
+      </label>
+      <select id="acompany_dropdown" name="acompany_form">
+        <option value="">...</option>
+        {% for company in all_companies %}
+        <option value="{{ company.Ticker }}">{{ company.Ticker }}</option>
+        {% endfor %}
+      </select>
+    </form>
+  </div>
+</div>
+
 <!-- when reading from database, you can probably go through a for loop and add multiple rows depending on the info -->
 <div class="container-fluid ActiveOrderInfoDiv" id="YourOrdersDiv">
   {% include 'order/yourorders.html' %}
@@ -98,19 +113,19 @@
 
 <!-- Dropdown Menu -->
 <div id="CurrentOrders" class="container-fluid text-center">
-  <!-- <div class="p-2">    # TODO: implement this (doesn't work rn)
-    <label for="selectcompany">
-      <p id="SelectCompanyLabel">Select Company:</p>
-    </label>
-    <form action="" method="GET">
-      <select id="SelectDropDown" name="company_form" onchange="this.form.submit()">
+ <div class="p-2">
+    <form id="select_dropdown" action="" method="GET">
+      <label for="selectcompany">
+        <p id="SelectCompanyLabel">Select Company:  </p>
+      </label>
+      <select id="company_dropdown" name="company_form">
         <option value="">...</option>
         {% for company in all_companies %}
         <option value="{{ company.Ticker }}">{{ company.Ticker }}</option>
         {% endfor %}
       </select>
     </form>
-  </div> -->
+  </div>
 </div>
 
 <br>
@@ -121,5 +136,8 @@
 </div>
 <br>
 <br>
+
+
+<script src="{% static 'order/ajaxscript.js' %}"></script>
 
 {% endblock body %}
