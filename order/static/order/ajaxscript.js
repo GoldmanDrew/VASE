@@ -87,37 +87,10 @@
        url: "/order/orderfilter/",
        data: {"company": $("#company_dropdown").val()},
        success: function (data) {
-         console.log(data)
-         console.log("it worked!")
          $('#AllOrdersDiv').html(data)
        },
        error: function (data) {
        }
      });
    });
- });
-
-  //$(document).on('change', '#company_dropdown', function(){
-   //var id = document.getElementById('company_dropdown');
-     //var id = $(this).val();
-     //console.log(id)
-     //$.ajax({
-      //   type: "GET",
-      //   url: "page2.php",
-      //   data: "pass_id="+id,
-      //   success: function( data ) {
-      //         alert(data);
-      //       document.getElementById("show").innerHTML = data;
-      //   }
-     //});
-  //});
-
-
-
-//all_orders = Order.objects.filter(Agent=getuser(request))
-//all_orders = Order.objects.all()
-//all_companies = Company.objects.all()
-//companies = request.GET.get('company_form')
-//if companies != "" and companies!= None:
-//    all_orders = all_orders.filter(OrderBookName=companies)
-//return all_orders
+});

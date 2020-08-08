@@ -91,7 +91,7 @@
         <p id="aSelectCompanyLabel">Select Company:  </p>
       </label>
       <select id="acompany_dropdown" name="acompany_form">
-        <option value="">...</option>
+        <option value="">show all</option>
         {% for company in all_companies %}
         <option value="{{ company.Ticker }}">{{ company.Ticker }}</option>
         {% endfor %}
@@ -114,17 +114,20 @@
 <!-- Dropdown Menu -->
 <div id="CurrentOrders" class="container-fluid text-center">
  <div class="p-2">
+   <div class="all_forms">
     <form id="select_dropdown" action="" method="GET">
       <label for="selectcompany">
         <p id="SelectCompanyLabel">Select Company:  </p>
       </label>
       <select id="company_dropdown" name="company_form">
-        <option value="">...</option>
+        <option value="">show all</option>
         {% for company in all_companies %}
         <option value="{{ company.Ticker }}">{{ company.Ticker }}</option>
         {% endfor %}
       </select>
     </form>
+    <button id="RefreshOrderButton" class="btn btn-primary">Refresh</button>
+    </div>
   </div>
 </div>
 
@@ -139,5 +142,20 @@
 
 
 <script src="{% static 'order/ajaxscript.js' %}"></script>
-
+<script>
+  $(document).on("click", "#RefreshOrderButton", function (e) {
+    e.preventDefault();
+    console.log("hi")
+    $.ajax({
+      type: 'GET',
+      url: "/order/orderrefresh/",
+      data: {"company": $("#company_dropdown").val()},
+      success: function (data) {
+        $('#AllOrdersDiv').html(data)
+      },
+      error: function (data) {
+      }
+    });
+  });
+</script>
 {% endblock body %}

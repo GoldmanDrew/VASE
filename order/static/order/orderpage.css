@@ -71,6 +71,15 @@ header {
   font-weight: bold;
 }
 
+#RefreshOrderButton {
+  background-color: #ce796b;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  border-color: #ce796b;
+  font-weight: bold;
+}
+
 .ActiveOrderInfoDiv {
   background-color: #e7e7e7;
   border-color: #e7e7e7;
