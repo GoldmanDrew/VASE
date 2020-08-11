@@ -159,20 +159,3 @@ def orderfilter(request):
         return render(request, "order/allorders.html", context)
     else:
         return HttpResponse("unsuccesful")
-
-def orderrefresh(request):
-    if request.method == "GET":
-        company = request.GET.get('company')
-        if company == "" or company == None:
-            all_orders = Order.objects.filter(Filled="N")
-        else:
-            all_orders = Order.objects.filter(OrderBookName = company, Filled="N")
-        all_asks = all_orders.filter(Direction="A").order_by('-Type', 'Price')
-        all_bids = all_orders.filter(Direction="B").order_by('-Type', '-Price')
-        context = {
-            "all_asks": all_asks,
-            "all_bids": all_bids,
-        }
-        return render(request, "order/allorders.html", context)
-    else:
-        return HttpResponse("unsuccesful")

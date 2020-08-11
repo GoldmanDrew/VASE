@@ -148,7 +148,7 @@
     console.log("hi")
     $.ajax({
       type: 'GET',
-      url: "/order/orderrefresh/",
+      url: "/order/orderfilter/",
       data: {"company": $("#company_dropdown").val()},
       success: function (data) {
         $('#AllOrdersDiv').html(data)

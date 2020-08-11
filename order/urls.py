@@ -13,5 +13,4 @@ urlpatterns = [
     path('gotoorder/<str:className>/', views.goToOrder, name="goto_order"),
     path('orderfilter/', views.orderfilter, name="order_filter"),
     path('activefilter/', views.activefilter, name="active_filter"),
-    path('orderrefresh/', views.orderrefresh, name="order_refresh"),
 ]
