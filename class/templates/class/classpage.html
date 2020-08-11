@@ -46,9 +46,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title" id="modal-label"></h3>
-            <form id="redirectToOrder" action="">
-              <button type="submit" class="btn btn-primary ml-5">Buy/Sell</button>
-            </form>
+            <button onclick="redirect()" type="submit" class="btn btn-primary ml-5">Buy/Sell</button>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -66,6 +64,14 @@
 {% block javascript %}
   <script>
     var all_prices = JSON.parse('{{all_prices_json|safe}}');
+    function redirect() {
+      var className = document.getElementById("modal-label").innerHTML;
+      if(className!=undefined){
+        document.location.href='http://127.0.0.1:8000/order/gotoorder/'+className+'/';
+        return false; // cancel default behavior
+      }
+    }
+
   </script>
   <script src="{% static 'class/classes.js' %}"></script>
 {% endblock %}

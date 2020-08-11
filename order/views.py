@@ -37,12 +37,33 @@ class OrderForm(ModelForm):
 
 
 def goToOrder(request, className):
+    orderpage(request)
     form_class = OrderForm
-    form = form_class(initial={'OrderBookName': className})
+    print(className)
+    curr_company = Company.objects.get(ClassName=className)
+    ticker = getattr(curr_company, 'Ticker')
+    print(ticker)
+    form = form_class(initial={'OrderBookName': ticker})
+
+    current_agent = Agent.objects.get(Agent=request.user)
+    your_orders = orderfilter(request)
+    your_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
+    all_orders = orderfilter(request)
+    all_orders = Order.objects.filter(Filled="N")
+    all_companies = Company.objects.all()
+    all_asks = all_orders.filter(Direction="A").order_by('-Type', 'Price')
+    all_bids = all_orders.filter(Direction="B").order_by('-Type', '-Price')
+
     context = {
-        'form': form,
+        "your_orders": your_orders,
+        "all_asks": all_asks,
+        "all_bids": all_bids,
+        "all_orders": all_orders,
+        "all_companies": all_companies,
+        "current_agent": current_agent,
+        "form": form,
     }
-    return render(request, 'order/orderpage.html', context)
+    return render(request, "order/orderpage.html", context)
 
 
 def getuser(request):
@@ -115,6 +136,7 @@ def yourorders(request):
         "your_orders": your_orders,
     }
     return render(request, "order/yourorders.html", context)
+
 
 def activefilter(request):
     if request.method == "GET":
