@@ -88,6 +88,7 @@ class RegisterView(View):
                 a = Agent(Agent=username, Cash=1000, Wealth=0, Email=email)
                 a.save()
 
+                # uncomment later
                 for company in Company.objects.all():
                     b = AgentShare(Agent=a, Company=company, Shares=50, Borrowed=0, Collateral=0)
                     b.save()
