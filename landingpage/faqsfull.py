@@ -2,7 +2,6 @@ faqdictionary = {
 "What is Have I Been Known?":
 "HIBK checks your bitcoin address for transactions with 'privacy gotchas' that make them more likely to be known to surveillance. Based on the results you are matched with relevant obfuscation resources that can help improve your bitcoin privacy.",
 
-
 "How does HIBK work?":
 "A request is made to Blockstream's Esplora API to get recent transactions for your address. A response with JSON data for those transactions on the bitcoin blockchain is received. A privacy analysis script runs in your browser to identify any 'privacy gotchas' in the transactions.",
 
