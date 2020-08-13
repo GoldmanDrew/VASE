@@ -23,6 +23,9 @@
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- <link rel="stylesheet" href="{% static 'landingpage/index.css' %}"> -->
 	<link rel="stylesheet" href="{% static 'landingpage/dist/css/style.css' %}">
+	<!-- <link rel="import" href="{% static 'landingpage/faqstest.js' %}"> -->
+	<script type="text/javascript" src="{% static 'landingpage/src/faqslist.js' %}"></script>
+
 
 	<script src="https://unpkg.com/animejs@2.2.0/anime.min.js"></script>
 	<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
@@ -30,6 +33,21 @@
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 
+
+	<!-- CSS related to accordion faq style -->
+	<!-- <link rel="stylesheet" href="uikit/components/accordion.scss">
+	<link rel="stylesheet" href="uikit/mixins-theme.scss">
+	<link rel="stylesheet" href="uikit/mixins.scss"> -->
+
+	<link rel="stylesheet" href="{% static 'landingpage/dist/scss/accordion.scss' %}">
+	<link rel="stylesheet" href="{% static 'landingpage/dist/scss/mixins-theme.scss' %}">
+	<link rel="stylesheet" href="{% static 'landingpage/dist/scss/mixins.scss' %}">
+	<link rel="stylesheet" href="{% static 'landingpage/dist/scss/main.scss' %}">
+
+	<link rel="stylesheet" href="{% static 'landingpage/dist/css/main.css' %}">
+
+	<script src="{% static 'landingpage/dist/js/main.js' %}"></script>
+	<script src="{% static 'landingpage/dist/js/privacy-analysis.js' %}"></script>
 </head>
 
 <body class="is-boxed has-animations">
@@ -154,7 +172,7 @@
 								<!-- added -->
 								<div class="container-fluid text-center form-div">
 									{% block form %} {% endblock form %}
-									<form action="https://virginia.us17.list-manage.com/subscribe/post" method="POST">
+									<form action="https://virginia.us17.list-manage.com/subscribe/post?u=6a2d1d7e15707011a1e922285&id=d48294805c" method="POST" id="mailing-list">
 										<input type="hidden" name="u" value="6a2d1d7e15707011a1e922285">
 										<input type="hidden" name="id" value="d48294805c">
 										<div class="field field-grouped">
@@ -170,6 +188,31 @@
 											</div>
 										</div>
 									</form>
+										<script>
+											$(document).ready( function () {
+												var $form = $('#mailing-list');
+												if ( $form.length > 0 ) {
+        											$('form input[type="submit"]').bind('click', function ( event ) {
+            											if ( event ) event.preventDefault();
+            											register($form);
+        											});
+    											}
+											});
+
+											function register($form) {
+											    $.ajax({
+											        type: $form.attr('method'),
+											        url: $form.attr('action'),
+											        data: $form.serialize(),
+											        cache       : false,
+											        dataType    : 'json',
+											        contentType: "application/json; charset=utf-8",
+											        error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
+
+											    });
+											}
+										</script>
+
 									<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
 									<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 								</div>
@@ -468,6 +511,32 @@
 						</div>
 					</div>
 				</section>
+
+				<section class="section">
+                <!-- <div class="container uk-section"> -->
+                    <div class="features-inner section-inner uk-container uk-container-small">
+                        <div class="features-header text-center">
+                            <div class="container-sm">
+                                <h2 class="section-title mt-0">Frequently Asked Questions</h2>
+
+								<div class="uk-article-content">
+									{% for k, v in faqdictionary.items %}
+										<ul data-uk-accordion="multiple: true">
+	    									<li>
+	        									<h3 class="uk-accordion-title" style= "text-align: left">{{k}}</h3>
+	        									<div class="uk-accordion-content" style= "text-align: left">
+	            									<p>{{v}}</p>
+	        									</div>
+	    									</li>
+										</ul>
+									{% endfor %}
+							</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
 
 				<!-- <section class="features section feature-fill">
 					<div class="container">
