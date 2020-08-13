@@ -95,3 +95,10 @@ class Price(models.Model):
 
     class Meta:
         db_table = 'prices'
+
+class FAQ(models.Model):
+    Question = models.TextField()
+    Answer = models.TextField()
+
+    class Meta:
+        db_table = 'faqs'
