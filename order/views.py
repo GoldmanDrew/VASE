@@ -73,6 +73,7 @@ def getuser(request):
 
 def orderpage(request):
     current_agent = Agent.objects.get(Agent=request.user)
+    current_agent_shares = AgentShare.objects.filter(Agent=current_agent)   # added
     your_orders = orderfilter(request)
     your_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
     all_orders = orderfilter(request)
@@ -90,6 +91,7 @@ def orderpage(request):
         "all_orders": all_orders,
         "all_companies": all_companies,
         "current_agent": current_agent,
+        "current_agent_shares": current_agent_shares,
         "form": form,
     }
     return render(request, "order/orderpage.html", context)
@@ -131,9 +133,17 @@ def cancelorder(request, pk):
 
 
 def yourorders(request):
+    current_agent = Agent.objects.get(Agent=request.user)
+    current_agent_shares = AgentShare.objects.filter(Agent=current_agent)   # added
+    your_orders = orderfilter(request)
     your_orders = Order.objects.filter(Agent=getuser(request), Filled="N")
     context = {
         "your_orders": your_orders,
+        "all_orders": all_orders,
+        "all_companies": all_companies,
+        "current_agent": current_agent,
+        "current_agent_shares": current_agent_shares,
+        # "form": form,
     }
     return render(request, "order/yourorders.html", context)
 
@@ -155,12 +165,18 @@ def activefilter(request):
 
 
 def allorders(request):
+    current_agent = Agent.objects.get(Agent=request.user)
+    current_agent_shares = AgentShare.objects.filter(Agent=current_agent)   # added
+    all_orders = orderfilter(request)
     all_orders = Order.objects.filter(Filled="N")
     all_asks = all_orders.filter(Direction="A").order_by('-Type', 'Price')
     all_bids = all_orders.filter(Direction="B").order_by('-Type', '-Price')
     context = {
         "all_asks": all_asks,
         "all_bids": all_bids,
+        "all_companies": all_companies,
+        "current_agent": current_agent,
+        "current_agent_shares": current_agent_shares,
     }
     return render(request, "order/allorders.html", context)
 

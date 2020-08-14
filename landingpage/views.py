@@ -19,13 +19,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegistrationForm     # imports the format for Login/Register
+from .faqsfull import faqdictionary
 
-
-# Create your views here. FOR THE ORDER APP (b/c this is the views.py file within the order app)
-
-
-def LandingPage(request):
-    return render(request, 'landingpage/index.html')
 
 
 def login_request(request):
@@ -47,7 +42,10 @@ def login_request(request):
 
     form = AuthenticationForm()
     # return render(request, "landingpage/index.html", {'form': form})
-    return render(request, "landingpage/login_form.html", {'form': form})
+
+    context = {"faqdictionary" : faqdictionary , 'form': form }
+
+    return render(request, "landingpage/login_form.html", context)
 
 
 def logout_request(request):
@@ -90,6 +88,7 @@ class RegisterView(View):
                 a = Agent(Agent=username, Cash=1000, Wealth=0, Email=email)
                 a.save()
 
+                # uncomment later
                 for company in Company.objects.all():
                     b = AgentShare(Agent=a, Company=company, Shares=50, Borrowed=0, Collateral=0)
                     b.save()
@@ -154,5 +153,3 @@ def activate(request, uidb64, token):
     else:
         messages.error(request, 'Your activation link is invalid')
         return redirect('landingpage:login_url')
-
-# Create your views here.

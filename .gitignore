@@ -4,10 +4,14 @@
 #settings
 market_project/settings.py
 
+# node modules
+landingpage/static/landingpage/node_modules/
+
 #database migrations folder
 order/migrations/
 
 #pycache folders
+class/__pycache__/
 order/__pycache__/
 market_project/__pycache__/
 landingpage/__pycache__/
@@ -15,4 +19,5 @@ order/__pycache__/
 userinfo/__pycache__/
 landingpage/migrations/__pycache__/
 userinfo/migrations/__pycache__/
+class/migrations/__pycache__/
 *.pyc
