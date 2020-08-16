@@ -48,9 +48,9 @@
             <td>Insert Professor</td>
             <td>Get Latest Price</td>
             <td>
-              <button id="{{classes.Ticker}}" type="button" class="btn bg-success"
+              <button id="{{classes.Ticker}}_Buy" type="button" class="btn bg-success"
               data-toggle="modal" data-target="#class-modal">Buy</button>
-              <button id="{{classes.Ticker}}" type="button" class="btn bg-danger"
+              <button id="{{classes.Ticker}}_Sell" type="button" class="btn bg-danger"
               data-toggle="modal" data-target="#class-modal">Sell</button>
             </td>
           </tr>
@@ -83,19 +83,21 @@
             </button>
           </div>
           <div class="modal-body class-modal-body">
-            <div class="row">
-              <form style="width: 100%;">
-                <div style="width: 33%; display: inline-block">
-                  insert price input
-                </div>
-                <div style="width: 33%; display: inline-block">
-                  autofill buy/sell
-                </div>
-                <div style="width: 33%; display: inline-block">
-                  price*quantity
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Place Order</button>
-              </form>
+            <div class="container">
+              <div class="row">
+                <form style="width: 100%;">
+                  <div style="width: 33%; display: inline-block">
+                    insert price input
+                  </div>
+                  <div id="buy-sell-label" style="width: 33%; display: inline-block">
+                    Quantity to Buy
+                  </div>
+                  <div style="width: 33%; display: inline-block">
+                    price*quantity
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Place Order</button>
+                </form>
+              </div>
             </div>
             <canvas id="myChart" class="price-chart"></canvas>
             <br>
