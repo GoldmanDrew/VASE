@@ -1,28 +1,3 @@
-/**
-body {
-  background-color: white;
-}
-
-.navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      background-color: black;
-}
-
-header {
-  padding-top: 3%;
-  padding-bottom: 2%;
-  font-size: 50;
-  font-weight: bold;
-}
-
-#SharesDiv {
-  background-color: #ececec;
-  border-color: #ececec;
-  border-width: 2px;
-  border-style: solid;
-  color: black;
-} **/
 
 body {
     background-color: #284b63;

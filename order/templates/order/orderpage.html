@@ -16,8 +16,41 @@
     $('[data-toggle="tooltip"]').tooltip();
   });
 </script>
+<br>
+<button type="button" class="collapsible text-center btn btn-primary btn-lg btn-block">Current Shares Info</button>
+<div class="content">
+
+  <div class="form-group row">
+    <label for="cash" class="col-4 col-form-label">Cash</label>
+    <div class="col-8 mt-2">
+      <p class="collapse_text">${{current_agent.Cash}}</p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="shares" class="col-4 col-form-label">Shares</label>
+    <div class="col-8">
+      <div id="SharesDiv">
+        <div class="row font-weight-bold">
+          <div class="col">Company</div>
+          <div class="col">Shares</div>
+          <div class="col">Borrowed</div>
+          <div class="col">Collateral</div>
+        </div>
+        {% for share in current_agent_shares %}
+        <div class="row collapse_text">
+          <div class="col">{{ share.Company }}</div>
+          <div class="col">{{ share.Shares }}</div>
+          <div class="col">{{ share.Borrowed }}</div>
+          <div class="col">${{ share.Collateral }}</div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div></div>
+
 <header class="container-fluid text-center">
-  <p class="heading">Place Order<p>
+  <p class="heading">Place Order</p>
   <!-- <script>
     function deleteOrder() {
       $(document).on('click', ':button', function () {
@@ -31,7 +64,7 @@
   <!-- Inner Divs -->
   <div class="container text-center">
     <!--<div class="row content">-->
-    <div class="d-flex flex-row align-content-between" id="InterDiv">
+    <div class="d-flex flex-row" id="InterDiv">
       <!-- Dropdown Div -->
       <div class="d-flex flex-column" id="InterLeft">
         <div class="p-2">
@@ -121,5 +154,22 @@
 </div>
 <br>
 <br>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
 
 {% endblock body %}
