@@ -106,3 +106,36 @@ header {
 p {
     color: #fffbfa;
 }
+
+.collapsible {
+  background-color: #ce796b;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 60%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.active, .collapsible:hover {
+  background-color: #ba6f63;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  background-color: #fffbfa;
+}
+
+.collapse_text {
+  color: #284b63;
+}
