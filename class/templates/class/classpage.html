@@ -28,7 +28,38 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center" style="margin: 0rem 3rem;">
+
+    <div class="container bg-white">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Code</th>
+          <th scope="col">Class</th>
+          <th scope="col">Professor</th>
+          <th scope="col">Latest Price</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for classes in all_classes %}
+          <tr>
+            <td>{{classes.Ticker}}</td>
+            <td>{{classes.ClassName}}</td>
+            <td>Insert Professor</td>
+            <td>Get Latest Price</td>
+            <td>
+              <button id="{{classes.Ticker}}" type="button" class="btn bg-success"
+              data-toggle="modal" data-target="#class-modal">Buy</button>
+              <button id="{{classes.Ticker}}" type="button" class="btn bg-danger"
+              data-toggle="modal" data-target="#class-modal">Sell</button>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+
+    <!--<div class="row justify-content-center" style="margin: 0rem 3rem;">
       {% for classes in all_classes%}
       <div class="col-lg-3 col-md-4 col-sm-6">
         <button id="{{classes.ClassName}}" type="button" class="{{classes.Ticker}} class-cards {{classes.Department}} domain-box" data-toggle="modal"
@@ -39,7 +70,7 @@
         </button>
       </div>
       {% endfor %}
-    </div>
+    </div>-->
     <div class="modal fade class-modal" id="class-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog class-modal-box" role="document">
@@ -52,6 +83,20 @@
             </button>
           </div>
           <div class="modal-body class-modal-body">
+            <div class="row">
+              <form style="width: 100%;">
+                <div style="width: 33%; display: inline-block">
+                  insert price input
+                </div>
+                <div style="width: 33%; display: inline-block">
+                  autofill buy/sell
+                </div>
+                <div style="width: 33%; display: inline-block">
+                  price*quantity
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Place Order</button>
+              </form>
+            </div>
             <canvas id="myChart" class="price-chart"></canvas>
             <br>
           </div>
