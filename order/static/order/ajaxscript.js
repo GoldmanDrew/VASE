@@ -42,6 +42,7 @@
       }
     });
   });
+
   $(document).on("submit", "#cancel_button", function (e) {
     e.preventDefault();
     $.ajax({
@@ -61,3 +62,35 @@
       }
     });
   });
+
+  $(document).ready(function() {
+   $('#acompany_dropdown').on('change', function() {
+     $.ajax({
+       type: 'GET',
+       url: "/order/activefilter/",
+       data: {"company": $("#acompany_dropdown").val()},
+       success: function (data) {
+         console.log(data)
+         console.log("it worked!")
+         $('#YourOrdersDiv').html(data)
+       },
+       error: function (data) {
+       }
+     });
+   });
+ });
+
+  $(document).ready(function() {
+   $('#company_dropdown').on('change', function() {
+     $.ajax({
+       type: 'GET',
+       url: "/order/orderfilter/",
+       data: {"company": $("#company_dropdown").val()},
+       success: function (data) {
+         $('#AllOrdersDiv').html(data)
+       },
+       error: function (data) {
+       }
+     });
+   });
+});

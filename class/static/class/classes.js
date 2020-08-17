@@ -9,8 +9,12 @@ function resize_scroll(e) {
 
 $('#class-modal').on('shown.bs.modal', function (event) {
   var button = event.relatedTarget;
-  var classname = button.id;
+  var button_id = button.id;
+  var components = button_id.split("_");
+  var classname = components[0];
+  var buy_sell = components[1];
   document.getElementById("modal-label").innerHTML = classname;
+  document.getElementById("buy-sell-label").innerHTML = "Quantity to " + buy_sell;
   $.ajax({
     type:"GET",
     url: "/class/get_prices",
