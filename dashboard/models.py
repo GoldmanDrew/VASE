@@ -7,6 +7,7 @@ class Token(models.Model):
     Ticker = models.CharField(max_length=4)
     Supply = models.FloatField()
     Price = models.FloatField()
+    Time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.Name
