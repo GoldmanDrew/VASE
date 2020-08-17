@@ -1,3 +1,3 @@
 from django.db import models
-from order.models import *
+from dashboard.models import *
 # Create your models here.

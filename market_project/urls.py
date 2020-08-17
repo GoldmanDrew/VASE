@@ -20,8 +20,8 @@ urlpatterns = [
     # path( '' , )  Whenever you leave the first parameter as '', that is the page that will be loaded
     # when the user goes to http://127.0.0.1:8000/ or http://127.0.0.1:8000
     path('admin/', admin.site.urls),
-    path('order/', include('order.urls')),
+    #path('order/', include('order.urls')),
     path('userinfo/' , include('userinfo.urls')),
     path('' , include('landingpage.urls')),
-    path('class/' , include('class.urls')),
+    path('dashboard/' , include('dashboard.urls')),
 ]

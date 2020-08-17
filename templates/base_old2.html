@@ -52,11 +52,15 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'dashboard:dashboard-index' %}">Classes</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'order:order-index' %}">Place Order</a>
+        </li>
         <li class="nav-item dropdown mr-5">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Account</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{% url 'userinfo:userinfo-display' %}">Profile</a>
             <a class="dropdown-item" href="{% url 'landingpage:logout_url' %}">Logout</a>
           </div>
         </li>
