@@ -44,11 +44,3 @@ class Order(models.Model):
 
     class Meta:
         db_table = 'orders'
-
-
-class FAQ(models.Model):
-    Question = models.TextField()
-    Answer = models.TextField()
-
-    class Meta:
-        db_table = 'faqs'
