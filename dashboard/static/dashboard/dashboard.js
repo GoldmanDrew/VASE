@@ -17,8 +17,8 @@ $('#class-modal').on('shown.bs.modal', function (event) {
   document.getElementById("buy-sell-label").innerHTML = "Quantity to " + buy_sell;
   $.ajax({
     type:"GET",
-    url: "/class/get_prices",
-    data:{"class":button.id},
+    url: "/dashboard/get_prices",
+    data:{"class":classname},
     dataType: 'json',
     success: function(data){
       var ctx = document.getElementById('myChart').getContext('2d');
@@ -88,10 +88,10 @@ $('#class-modal').on('shown.bs.modal', function (event) {
 
 var price_data = {};
 var time = [];
-for(price in all_prices){
-  var curr_name = all_prices[price]["fields"]["OrderBookName"];
-  var curr_date = new Date(all_prices[price]["fields"]["Time"]);
-  var curr_price = all_prices[price]["fields"]["Price"];
+for(price in all_orders){
+  var curr_name = all_orders[price]["fields"]["OrderBookName"];
+  var curr_date = new Date(all_orders[price]["fields"]["Time"]);
+  var curr_price = all_orders[price]["fields"]["Price"];
   time.push(curr_date);
   if (curr_name in price_data){
     price_data[curr_name].push({"x": curr_date, "y": curr_price});

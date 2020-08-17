@@ -1,4 +1,4 @@
 from django.contrib import admin
-from order.admin import *
+from dashboard.admin import *
 
 # Register your models here.
