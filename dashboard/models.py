@@ -6,7 +6,7 @@ class Token(models.Model):
     Name = models.CharField(max_length=255, primary_key = True, null=False)
     Ticker = models.CharField(max_length=4)
     Supply = models.FloatField()
-    ShortFee = models.FloatField()
+    Price = models.FloatField()
 
     def __str__(self):
         return self.Name

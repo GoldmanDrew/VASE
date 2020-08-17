@@ -3,7 +3,7 @@ from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.forms import ModelForm
 from django.urls import reverse_lazy
-from order.models import *
+from dashboard.models import *
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout
 from django.http import HttpResponse

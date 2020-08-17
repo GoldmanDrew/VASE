@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from order.models import *
+from dashboard.models import *
 import json
 from django.http import HttpResponse
 from django.core import serializers
