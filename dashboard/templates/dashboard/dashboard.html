@@ -10,18 +10,18 @@
 
 <section class="section section-formatting">
   <div class="container container-formatting" id="classview">
-    <div class="row">
+    <div class="row bg-row">
       <div class = "col-lg-10 col-md-12">
         <canvas id="all_chart" class="all-price-chart"></canvas>
       </div>
-      <div id="checkbox-list" class="d-none d-lg-block col-lg-2 class-checkboxes">
-        <div class= "form-checkboxes">
+      <div class="d-none d-lg-block col-lg-2" style="background-color: #284B63;">
+        <div id="checkbox-list" class= "form-checkboxes">
           <h4 class="white" style = "padding-bottom: 10px;">Filter</h4>
           <form action="" id="checkbox-form-id">
-            {% for classes in all_classes %}
+            {% for classes in all_tokens %}
               <div class="form-group">
-                <input type="checkbox" class="form-check-input" id="check_{{classes.Ticker}}" checked>
-                <label class="form-check-label white" id="label_{{classes.Ticker}}" for="check_{{classes.Ticker}}">{{classes.Name}}</label>
+                <input type="checkbox" class="form-check-input" id="check_{{classes.Name}}" checked>
+                <label class="form-check-label white" id="label_{{classes.Name}}" for="check_{{classes.Ticker}}">{{classes.Name}}</label>
               </div>
             {% endfor %}
           </form>
@@ -40,7 +40,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for classes in all_classes %}
+        {% for classes in all_tokens %}
           <tr>
             <td>{{classes.Ticker}}</td>
             <td>{{classes.Name}}</td>
@@ -96,7 +96,8 @@
 
 {% block javascript %}
   <script>
-    var all_orders = JSON.parse('{{all_orders_json|safe}}');
+    var all_prices = JSON.parse('{{all_tokens_json|safe}}');
+    console.log(all_prices);
   </script>
   <script src="{% static 'dashboard/dashboard.js' %}"></script>
 {% endblock %}

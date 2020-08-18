@@ -7,25 +7,22 @@ from django.core import serializers
 
 def classview(request):
     all_tokens = Token.objects.all()
-    all_orders = Order.objects.all()
-    all_orders_json = serializers.serialize('json', all_orders)
+    all_tokens_json = serializers.serialize('json', all_tokens)
     context = {
-        "all_classes" : all_tokens,
-        "all_orders" : all_orders,
-        "all_orders_json" : all_orders_json,
+        "all_tokens" : all_tokens,
+        "all_tokens_json" : all_tokens_json,
     }
     return render(request, "dashboard/dashboard.html", context)
 
 def priceview(request):
     if request.method == 'GET':
         class_name = request.GET['class']
-        all_orders = Order.objects.all();
-        #all_orders = Price.objects.filter(OrderBookName = class_name)
+        print(class_name)
+        all_prices = Token.objects.filter(Name = class_name);
         context = {
-            "all_orders" : all_orders
+            "all_prices" : all_prices
         }
-        print(class_ticker, prices, all_orders)
-        json_data = serializers.serialize('json', all_orders)
+        json_data = serializers.serialize('json', all_prices)
         return HttpResponse(json_data, content_type="application/json")
     else:
         return HttpResponse("unsuccesful")
