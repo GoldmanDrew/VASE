@@ -1,17 +1,32 @@
 faqdictionary = {
-"What is the VASE?":
-"We’re an exchange exclusively built for UVA students to buy and sell shares (or tokens) of things that you have an opinion on - think of buying a share as an upvote where 1) you have actual skin in the game and 2) you can make money from sharing your opinion. The UniExchange is all about relative valuation. For example, if we’re comparing one course vs. another, if one course has a lower price than another even when you think it should be higher, you buy a share (or multiple shares, if you’re really invested in that opinion). If enough people agree, that class’s share price will go up. The idea is, if enough of us participate in the market, buying when the share price is low (or simply, buying when we think it ought to be higher) and selling when it’s high (or ought to be lower), we as a community of students can be better informed of our opinion as a whole.",
+    "What value do I get from holding a token? Why would I want to buy one? What do I get?":
+    "You have valuable information - your opinion. You can exchange that for a token, effectively quantifying that opinion, and pushing up the price of the token as a result (buy a token to move up the price slightly, buy a lot of tokens to move up the price a lot). We think of it as literally voting with your money. If an opinion turns out to be a popular one (say, a certain course gets ranked higher and higher as more people buy its tokens), then people who voted their opinion earlier on by buying a token, can sell at a profit. These tokens aren’t financial assets with underlying cash flows, which is to say that they don’t hold value in the traditional stock market sense, but we hope the above, plus the perfect liquidity of tokens (see the next question) give an effective reason for participating in this exchange.",
 
-"How does the VASE work?":
-"It’s simple supply-demand economics with a twist. In a normal market, and indeed in a normal stock exchange, when you buy, there needs to be a seller and when you sell, there needs to be a buyer - that doesn’t work very well when there’s not many buyers and sellers around! We’re pioneering a formula that ensures that you can buy and sell whenever you want - you’re exercising a vote here, not holding onto financial assets.",
+    "How do I know I’ll be able to actually sell a token once I’ve bought it?":
+    "We guarantee it. And this isn’t some kind of market-speak. The unique protocol that we use means that you literally can’t buy a token that you wouldn’t be able to sell - the tokens are perfectly liquid. Shoot us an email if you want to see the math. On our platform, there doesn’t need to be a token-buyer on the other end if you’re selling, and there doesn’t need to be a token-seller if you’re buying. You’re effectively exercising a vote with a token here, not holding onto financial securities.",
 
-"What can I get?":
-"You’ve got valuable information - your opinion. By buying (and later, selling) tokens of classes that you’ve taken, you get to exercise that opinion, changing the prices accordingly (buy a token to move up the price slightly, buy a lot of tokens to move up the price a lot). If you buy a token and other people agree with you, increasing its price, you can sell it for a profit. If you have experience trading stocks using technical analysis on public exchanges, you’ll likely be able to use the same strategies here. If you’re more experienced with fundamental analysis - reach out to us! We’re still figuring out a methodology for fundamentally valuing these assets.",
+    "Why should I trust you?":
+    "This is probably a great time to introduce ourselves. I’m Som, a cofounder, and a second-year at UVA studying economics and computer science. Have any concerns? Want to chat and determine for yourself whether you can trust me? Email me at sm2pvm@virginia.edu.",
 
-"What does holding a “share” give me? What is the value of a share?":
-"These tokens aren’t financial assets with underlying cash flows, which is to say that they don’t hold value in the traditional stock market sense. But these shares are perfectly liquid, which means that you can buy or sell them at any point in time. This removal of barriers to exit or entry in the market means simply that buying a share gives you the right to sell it at any point. We think this is powerful because you, as an individual, can exercise a weighted upvote (a demand-side push) on an asset, pushing its price up and ranking it higher, or you can exercise a downvote (a supply-side push) whenever you think it has reached a high enough rank and want to sell it, pushing its price ever-so-slightly down.",
+    "Can I use Unibursal without buying or selling tokens?":
+    "If you don’t buy/sell tokens, your opinion isn’t recorded in the market and in prices. But if you want to just see what other students think, you can still use Unibursal without buying/selling.",
 
-"Can I use the VASE without buying or selling tokens?":
-"If you don’t buy and sell shares, your opinion isn’t recorded in the market and in prices. But if you want to just see what other students think, you can absolutely use the VASE without buying/selling."
+    "What moves prices?":
+    "Short answer: you. Slightly longer answer: it’s supply-demand economics. When you buy a token, you’re pushing its demand up, and thus its price. When you sell, you’re decreasing its price. An effectively large mass of users participating in the market moves prices in a not-fully-predictable fashion.",
+
+    "Do you make money?":
+    "We probably will eventually, through small transaction fees. Right now though, we want to see it grow, so we’re actually losing money through other variable costs to ensure a seamless user experience for you.",
+
+    "Where does my money go?":
+    "When you deposit money in your account, your financial information goes through a trusted third party (the same one that companies like Google, Amazon, and Target use) - we don’t store any of that information. If it authenticates, then your account is loaded with the amount of cash you deposited. This amount is stored both on our servers and off of it - that means that website compromises don’t compromise your financial information or money. After that, when you buy tokens, your cash amount is decreased by the cost of the tokens, while your token count increases. When you want to withdraw your money, the information once again goes through a trusted third party.",
+
+    "Are you storing my credit card information? Is my money safe?":
+    "We never store your credit card information. When connecting your information to Unibursal, we use a trusted third-party (the same one that companies like DoorDash, Lyft, and Zoom use), to handle it. We never see or store any of your banking credentials or financial information. Even in the case of a full website compromise, your money and your financial information are untouched.",
+
+    "How can I join/help?":
+    "We’re creating an ecosystem, and we’re looking for computer scientists, finance specialists, designers, or anyone with an idea and a plan. If you’ve created something that adds direct or indirect functionality to Unibursal, shoot either of us an email today.",
+
+    "Are you tracking me/selling my personal data?":
+    "Absolutely not. We’re interested in tracking prices, not you. And you can take that to the honor committee."
 
 }

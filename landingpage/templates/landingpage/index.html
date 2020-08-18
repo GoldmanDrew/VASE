@@ -8,52 +8,52 @@
 	{% load static %}
 	{% load crispy_forms_tags %}
 
-	<title>Landing page</title>
+	<title>Unibursal</title>
 
 	<style>
-      @font-face {
-        font-display: block;
-        font-family: Roboto;
-        src: url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
-      }
+		@font-face {
+			font-display: block;
+			font-family: Roboto;
+			src: url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+		}
 
-      @font-face {
-        font-display: fallback;
-        font-family: Roboto;
-        font-weight: 600;
-        src: url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-      }
+		@font-face {
+			font-display: fallback;
+			font-family: Roboto;
+			font-weight: 600;
+			src: url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
+		}
 
-      @font-face {
-        font-display: fallback;
-        font-family: Roboto;
-        font-weight: 700;
-        src: url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-      }
+		@font-face {
+			font-display: fallback;
+			font-family: Roboto;
+			font-weight: 700;
+			src: url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
+		}
 
-      #sib-container input:-ms-input-placeholder {
-        text-align: left;
-        font-family: "Helvetica", sans-serif;
-        color: #c0ccda;
-      }
+		#sib-container input:-ms-input-placeholder {
+			text-align: left;
+			font-family: "Helvetica", sans-serif;
+			color: #c0ccda;
+		}
 
-			#EMAIL {
-				color: #000000;
-			}
+		#EMAIL {
+			color: #000000;
+		}
 
-      #sib-container input::placeholder {
-        text-align: left;
-        font-family: "Helvetica", sans-serif;
-        color: #c0ccda;
-      }
+		#sib-container input::placeholder {
+			text-align: left;
+			font-family: "Helvetica", sans-serif;
+			color: #c0ccda;
+		}
 
-      #sib-container textarea::placeholder {
-        text-align: left;
-        font-family: "Helvetica", sans-serif;
-        color: #c0ccda;
-      }
-    </style>
-    <!--  END - We recommend to place the above code in head tag of your website html -->
+		#sib-container textarea::placeholder {
+			text-align: left;
+			font-family: "Helvetica", sans-serif;
+			color: #c0ccda;
+		}
+	</style>
+	<!--  END - We recommend to place the above code in head tag of your website html -->
 
 	<link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet">
 	<!-- <link rel="stylesheet" href="dist/css/style.css"> -->
@@ -222,75 +222,93 @@
 
 									<!-- Email form -->
 									<!-- START - We recommend to place the below code where you want the form in your website html  -->
-								<div class="sib-form" style="text-align: left;
+									<div class="sib-form" style="text-align: left;
 								         background-color: #EFF2F7;                                 ">
-								  <div id="sib-form-container" class="sib-form-container">
-								    <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
-								      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-								        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-								          <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z"
-								          />
-								        </svg>
-								        <span class="sib-form-message-panel__inner-text">
-								                          Your subscription could not be saved. Please try again.
-								                      </span>
-								      </div>
-								    </div>
-								    <div></div>
-								    <div id="success-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
-								      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-								        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-								          <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"
-								          />
-								        </svg>
-								        <span class="sib-form-message-panel__inner-text">
-								                          Thanks for subscribing!
-								                      </span>
-								      </div>
-								    </div>
-								    <div></div>
-								    <div id="sib-container" class="sib-container--large sib-container--horizontal" style="text-align:left; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid;">
+										<div id="sib-form-container" class="sib-form-container">
+											<div id="error-message" class="sib-form-message-panel"
+												style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
+												<div
+													class="sib-form-message-panel__text sib-form-message-panel__text--center">
+													<svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+														<path
+															d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+													</svg>
+													<span class="sib-form-message-panel__inner-text">
+														Your subscription could not be saved. Please try again.
+													</span>
+												</div>
+											</div>
+											<div></div>
+											<div id="success-message" class="sib-form-message-panel"
+												style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
+												<div
+													class="sib-form-message-panel__text sib-form-message-panel__text--center">
+													<svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+														<path
+															d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+													</svg>
+													<span class="sib-form-message-panel__inner-text">
+														Thanks for subscribing!
+													</span>
+												</div>
+											</div>
+											<div></div>
+											<div id="sib-container"
+												class="sib-container--large sib-container--horizontal"
+												style="text-align:left; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid;">
 
-								      <form id="sib-form" method="POST" action="https://0ef92e60.sibforms.com/serve/MUIEAPHWiHRGT3Z2oxCcqW1b2Ybr2B3Z0ItqPQJuC0k85NP70M3TzbRwxdlQ29EF4WIJyVUZWIfWltlOTGa-rEv4TArUmhCV1RhLjJhdHBmY2DlHUWZght-ylWSlzisOxiEDb1J_h1p7O8m3uhD6_evot12zxixv5vCiOYUpyFHH-cGPF-Q9Mwt7HtgecOP20wOy917VAgPEtW48"
-								        data-type="subscription">
-								        <div style="padding: 8px 0;">
-								          <div class="sib-input sib-form-block">
-								            <div class="form__entry entry_block">
-								              <div class="form__label-row form__label-row--horizontal">
+												<form id="sib-form" method="POST"
+													action="https://0ef92e60.sibforms.com/serve/MUIEAPHWiHRGT3Z2oxCcqW1b2Ybr2B3Z0ItqPQJuC0k85NP70M3TzbRwxdlQ29EF4WIJyVUZWIfWltlOTGa-rEv4TArUmhCV1RhLjJhdHBmY2DlHUWZght-ylWSlzisOxiEDb1J_h1p7O8m3uhD6_evot12zxixv5vCiOYUpyFHH-cGPF-Q9Mwt7HtgecOP20wOy917VAgPEtW48"
+													data-type="subscription">
+													<div style="padding: 8px 0;">
+														<div class="sib-input sib-form-block">
+															<div class="form__entry entry_block">
+																<div
+																	class="form__label-row form__label-row--horizontal">
 
-								                <div class="entry__field">
-								                  <input class="input cursor_text" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
-								                </div>
-								              </div>
+																	<div class="entry__field">
+																		<input class="input cursor_text" type="text"
+																			id="EMAIL" name="EMAIL" autocomplete="off"
+																			placeholder="EMAIL" data-required="true"
+																			required />
+																	</div>
+																</div>
 
-								              <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-								              </label>
-								              <label class="entry__specification" style="font-size:12px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#3E4857;">
-								                Provide your email address to subscribe. For e.g abc@xyz.com
-								              </label>
-								            </div>
-								          </div>
-								        </div>
-								        <div style="padding: 8px 0;">
-								          <div class="sib-form-block" style="text-align: center">
-								            <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px; text-align:center; font-weight:700; font-family:&quot;Helvetica&quot;, sans-serif; color:#FFFFFF; background-color:#3E4857; border-radius:3px; border-width:0px;"
-								              form="sib-form" type="submit">
-								              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-								                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"
-								                />
-								              </svg>
-								              SUBSCRIBE
-								            </button>
-								          </div>
-								        </div>
+																<label class="entry__error entry__error--primary"
+																	style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+																</label>
+																<label class="entry__specification"
+																	style="font-size:12px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#3E4857;">
+																	Provide your email address to subscribe. For e.g
+																	abc@xyz.com
+																</label>
+															</div>
+														</div>
+													</div>
+													<div style="padding: 8px 0;">
+														<div class="sib-form-block" style="text-align: center">
+															<button
+																class="sib-form-block__button sib-form-block__button-with-loader"
+																style="font-size:16px; text-align:center; font-weight:700; font-family:&quot;Helvetica&quot;, sans-serif; color:#FFFFFF; background-color:#3E4857; border-radius:3px; border-width:0px;"
+																form="sib-form" type="submit">
+																<svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
+																	viewBox="0 0 512 512">
+																	<path
+																		d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+																</svg>
+																SUBSCRIBE
+															</button>
+														</div>
+													</div>
 
-								        <input type="text" name="email_address_check" value="" class="input--hidden">
-								        <input type="hidden" name="locale" value="en">
-								      </form>
-								    </div>
-								  </div>
-								</div>
-								<!-- END - We recommend to place the below code where you want the form in your website html  -->
+													<input type="text" name="email_address_check" value=""
+														class="input--hidden">
+													<input type="hidden" name="locale" value="en">
+												</form>
+											</div>
+										</div>
+									</div>
+									<!-- END - We recommend to place the below code where you want the form in your website html  -->
 
 								</div>
 							</div>
@@ -590,7 +608,7 @@
 				</section>
 
 
-				 <section class="features section feature-fill">
+				<section class="features section feature-fill">
 					<div class="container">
 						<div class="features-inner section-inner">
 							<div class="features-header text-center">
@@ -616,8 +634,25 @@
 										<h4 class="feature-title h3-mobile mb-8 powerful">What</h4>
 
 										<!-- Enter What text here -->
-										<p class="text-sm feature-text">A pseudo-Latin text used in web design, layout,
-											and printing in place of English to emphasise design elements.</p>
+										<p class="text-sm feature-text">We’re UVA undergrad students building the
+											first-ever stock market* for opinions. Yeah, we’re excited. To stay updated
+											on our progress, join our mailing list. Once we’re done, we’ll ask you to
+											join and use our market-based platform to rank stuff like courses,
+											frats/sororities, songs, movies, etc. by buying tokens - of a course offered
+											at UVA, for example - when you think their ranking should be higher (sort of
+											like a weighted upvote, depending on how much you buy), and then selling
+											them when you think they’re at their peak (a weighted downvote). If you, and
+											everyone you know does this, then we’ll arrive at a ranking that represents
+											the opinions of everyone - and as opinions change constantly, depending on
+											the latest information, the market will reflect that.
+										</p>
+										</br>
+										</br>
+										<p class="text-sm feature-text">*For legal reasons, we should probably say that
+											these aren’t actual stocks, as in partial ownership of any company. Your
+											tokens serve as demand/supply metrics that determine how a particular
+											representative asset, like a course, is viewed in comparison to others.
+										</p>
 									</div>
 								</div>
 								<div class="feature text-center is-revealing">
@@ -637,8 +672,32 @@
 										<h4 class="feature-title h3-mobile mb-8 powerful">Why</h4>
 
 										<!-- Enter Why text here -->
-										<p class="text-sm feature-text">A pseudo-Latin text used in web design, layout,
-											and printing in place of English to emphasise design elements.</p>
+										<p class="text-sm feature-text">To share information: using the example of
+											courses again, we love theCourseForum and RateMyProfessors but we get that
+											they don’t tell the full story - none of the people we’ve asked have ever
+											left a review on them despite enjoying/disliking certain classes and
+											professors. So at the very least, we want this to be a tool for sharing
+											information that other review-based websites have missed.
+										</p>
+										<br>
+										<p class="text-sm feature-text">To quantify opinion: You know what your own
+											opinion is, but it’s hard to gauge what everyone thinks - and simple Like or
+											Upvote/Downvote systems don’t tell the whole story. We’re trying to go
+											somewhere nobody has really gone before, by connecting people’s opinions in
+											a way that just makes sense.
+										</p>
+										<br>
+										<p class="text-sm feature-text">To empower decision/action: You make a lot of
+											choices based on simple facts, but you probably also make a lot of choices
+											based on other people’s opinions - what movie to watch, and oftentimes, what
+											class to take. We hope this new tool helps you make those decisions and take
+											those actions based on what the community’s opinion is.
+										</p>
+										<br>
+										<p class="text-sm feature-text">Overall, we want to be able to answer the
+											questions: 1) What do you have a strong opinion on? 2) How much of UVA
+											agrees with you, and to what extent? 3) How can you use that information?
+										</p>
 									</div>
 								</div>
 								<div class="feature text-center is-revealing">
@@ -658,8 +717,9 @@
 										<h4 class="feature-title h3-mobile mb-8 powerful">Who</h4>
 
 										<!-- Enter Who text here -->
-										<p class="text-sm feature-text">A pseudo-Latin text used in web design, layout,
-											and printing in place of English to emphasise design elements.</p>
+										<p class="text-sm feature-text">We’re asking other students those exact
+											questions! Stay tuned for the video :)
+										</p>
 									</div>
 								</div>
 								<div class="feature text-center is-revealing">
@@ -678,8 +738,7 @@
 										<h4 class="feature-title h3-mobile mb-8 powerful">How</h4>
 
 										<!-- Enter How text here -->
-										<p class="text-sm feature-text">A pseudo-Latin text used in web design, layout,
-											and printing in place of English to emphasise design elements.</p>
+										<p class="text-sm feature-text">Stay tuned :)</p>
 									</div>
 								</div>
 							</div>
@@ -688,33 +747,33 @@
 				</section>
 
 				<section class="section">
-                <!-- <div class="container uk-section"> -->
-                    <div class="features-inner section-inner uk-container uk-container-small">
-                        <div class="features-header text-center">
-                            <div class="container-sm">
-                                <h2 class="section-title mt-0">Frequently Asked Questions</h2>
+					<!-- <div class="container uk-section"> -->
+					<div class="features-inner section-inner uk-container uk-container-small">
+						<div class="features-header text-center">
+							<div class="container-sm">
+								<h2 class="section-title mt-0">Frequently Asked Questions</h2>
 
 								<div class="uk-article-content">
 									{% for k, v in faqdictionary.items %}
-										<ul data-uk-accordion="multiple: true">
-	    									<li>
-	        									<h3 class="uk-accordion-title powerful" style= "text-align: left">{{k}}</h3>
-	        									<div class="uk-accordion-content" style= "text-align: left">
-	            									<p style="color: #284b63">{{v}}</p>
-	        									</div>
-	    									</li>
-										</ul>
+									<ul data-uk-accordion="multiple: true">
+										<li>
+											<h3 class="uk-accordion-title powerful" style="text-align: left">{{k}}</h3>
+											<div class="uk-accordion-content" style="text-align: left">
+												<p style="color: #284b63">{{v}}</p>
+											</div>
+										</li>
+									</ul>
 									{% endfor %}
+								</div>
 							</div>
-                            </div>
-                        </div>
+						</div>
 
-                    </div>
-                </div>
-            </section>
+					</div>
+		</div>
+		</section>
 
 
-				<!-- <section class="testimonials section">
+		<!-- <section class="testimonials section">
 					<div class="testimonials-shape testimonials-shape-1">
 						<svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
 							<defs>
@@ -825,7 +884,7 @@
 					</div>
 				</section> -->
 
-				<!-- <section class="newsletter section text-dark">
+		<!-- <section class="newsletter section text-dark">
 					<div class="container-sm">
 						<div class="newsletter-inner section-inner">
 							<div class="newsletter-header text-center">
@@ -847,127 +906,127 @@
 						</div>
 					</div>
 				</section> -->
-			</main>
+		</main>
 
-			<!-- <footer class="site-footer">
-				<div class="container">
-					<div class="site-footer-inner has-top-divider">
-						<div class="brand footer-brand">
-							<a href="#">
-								<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-									<title>April</title>
-									<defs>
-										<linearGradient x1="114.674%" y1="39.507%" x2="-52.998%" y2="39.507%"
-											id="logo-footer-a">
-											<stop stop-color="#CE796B" offset="0%" />
-											<stop stop-color="#CE796B" stop-opacity="0" offset="100%" />
-										</linearGradient>
-										<linearGradient x1="93.05%" y1="19.767%" x2="15.034%" y2="85.765%"
-											id="logo-footer-b">
-											<stop stop-color="#CE796B" offset="0%" />
-											<stop stop-color="#e6a297" offset="100%" />
-										</linearGradient>
-										<linearGradient x1="32.716%" y1="-20.176%" x2="32.716%" y2="148.747%"
-											id="logo-footer-c">
-											<stop stop-color="#284b63" offset="0%" />
-											<stop stop-color="#284b63" stop-opacity="0" offset="100%" />
-										</linearGradient>
-									</defs>
-									<g fill="none" fill-rule="evenodd">
+		<footer class="site-footer">
+			<div class="container">
+				<div class="site-footer-inner has-top-divider">
+					<div class="brand footer-brand">
+						<a href="#">
+							<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+								<title>April</title>
+								<defs>
+									<linearGradient x1="114.674%" y1="39.507%" x2="-52.998%" y2="39.507%"
+										id="logo-footer-a">
+										<stop stop-color="#CE796B" offset="0%" />
+										<stop stop-color="#CE796B" stop-opacity="0" offset="100%" />
+									</linearGradient>
+									<linearGradient x1="93.05%" y1="19.767%" x2="15.034%" y2="85.765%"
+										id="logo-footer-b">
+										<stop stop-color="#CE796B" offset="0%" />
+										<stop stop-color="#e6a297" offset="100%" />
+									</linearGradient>
+									<linearGradient x1="32.716%" y1="-20.176%" x2="32.716%" y2="148.747%"
+										id="logo-footer-c">
+										<stop stop-color="#284b63" offset="0%" />
+										<stop stop-color="#284b63" stop-opacity="0" offset="100%" />
+									</linearGradient>
+								</defs>
+								<g fill="none" fill-rule="evenodd">
+									<path
+										d="M31.12 7.482C28.327 19.146 19.147 28.326 7.483 31.121A12.04 12.04 0 0 1 .88 24.518C3.674 12.854 12.854 3.674 24.518.879a12.04 12.04 0 0 1 6.603 6.603z"
+										fill="#284b63" />
+									<path
+										d="M28.874 3.922l-24.91 24.99a12.026 12.026 0 0 1-3.085-4.394C3.674 12.854 12.854 3.674 24.518.879a12.025 12.025 0 0 1 4.356 3.043z"
+										fill="url(#logo-footer-a)" />
+									<g opacity=".88">
 										<path
-											d="M31.12 7.482C28.327 19.146 19.147 28.326 7.483 31.121A12.04 12.04 0 0 1 .88 24.518C3.674 12.854 12.854 3.674 24.518.879a12.04 12.04 0 0 1 6.603 6.603z"
-											fill="#284b63" />
+											d="M31.12 24.518a12.04 12.04 0 0 1-6.602 6.603C12.854 28.326 3.674 19.146.879 7.482A12.04 12.04 0 0 1 7.482.88c11.664 2.795 20.844 11.975 23.639 23.639z"
+											fill="url(#logo-footer-b)" />
 										<path
-											d="M28.874 3.922l-24.91 24.99a12.026 12.026 0 0 1-3.085-4.394C3.674 12.854 12.854 3.674 24.518.879a12.025 12.025 0 0 1 4.356 3.043z"
-											fill="url(#logo-footer-a)" />
-										<g opacity=".88">
-											<path
-												d="M31.12 24.518a12.04 12.04 0 0 1-6.602 6.603C12.854 28.326 3.674 19.146.879 7.482A12.04 12.04 0 0 1 7.482.88c11.664 2.795 20.844 11.975 23.639 23.639z"
-												fill="url(#logo-footer-b)" />
-											<path
-												d="M24.518 31.12C12.854 28.327 3.674 19.147.879 7.483A12.015 12.015 0 0 1 3.46 3.57L28.47 28.5a12.016 12.016 0 0 1-3.951 2.62z"
-												fill="url(#logo-footer-c)" />
-										</g>
+											d="M24.518 31.12C12.854 28.327 3.674 19.147.879 7.483A12.015 12.015 0 0 1 3.46 3.57L28.47 28.5a12.016 12.016 0 0 1-3.951 2.62z"
+											fill="url(#logo-footer-c)" />
 									</g>
+								</g>
+							</svg>
+						</a>
+					</div>
+					<ul class="footer-links list-reset">
+						<li>
+							<a href="#">Contact</a>
+						</li>
+						<li>
+							<a href="#">About us</a>
+						</li>
+						<li>
+							<a href="#">FAQ's</a>
+						</li>
+						<li>
+							<a href="#">Support</a>
+						</li>
+					</ul>
+					<ul class="footer-social-links list-reset">
+						<li>
+							<a href="#">
+								<span class="screen-reader-text">Facebook</span>
+								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M6.023 16L6 9H3V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H13l-1 3H9.28v7H6.023z"
+										fill="#FFFBFA" />
 								</svg>
 							</a>
-						</div>
-						<ul class="footer-links list-reset">
-							<li>
-								<a href="#">Contact</a>
-							</li>
-							<li>
-								<a href="#">About us</a>
-							</li>
-							<li>
-								<a href="#">FAQ's</a>
-							</li>
-							<li>
-								<a href="#">Support</a>
-							</li>
-						</ul>
-						<ul class="footer-social-links list-reset">
-							<li>
-								<a href="#">
-									<span class="screen-reader-text">Facebook</span>
-									<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M6.023 16L6 9H3V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H13l-1 3H9.28v7H6.023z"
-											fill="#FFFBFA" />
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="screen-reader-text">Twitter</span>
-									<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z"
-											fill="#FFFBFA" />
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="screen-reader-text">Google</span>
-									<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z"
-											fill="#FFFBFA" />
-									</svg>
-								</a>
-							</li>
-						</ul>
-						<div class="footer-copyright">&copy; 2018 April, all rights reserved</div>
-					</div>
+						</li>
+						<li>
+							<a href="#">
+								<span class="screen-reader-text">Twitter</span>
+								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z"
+										fill="#FFFBFA" />
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="screen-reader-text">Google</span>
+								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z"
+										fill="#FFFBFA" />
+								</svg>
+							</a>
+						</li>
+					</ul>
+					<div class="footer-copyright">&copy; 2020 Unibursal, all rights reserved</div>
 				</div>
-			</footer> -->
-		</div>
-		<!-- START - We recommend to place the below code in footer or bottom of your website html  -->
-		<script>
-		  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+			</div>
 
-		  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Invalid information. Please try again.";
+	</div>
+	<!-- START - We recommend to place the below code in footer or bottom of your website html  -->
+	<script>
+		window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
 
-		  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+		window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Invalid information. Please try again.";
 
-		  window.GENERIC_INVALID_MESSAGE = "Invalid information. Please try again.";
+		window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+
+		window.GENERIC_INVALID_MESSAGE = "Invalid information. Please try again.";
 
 
 
 
-		  window.translation = {
-		    common: {
-		      selectedList: '{quantity} list selected',
-		      selectedLists: '{quantity} lists selected'
-		    }
-		  };
+		window.translation = {
+			common: {
+				selectedList: '{quantity} list selected',
+				selectedLists: '{quantity} lists selected'
+			}
+		};
 
-		  var AUTOHIDE = Boolean(0);
-		</script>
-		<script src="https://sibforms.com/forms/end-form/build/main.js"></script>
-		<!-- END - We recommend to place the above code in footer or bottom of your website html  -->
-		<script src="{% static 'landingpage/dist/js/main.min.js' %}"></script>
+		var AUTOHIDE = Boolean(0);
+	</script>
+	<script src="https://sibforms.com/forms/end-form/build/main.js"></script>
+	<!-- END - We recommend to place the above code in footer or bottom of your website html  -->
+	<script src="{% static 'landingpage/dist/js/main.min.js' %}"></script>
 </body>
 
 </html>
