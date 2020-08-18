@@ -18,7 +18,7 @@ class Token(models.Model):
 class UserShare(models.Model):
     ID = models.AutoField(primary_key = True, null=False)
     User = models.CharField(max_length=255)
-    Token = models.ForeignKey(Token, on_delete=models.CASCADE)
+    Token = models.ForeignKey(Token, on_delete=models.CASCADE, db_column='Token')
     Quantity = models.FloatField()
 
     def __int__(self):
@@ -31,8 +31,8 @@ class UserShare(models.Model):
 class Order(models.Model):
     OrderID = models.AutoField(primary_key = True, null=False)
     User = models.CharField(max_length=255)
-    SourceToken = models.ForeignKey(Token, on_delete=models.CASCADE, null=False, related_name="source_token")
-    TargetToken = models.ForeignKey(Token, on_delete=models.CASCADE, null=False, related_name="target_token")
+    SourceToken = models.ForeignKey(Token, on_delete=models.CASCADE, null=False, related_name="source_token", db_column='SourceToken')
+    TargetToken = models.ForeignKey(Token, on_delete=models.CASCADE, null=False, related_name="target_token", db_column='TargetToken')
     Quantity = models.FloatField()
     Filled = models.CharField(max_length=1, null=False)
 
