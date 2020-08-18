@@ -18,7 +18,7 @@ article, aside, footer, header, nav, section {
 }
 
 .main-title {
-    font-size: 3em;
+    font-size: 2.5em;
     text-align: center;
 }
 
@@ -1457,7 +1457,7 @@ button, input, select, textarea, label {
     position: relative;
     height: 100%;
     background: #bedbbd;
-    padding: 48px 24px 72px
+    padding: 10px 24px 72px
 }
 
 .feature-inner::before {
