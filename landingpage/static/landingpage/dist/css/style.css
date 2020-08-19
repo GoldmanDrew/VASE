@@ -3,6 +3,10 @@ body {
     margin: 0
 }
 
+hr.dotted {
+  border-top: 3px dotted #bbb;
+}
+
 .navbar
 {
     background-color:#84b082;  /*whichever you want*/
@@ -28,7 +32,7 @@ article, aside, footer, header, nav, section {
 }
 
 .feature-fill {
-    background-color: #ce796b;
+    background-color: #fffbfa;
 }
 
 .form-column {
