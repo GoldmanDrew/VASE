@@ -1457,7 +1457,9 @@ button, input, select, textarea, label {
     position: relative;
     height: 100%;
     background: #bedbbd;
-    padding: 10px 24px 72px
+    padding: /** 48px 24px 72px **/ 20px;
+    text-align: center;
+
 }
 
 .feature-inner::before {
