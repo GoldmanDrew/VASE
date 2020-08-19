@@ -221,9 +221,7 @@
 									{% block form %} {% endblock form %}
 
 									<!-- Email form -->
-									<!-- START - We recommend to place the below code where you want the form in your website html  -->
-									<div class="sib-form" style="text-align: left;
-								         background-color: #EFF2F7;                                 ">
+									<div class="sib-form" style="text-align: left; background-color: transparent;">
 										<div id="sib-form-container" class="sib-form-container">
 											<div id="error-message" class="sib-form-message-panel"
 												style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
@@ -255,12 +253,14 @@
 											<div></div>
 											<div id="sib-container"
 												class="sib-container--large sib-container--horizontal"
-												style="text-align:left; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid;">
+												style="text-align:left; background-color: transparent; max-width:540px; border-radius:3px; border-width:1px; border-color:transparent; border-style:solid;">
 
 												<form id="sib-form" method="POST"
 													action="https://0ef92e60.sibforms.com/serve/MUIEAPHWiHRGT3Z2oxCcqW1b2Ybr2B3Z0ItqPQJuC0k85NP70M3TzbRwxdlQ29EF4WIJyVUZWIfWltlOTGa-rEv4TArUmhCV1RhLjJhdHBmY2DlHUWZght-ylWSlzisOxiEDb1J_h1p7O8m3uhD6_evot12zxixv5vCiOYUpyFHH-cGPF-Q9Mwt7HtgecOP20wOy917VAgPEtW48"
 													data-type="subscription">
-													<div style="padding: 8px 0;">
+													<div class="text-center" style="padding: 8px 0;">
+														<h6>Join our early-access mailing list! Be the first to know
+															about our progress.</h6>
 														<div class="sib-input sib-form-block">
 															<div class="form__entry entry_block">
 																<div
@@ -269,8 +269,8 @@
 																	<div class="entry__field">
 																		<input class="input cursor_text" type="text"
 																			id="EMAIL" name="EMAIL" autocomplete="off"
-																			placeholder="EMAIL" data-required="true"
-																			required />
+																			placeholder="email@example.com"
+																			data-required="true" required />
 																	</div>
 																</div>
 
@@ -279,8 +279,6 @@
 																</label>
 																<label class="entry__specification"
 																	style="font-size:12px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#3E4857;">
-																	Provide your email address to subscribe. For e.g
-																	abc@xyz.com
 																</label>
 															</div>
 														</div>
@@ -288,8 +286,7 @@
 													<div style="padding: 8px 0;">
 														<div class="sib-form-block" style="text-align: center">
 															<button
-																class="sib-form-block__button sib-form-block__button-with-loader"
-																style="font-size:16px; text-align:center; font-weight:700; font-family:&quot;Helvetica&quot;, sans-serif; color:#FFFFFF; background-color:#3E4857; border-radius:3px; border-width:0px;"
+																class="button button-primary button-block submit-button sib-form-block__button sib-form-block__button-with-loader"
 																form="sib-form" type="submit">
 																<svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
 																	viewBox="0 0 512 512">
@@ -308,7 +305,7 @@
 											</div>
 										</div>
 									</div>
-									<!-- END - We recommend to place the below code where you want the form in your website html  -->
+									<!-- Form END -->
 
 								</div>
 							</div>
