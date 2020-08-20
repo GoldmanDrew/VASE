@@ -383,6 +383,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #284b63;
 }
 
+.feature-question {
+    color: black;
+    font-weight: bold;
+}
+
 h1, .h1 {
     font-size: 40px;
     line-height: 50px;
