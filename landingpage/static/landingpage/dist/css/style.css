@@ -1396,6 +1396,10 @@ button, input, select, textarea, label {
     }
 }
 
+.faq-title {
+    display: inline-block;
+}
+
 .features {
     position: relative
 }
