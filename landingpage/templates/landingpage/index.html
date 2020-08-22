@@ -108,10 +108,13 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="#">Your Info</a>
+					<a class="nav-link" href="#subscribe">Subscribe</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Place Order</a>
+					<a class="nav-link" href="#about">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#faq">FAQ</a>
 				</li>
 			</ul>
 
@@ -166,7 +169,7 @@
 							<h1 class="m-0">
 								<a href="#">
 									<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-										<title>April</title>
+										<title>Unibursal</title>
 										<defs>
 											<linearGradient x1="114.674%" y1="39.507%" x2="-52.998%" y2="39.507%"
 												id="logo-a">
@@ -209,7 +212,7 @@
 			</header>
 
 			<main>
-				<section class="hero section">
+				<section class="hero section" id="subscribe">
 					<div class="container">
 						<div class="hero-inner">
 							<div class="hero-copy text-center form-div">
@@ -605,7 +608,7 @@
 				</section>
 
 
-				<section class="features section feature-fill">
+				<section class="features section feature-fill" id="about">
 					<div class="container">
 						<div class="features-inner section-inner">
 							<div class="features-header text-center">
@@ -695,7 +698,7 @@
 					</div>
 				</section>
 
-				<section class="section">
+				<section class="section" id ="faq">
 					<!-- <div class="container uk-section"> -->
 					<div class="features-inner section-inner uk-container uk-container-small">
 						<div class="features-header text-center">
@@ -975,6 +978,24 @@
 	</script>
 	<script src="https://sibforms.com/forms/end-form/build/main.js"></script>
 	<!-- END - We recommend to place the above code in footer or bottom of your website html  -->
+	<!-- <script>
+	window.onscroll = function() {myFunction()};
+
+	// Get the navbar
+	var navbar = document.getElementById("navbar");
+
+	// Get the offset position of the navbar
+	var sticky = navbar.offsetTop;
+
+	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function myFunction() {
+	  if (window.pageYOffset >= sticky) {
+	    navbar.classList.add("sticky")
+	  } else {
+	    navbar.classList.remove("sticky");
+	  }
+	}
+</script> -->
 	<script src="{% static 'landingpage/dist/js/main.min.js' %}"></script>
 </body>
 
