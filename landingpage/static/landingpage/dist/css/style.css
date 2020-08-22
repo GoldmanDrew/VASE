@@ -403,6 +403,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: var(--color-1);
 }
 
+.feature-question {
+    color: #ce796b;
+    font-weight: bold;
+}
+
 h1, .h1 {
     font-size: 40px;
     line-height: 50px;
@@ -1412,6 +1417,10 @@ button, input, select, textarea, label {
     }
 }
 
+.faq-title {
+    display: inline-block;
+}
+
 .features {
     position: relative
 }
@@ -1476,7 +1485,7 @@ button, input, select, textarea, label {
 .feature-inner {
     position: relative;
     height: 100%;
-    background: #bedbbd;
+    background: white;
     padding: /** 48px 24px 72px **/ 20px;
     text-align: center;
 
@@ -1489,7 +1498,7 @@ button, input, select, textarea, label {
     right: 0;
     bottom: 0;
     left: 0;
-    box-shadow: 0 24px 48px rgba(17, 16, 62, 0.12);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
     mix-blend-mode: multiply
 }
 
@@ -1498,7 +1507,8 @@ button, input, select, textarea, label {
     margin: 0 auto;
     width: 88px;
     height: 88px;
-    border-radius: 50%
+    border-radius: 50%;
+    background-color: #81b37f;
 }
 
 .feature-icon::before {
@@ -1744,7 +1754,7 @@ button, input, select, textarea, label {
 }
 
 .boxed-container {
-    max-width: 1440px;
+    /* max-width: 1440px; */
     margin: 0 auto;
     box-shadow: 0 24px 48px rgba(17, 16, 62, 0.12)
 }

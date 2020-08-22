@@ -224,92 +224,90 @@
 									{% block form %} {% endblock form %}
 								</div>
 
-									<!-- Email form -->
-									<div class="sib-form" style="text-align: left; background-color: transparent;">
-										<div id="sib-form-container" class="sib-form-container">
-											<div id="error-message" class="sib-form-message-panel"
-												style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
-												<div
-													class="sib-form-message-panel__text sib-form-message-panel__text--center">
-													<svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-														<path
-															d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-													</svg>
-													<span class="sib-form-message-panel__inner-text">
-														Your subscription could not be saved. Please try again.
-													</span>
-												</div>
-											</div>
-											<div></div>
-											<div id="success-message" class="sib-form-message-panel"
-												style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
-												<div
-													class="sib-form-message-panel__text sib-form-message-panel__text--center">
-													<svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-														<path
-															d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-													</svg>
-													<span class="sib-form-message-panel__inner-text">
-														Thanks for subscribing!
-													</span>
-												</div>
-											</div>
-											<div></div>
-											<div id="sib-container"
-												class="sib-container--large sib-container--horizontal"
-												style="text-align:left; background-color: transparent; max-width:540px; border-radius:3px; border-width:1px; border-color:transparent; border-style:solid;">
-
-												<form id="sib-form" method="POST"
-													action="https://0ef92e60.sibforms.com/serve/MUIEAPHWiHRGT3Z2oxCcqW1b2Ybr2B3Z0ItqPQJuC0k85NP70M3TzbRwxdlQ29EF4WIJyVUZWIfWltlOTGa-rEv4TArUmhCV1RhLjJhdHBmY2DlHUWZght-ylWSlzisOxiEDb1J_h1p7O8m3uhD6_evot12zxixv5vCiOYUpyFHH-cGPF-Q9Mwt7HtgecOP20wOy917VAgPEtW48"
-													data-type="subscription">
-													<div class="text-center" style="padding: 8px 0;">
-														<h6>Join our early-access mailing list! Be the first to know
-															about our progress.</h6>
-														<div class="sib-input sib-form-block">
-															<div class="form__entry entry_block">
-																<div
-																	class="form__label-row form__label-row--horizontal">
-
-																	<div class="entry__field">
-																		<input class="input cursor_text" type="text"
-																			id="EMAIL" name="EMAIL" autocomplete="off"
-																			placeholder="email@example.com"
-																			data-required="true" required />
-																	</div>
-																</div>
-
-																<label class="entry__error entry__error--primary"
-																	style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-																</label>
-																<label class="entry__specification"
-																	style="font-size:12px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#3E4857;">
-																</label>
-															</div>
-														</div>
-													</div>
-													<div style="padding: 8px 0;">
-														<div class="sib-form-block" style="text-align: center">
-															<button
-																class="button button-primary button-block submit-button sib-form-block__button sib-form-block__button-with-loader"
-																form="sib-form" type="submit">
-																<svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
-																	viewBox="0 0 512 512">
-																	<path
-																		d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-																</svg>
-																SUBSCRIBE
-															</button>
-														</div>
-													</div>
-
-													<input type="text" name="email_address_check" value=""
-														class="input--hidden">
-													<input type="hidden" name="locale" value="en">
-												</form>
+								<!-- Email form -->
+								<div class="sib-form" style="text-align: left; background-color: transparent;">
+									<div id="sib-form-container" class="sib-form-container">
+										<div id="error-message" class="sib-form-message-panel"
+											style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
+											<div
+												class="sib-form-message-panel__text sib-form-message-panel__text--center">
+												<svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+													<path
+														d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+												</svg>
+												<span class="sib-form-message-panel__inner-text">
+													Your subscription could not be saved. Please try again.
+												</span>
 											</div>
 										</div>
+										<div></div>
+										<div id="success-message" class="sib-form-message-panel"
+											style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
+											<div
+												class="sib-form-message-panel__text sib-form-message-panel__text--center">
+												<svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+													<path
+														d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+												</svg>
+												<span class="sib-form-message-panel__inner-text">
+													Thanks for subscribing!
+												</span>
+											</div>
+										</div>
+										<div></div>
+										<div id="sib-container" class="sib-container--large sib-container--horizontal"
+											style="text-align:left; background-color: transparent; max-width:540px; border-radius:3px; border-width:1px; border-color:transparent; border-style:solid;">
+
+											<form id="sib-form" method="POST"
+												action="https://0ef92e60.sibforms.com/serve/MUIEAPHWiHRGT3Z2oxCcqW1b2Ybr2B3Z0ItqPQJuC0k85NP70M3TzbRwxdlQ29EF4WIJyVUZWIfWltlOTGa-rEv4TArUmhCV1RhLjJhdHBmY2DlHUWZght-ylWSlzisOxiEDb1J_h1p7O8m3uhD6_evot12zxixv5vCiOYUpyFHH-cGPF-Q9Mwt7HtgecOP20wOy917VAgPEtW48"
+												data-type="subscription">
+												<div class="text-center" style="padding: 8px 0;">
+													<h6>Join our early-access mailing list! Be the first to know
+														about our progress.</h6>
+													<div class="sib-input sib-form-block">
+														<div class="form__entry entry_block">
+															<div class="form__label-row form__label-row--horizontal">
+
+																<div class="entry__field">
+																	<input class="input cursor_text" type="text"
+																		id="EMAIL" name="EMAIL" autocomplete="off"
+																		placeholder="email@example.com"
+																		data-required="true" required />
+																</div>
+															</div>
+
+															<label class="entry__error entry__error--primary"
+																style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+															</label>
+															<label class="entry__specification"
+																style="font-size:12px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#3E4857;">
+															</label>
+														</div>
+													</div>
+												</div>
+												<div style="padding: 8px 0;">
+													<div class="sib-form-block" style="text-align: center">
+														<button
+															class="button button-primary button-block submit-button sib-form-block__button sib-form-block__button-with-loader"
+															form="sib-form" type="submit">
+															<svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
+																viewBox="0 0 512 512">
+																<path
+																	d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+															</svg>
+															SUBSCRIBE
+														</button>
+													</div>
+												</div>
+
+												<input type="text" name="email_address_check" value=""
+													class="input--hidden">
+												<input type="hidden" name="locale" value="en">
+											</form>
+										</div>
 									</div>
-									<!-- Form END -->
+								</div>
+								<!-- Form END -->
 
 							</div>
 							<div class="hero-illustration">
@@ -613,66 +611,123 @@
 						<div class="features-inner section-inner">
 							<div class="features-header text-center">
 								<div class="container-sm">
-									<h2 class="section-title mt-0 powerful">What</h2>
-									<p class="section-paragraph powerful">We’re UVA undergrad students building the first-ever stock
-										market* for opinions. Yeah, we’re excited. To stay updated on our progress, join our mailing list.
-										Once we’re done, we’ll ask you to join and use our market-based platform to rank stuff like courses,
-										frats/sororities, songs, movies, etc. by buying tokens - of a course offered at UVA, for example -
-										when you think their ranking should be higher (sort of like a weighted upvote, depending on how much you buy),
-										and then selling them when you think they’re at their peak (a weighted downvote). If you, and
-										everyone you know does this, then we’ll arrive at a ranking that represents the opinions of everyone -
-										and as opinions change constantly, depending on the latest information, the market will reflect that. </p>
-
-										<br>
-
-										<p class="section-paragraph powerful"> *For legal reasons, we should probably say that these aren’t actual stocks, as in partial ownership of any company.
-										Your tokens serve as demand/supply metrics that determine how a particular representative asset, like a course, is viewed in comparison to others.
+									<h2 class="section-title mt-0 powerful">The <span
+											class="feature-question">What</span></h2>
+									<p class="section-paragraph powerful">We’re UVA undergrad students building the
+										<i>first-ever</i> stock*
+										market for opinions. The vision is big, and in the future you'll be able to use
+										this market-based platform to rank <i>anything.</i> But for now, to prove it
+										works and to add value to the UVA community, we'll ask you to join and use it to
+										rank the courses offered at UVA. You can do this by buying tokens of a UVA
+										course when you think their ranking should be higher (sort of like a weighted
+										upvote, depending on how many you buy), and then selling them when you think
+										they’re at their peak (a weighted downvote). If you, and
+										everyone you know does this, then we’ll arrive at a ranking that represents the
+										opinions of everyone - and as opinions change constantly, depending on the
+										latest information, the market will reflect that.</p>
+									<br>
+									<p class="section-paragraph powerful">
+										*For legal reasons, we should probably say that these aren’t actual stocks, as
+										in partial ownership of any company. Your tokens serve as demand/supply metrics
+										that determine how a particular representative asset, like a course, is viewed
+										in comparison to others.
 									</p>
 								</div>
 							</div>
 							<hr class="dotted">
 							<br>
-							<h2 class="section-title mt-0 text-center powerful">Why</h2>
+							<h2 class="section-title mt-0 powerful text-center">The <span
+									class="feature-question">Why</span></h2>
 
 							<div class="features-wrap">
 								<div class="feature text-center is-revealing">
 									<div class="feature-inner">
-										<!-- <h4 class="feature-title h3-mobile mb-8 powerful"></h4> -->
-										<p class="text-sm feature-text">To share information: using the example of courses again,
-											we love theCourseForum and RateMyProfessors but we get that they don’t tell the full story -
-											none of the people we’ve asked have ever left a review on them despite enjoying/disliking certain classes and professors.
-											So at the very least, we want this to be a tool for sharing information that other review-based websites have missed.
+										<div class="feature-icon">
+											<svg width="88" height="88" xmlns="http://www.w3.org/2000/svg">
+												<g fill="none" fill-rule="nonzero">
+													<path d="M43 47v7a13 13 0 0 0 13-13v-7c-7.18 0-13 5.82-13 13z"
+														fill="#FF6381" />
+													<path d="M32 41v4a9 9 0 0 0 9 9v-4a9 9 0 0 0-9-9z" fill="#FF97AA" />
+												</g>
+											</svg>
+										</div>
+										<h4 class="feature-title h3-mobile mb-8 powerful">To Quantify Opinion</h4>
+										<p class="text-sm feature-text">You know what your own
+											opinion is on the classes you've taken, but it’s hard to gauge what everyone
+											thinks - and simple Like or
+											Upvote/Downvote systems don’t tell the whole story. We’re trying to go
+											somewhere nobody has really gone before, by connecting students' opinions in
+											a way that just makes sense.
 										</p>
 									</div>
 								</div>
 
 								<div class="feature text-center is-revealing">
 									<div class="feature-inner">
-										<!-- <h4 class="feature-title h3-mobile mb-8 powerful">Why</h4> -->
-										<p class="text-sm feature-text">To quantify opinion: You know what your own opinion is,
-											but it’s hard to gauge what everyone thinks - and simple Like or Upvote/Downvote systems
-											don’t tell the whole story. We’re trying to go somewhere nobody has really gone before,
-											by connecting people’s opinions in a way that just makes sense.
+										<div class="feature-icon">
+											<svg width="88" height="88" xmlns="http://www.w3.org/2000/svg">
+												<g fill="none" fill-rule="nonzero">
+													<path d="M43 47v7a13 13 0 0 0 13-13v-7c-7.18 0-13 5.82-13 13z"
+														fill="#FF6381" />
+													<path d="M32 41v4a9 9 0 0 0 9 9v-4a9 9 0 0 0-9-9z" fill="#FF97AA" />
+												</g>
+											</svg>
+										</div>
+										<h4 class="feature-title h3-mobile mb-8 powerful">To Share Information</h4>
+										<p class="text-sm feature-text">
+											We love theCourseForum and RateMyProfessors but we get that they don’t tell
+											the full story - none of the people we’ve asked (including us) have ever
+											left a review despite enjoying/disliking certain classes and professors.
+											Have you? So in the near term, you can use <b>Unibursal</b> as a tool for
+											sharing
+											information that other review-based websites have missed.
 										</p>
 									</div>
 								</div>
 
 								<div class="feature text-center is-revealing">
 									<div class="feature-inner">
-										<!-- <h4 class="feature-title h3-mobile mb-8 powerful"></h4> -->
-										<p class="text-sm feature-text">To empower decision/action: You make a lot of choices based on
-											simple facts, but you probably also make a lot of choices based on other people’s opinions -
-											what movie to watch, and oftentimes, what class to take. We hope this new tool helps you make
-											those decisions and take those actions based on what the community’s opinion is.
+										<div class="feature-icon">
+											<svg width="88" height="88" xmlns="http://www.w3.org/2000/svg">
+												<g fill="none" fill-rule="nonzero">
+													<path d="M43 47v7a13 13 0 0 0 13-13v-7c-7.18 0-13 5.82-13 13z"
+														fill="#FF6381" />
+													<path d="M32 41v4a9 9 0 0 0 9 9v-4a9 9 0 0 0-9-9z" fill="#FF97AA" />
+												</g>
+											</svg>
+										</div>
+										<h4 class="feature-title h3-mobile mb-8 powerful">To Empower Decision-Making
+										</h4>
+										<p class="text-sm feature-text">You make a lot of
+											choices based on simple facts, but you probably also make a lot of choices
+											based on other people’s opinions - what movie to watch, and oftentimes, what
+											class to take. We hope <b>Unibursal</b> helps you make those decisions based
+											on an accurate view of what the community’s opinion is.
 										</p>
 									</div>
 								</div>
-								<div class="feature text-center is-revealing">
+								<div class="feature text-center is-revealing" style="visibility: visible;">
 									<div class="feature-inner">
-										<!-- <h4 class="feature-title h3-mobile mb-8 powerful"></h4> -->
-										<p class="text-sm feature-text">Overall, we want to be able to answer the questions:
-											1) What do you have a strong opinion on? 2) How much of UVA agrees with you, and
-											to what extent? 3) How can you use that information?
+										<div class="feature-icon">
+											<svg width="88" height="88" xmlns="http://www.w3.org/2000/svg">
+												<g fill="none" fill-rule="nonzero">
+													<path d="M43 47v7a13 13 0 0 0 13-13v-7c-7.18 0-13 5.82-13 13z"
+														fill="#FF6381" />
+													<path d="M32 41v4a9 9 0 0 0 9 9v-4a9 9 0 0 0-9-9z" fill="#FF97AA" />
+												</g>
+											</svg>
+										</div>
+										<h4 class="feature-title h3-mobile mb-8 powerful">...To Help You Answer</h4>
+										<p class="text-sm feature-text">
+											1) What do you think about __?
+											<br>
+											2) What does UVA think about __?
+											<br>
+											3) How can you use that information?
+											<br>
+											<br>
+											If you've got an answer to those questions - or want one - we want you to
+											join <b>Unibursal</b>
 										</p>
 									</div>
 								</div>
@@ -685,13 +740,36 @@
 							<hr class="dotted">
 
 							<div class="features-header text-center">
-									<h2 class="section-title mt-0 powerful">Who</h2>
-									<p class="section-paragraph powerful">We’re asking other students those exact questions! Stay tuned for the video :)</p>
+								<h2 class="section-title mt-0 powerful">The <span class="feature-question">Who</span>
+								</h2>
+								<p class="section-paragraph powerful">We’re asking other students those exact questions!
+									Stay
+									tuned for the video :)</p>
 							</div>
 							<hr class="dotted">
 							<div class="features-header text-center">
-										<h2 class="section-title mt-0 powerful">How</h2>
-										<p class="section-paragraph powerful">Stay tuned :)</p>
+								<h2 class="section-title mt-0 powerful">The <span class="feature-question">How</span>
+								</h2>
+								<p class="section-paragraph powerful">In the <b><a
+											href="https://www.investopedia.com/articles/investing/082614/how-stock-market-works.asp">stock
+											market</a></b>, you usually buy a share of a company
+									when you think its value is going to go up. When enough people do that, its demand
+									goes up, raising its price. Through supply-demand economics, the market arrives at a
+									price.
+									<br><br>
+									We think this is powerful when applied to opinions because you, as an individual,
+									can exercise a weighted upvote (a demand-side push) on a token that represents
+									something like a course, pushing its price up and ranking it higher, or you can
+									exercise a downvote whenever you think it has reached a high enough rank and want to
+									sell it, pushing its price ever-so-slightly down.
+									<br><br>
+									When enough people participate in voting their opinions (buying and selling tokens),
+									our unique interpretation of a <b><a
+											href="https://review.chicagobooth.edu/magazine/winter-2013/eugene-fama-efficient-markets-and-the-nobel-prize#:~:text=Fama%2C%20efficient%20markets%2C%20and%20the%20Nobel%20Prize,-John%20H.&text=In%201970%2C%20in%20%E2%80%9CEfficient%20Capital,available%20information%20about%20future%20values.">Nobel-awarded
+											theory</a></b> says that the prices of these
+									tokens will reflect a ranking by the community of where people’s opinions lie. So
+									the class with the highest-priced token is held highest in community opinion.
+								</p>
 							</div>
 
 						</div>
@@ -703,8 +781,15 @@
 					<div class="features-inner section-inner uk-container uk-container-small">
 						<div class="features-header text-center">
 							<div class="container-sm">
-								<h2 class="section-title mt-0">Frequently Asked Questions</h2>
-
+								<div>
+									<h2 class="faq-title section-title mt-0">Frequently Asked Questions</h2>
+									<a href="mailto:sm2pvm@virginia.edu?subject=Question">
+										<button style="height: 40%;"
+											class="faq-title ml-48 mb-24 button button-primary button-block submit-button">Ask
+											a
+											Question!</button>
+									</a>
+								</div>
 								<div class="uk-article-content">
 									{% for k, v in faqdictionary.items %}
 									<ul data-uk-accordion="multiple: true">
