@@ -1,3 +1,10 @@
+:root {
+  --color-1: #284b63; /** blue **/
+  --color-2: #84b082; /** green **/
+  --color-3: #fffbfa; /** white **/
+  --color-4: #ce796b; /** pink **/
+  --color-5: #e7e7e7; /** gray **/
+}
 
 body {
     margin: 0;
@@ -13,7 +20,7 @@ hr.dotted {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
-  background-color: #84b082;  /*whichever you want*/
+  background-color: var(--color-2);  /*whichever you want*/
   color: #fff;
   z-index: 1;
 }
@@ -41,7 +48,7 @@ article, aside, footer, header, nav, section {
 }
 
 .feature-fill {
-    background-color: #fffbfa;
+    background-color: var(--color-3);
 }
 
 .form-column {
@@ -251,7 +258,7 @@ html {
 }
 
 body {
-    background: #fffbfa;
+    background: var(--color-3);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased
 }
@@ -358,7 +365,7 @@ html {
 }
 
 body {
-    color: #fffbfa;
+    color: var(--color-3);
     font-size: 1rem
 }
 
@@ -367,33 +374,33 @@ body, button, input, select, textarea {
 }
 
 a {
-    color: #84b082;
+    color: var(--color-2);
     text-decoration: none
 }
 
 a:hover, a:active {
     outline: 0;
-    color: #ce796b;
+    color: var(--color-4);
     text-decoration: underline
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     clear: both;
-    color: #fffbfa;
+    color: var(--color-3);
     font-family: Fira Sans, serif;
     font-weight: 600
 }
 
 .powerful {
-    color: #284b63;
+    color: var(--color-1);
 }
 
 .at-tags {
-    color: #284b63;
+    color: var(--color-1);
 }
 
 .feature-text {
-    color: #284b63;
+    color: var(--color-1);
 }
 
 h1, .h1 {
@@ -480,7 +487,7 @@ h4, h5, h6, .h4, .h5, .h6 {
 }
 
 .text-dark {
-    color: #284b63;
+    color: var(--color-1);
 }
 
 .text-light a {
@@ -548,7 +555,7 @@ blockquote p {
 }
 
 address {
-    color: #284b63;
+    color: var(--color-1);
     border-width: 1px 0;
     border-style: solid;
     border-color: #669abd;
@@ -652,7 +659,7 @@ button, input, select, textarea, label {
     text-transform: uppercase;
     line-height: 16px;
     text-decoration: none;
-    background-color: #fffbfa;
+    background-color: var(--color-3);
     color: #4950F6 !important;
     border: none;
     height: auto;
@@ -1093,12 +1100,12 @@ button, input, select, textarea, label {
 }
 
 .input, .textarea {
-    background-color: #fffbfa;
+    background-color: var(--color-3);
     border-width: 1px;
     border-style: solid;
     border-color: #669abd;
     border-radius: 2px;
-    color: #284b63;
+    color: var(--color-1);
     max-width: 100%;
     width: 100%
 }
@@ -1199,7 +1206,7 @@ button, input, select, textarea, label {
     line-height: 16px;
     text-decoration: none !important;
     background-color: #fff;
-    color: #284B63 !important;
+    color: var(--color-1) !important;
     border: none;
     border-radius: 2px;
     cursor: pointer;
@@ -1229,7 +1236,7 @@ button, input, select, textarea, label {
 }
 
 .button-primary {
-    background: #ce796b
+    background: var(--color-4);
 }
 
 .button-primary:hover {
@@ -1497,7 +1504,7 @@ button, input, select, textarea, label {
 .feature-icon::before {
     content: '';
     display: block;
-    background: #284b63;
+    background: var(--color-1);
     width: 64px;
     height: 64px;
     position: absolute;
@@ -1693,7 +1700,7 @@ button, input, select, textarea, label {
 
 .newsletter {
     position: relative;
-    background-color: #84b082
+    background-color: var(--color-2);
 }
 
 .newsletter::before {
@@ -1725,11 +1732,11 @@ button, input, select, textarea, label {
 }
 
 .is-boxed {
-    background: #284b63
+    background: var(--color-1);
 }
 
 .body-wrap {
-    background: /**#f0d0cc;**/#284b63;
+    background: /**#f0d0cc;**/var(--color-1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1764,8 +1771,8 @@ main {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0px;
-    color: #284b63;
-    background-color: #84b082
+    color: var(--color-1);
+    background-color: var(--color-2);
 }
 
 .site-footer::before {
@@ -1780,12 +1787,12 @@ main {
 }
 
 .site-footer a {
-    color: #284b63;
+    color: var(--color-1);
     text-decoration: none
 }
 
 .site-footer a:hover, .site-footer a:active {
-    color: #fffbfa;
+    color: var(--color-3);
     text-decoration: underline
 }
 
@@ -1798,7 +1805,7 @@ main {
 }
 
 .site-footer-inner.has-top-divider::before {
-    background: #284b63;
+    background: var(--color-1);
     background: linear-gradient(to right, rgba(86, 86, 120, 0.1) 0, rgba(86, 86, 120, 0.6) 50%, rgba(86, 86, 120, 0.1) 100%)
 }
 
