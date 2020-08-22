@@ -24,7 +24,7 @@ faqdictionary = {
     "We never store your credit card information. When connecting your information to Unibursal, we use a trusted third-party (the same one that companies like DoorDash, Lyft, and Zoom use), to handle it. We never see or store any of your banking credentials or financial information. Even in the case of a full website compromise, your money and your financial information are untouched.",
 
     "How can I join/help?":
-    "We’re creating an ecosystem, and we’re looking for computer scientists, finance specialists, designers, or anyone with an idea and a plan. If you’ve created something that adds direct or indirect functionality to Unibursal, shoot either of us an email today.",
+    "We’re creating an ecosystem, and we’re looking for computer scientists, finance specialists, designers, or anyone with an idea and a plan. If you’ve created something that adds direct or indirect functionality to Unibursal, shoot us an email today.",
 
     "Are you tracking me/selling my personal data?":
     "Absolutely not. We’re interested in tracking prices, not you. And you can take that to the honor committee."
