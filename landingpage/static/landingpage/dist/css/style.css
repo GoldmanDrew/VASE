@@ -44,6 +44,35 @@ hr.dotted {
     color: var(--color-white);
 }
 
+.how-left-justified {
+  /** position: relative;
+  top: -100px; **/
+  position: relative;
+  left: -2%;
+  width: 62%;
+}
+
+.how-right-justified {
+  /** position: relative;
+  top: -200px; **/
+  width: 62%;
+  position: relative;
+  margin-left: 50%;
+}
+
+.how-numbers {
+  position: relative;
+
+}
+
+.how-headings {
+  margin: 0;
+  position: absolute;               
+  top: 50%;
+  transform: translate(0, -50%) }
+
+}
+
 article, aside, footer, header, nav, section {
     display: block
 }
@@ -1541,8 +1570,13 @@ button, input, select, textarea, label {
 
 @media (min-width: 641px) {
     .features .section-paragraph {
-        padding-left: 72px;
+        padding-left: 40px;
         padding-right: 72px
+    }
+
+    .features .how-paragraph {
+      padding-left: 40px;
+      padding-right: 40px;
     }
     .features-wrap {
         padding-top: 24px;
@@ -1750,6 +1784,7 @@ button, input, select, textarea, label {
         padding-left: 72px;
         padding-right: 72px
     }
+
 }
 
 .is-boxed {
