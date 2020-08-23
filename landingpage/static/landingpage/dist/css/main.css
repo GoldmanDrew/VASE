@@ -1,4 +1,22 @@
 /*! system-font.css v2.0.2 | CC0-1.0 License | github.com/jonathantneal/system-font-css */
+:root {
+  --color-1: #284b63; /** blue **/
+  --color-1-light: #3b617a;
+  --color-1-dark: #162936;
+  --color-2: #84b082; /** green **/
+  --color-2-light: #b6dbb4;
+  --color-2-medium: #9fc49d;
+  --color-2-dark: #6c946a;
+  --color-3: #fffbfa; /** white **/
+  --color-3-dark: #ffd8cd;
+  --color-4: #ce796b; /** pink **/
+  --color-4-light: #e6a297;
+  --color-4-dark: #b8685c;
+  --color-5: #e7e7e7; /** gray **/
+  --color-5-dark: #d4d4d4;
+  --color-black: #000;
+  --color-white: #fff;
+}
 
 @font-face {
     font-family: system-ui;
@@ -3406,7 +3424,7 @@ ul.uk-nav-sub {
 }
 
 .uk-accordion li {
-    background: #fffbfa;
+    background: var(--color-3);
 }
 
 .uk-accordion .uk-accordion-title {
@@ -3416,7 +3434,7 @@ ul.uk-nav-sub {
 }
 
 .uk-accordion .uk-accordion-title:hover {
-    color: #84b082;
+    color: var(--color-2);
 }
 
 .uk-accordion .uk-accordion-content {

@@ -1,5 +1,25 @@
+/* :root {
+  --color-1: #284b63;
+  --color-1-light: #3b617a;
+  --color-1-dark: #162936;
+  --color-2: #84b082; 
+  --color-2-light: #b6dbb4;
+  --color-2-medium: #9fc49d;
+  --color-2-dark: #6c946a;
+  --color-3: #fffbfa;
+  --color-3-dark: #ffd8cd;
+  --color-4: #ce796b;
+  --color-4-light: #e6a297;
+  --color-4-dark: #b8685c;
+  --color-5: #e7e7e7;
+  --color-5-dark: #d4d4d4;
+  --color-black: #000;
+  --color-white: #fff;
+} */
+
 body {
-    margin: 0
+    margin: 0;
+    padding: 0;
 }
 
 hr.dotted {
@@ -13,7 +33,36 @@ hr.dotted {
 }
 
 .navbar-light {
-    color: #fff;
+    color: var(--color-white);
+}
+
+.how-left-justified {
+  /** position: relative;
+  top: -100px; **/
+  position: relative;
+  left: -2%;
+  width: 62%;
+}
+
+.how-right-justified {
+  /** position: relative;
+  top: -200px; **/
+  width: 62%;
+  position: relative;
+  margin-left: 50%;
+}
+
+.how-numbers {
+  position: relative;
+
+}
+
+.how-headings {
+  margin: 0;
+  position: absolute;               
+  top: 50%;
+  transform: translate(0, -50%) }
+
 }
 
 .navbar-brand {
@@ -35,7 +84,7 @@ article, aside, footer, header, nav, section {
 }
 
 .feature-fill {
-    background-color: #fffbfa;
+    background-color: var(--color-3);
 }
 
 .form-column {
@@ -104,7 +153,7 @@ dfn {
 
 mark {
     background-color: #ff0;
-    color: #000
+    color: var(--color-black);
 }
 
 small {
@@ -140,7 +189,7 @@ img {
 }
 
 svg:not(:root) {
-    overflow: hidden
+    overflow: visible;
 }
 
 button, input, optgroup, select, textarea {
@@ -245,7 +294,7 @@ html {
 }
 
 body {
-    background: #fffbfa;
+    background: var(--color-3);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased
 }
@@ -254,7 +303,7 @@ hr {
     border: 0;
     display: block;
     height: 1px;
-    background: #669abd;
+    background: var(--color-1-light);
     background: linear-gradient(to right, rgba(210, 218, 240, 0.1) 0, rgba(210, 218, 240, 0.6) 50%, rgba(210, 218, 240, 0.1) 100%);
     margin-top: 24px;
     margin-bottom: 24px
@@ -319,7 +368,7 @@ table {
 }
 
 tr {
-    border-bottom: 1px solid #669abd
+    border-bottom: 1px solid var(--color-1-light)
 }
 
 th {
@@ -352,7 +401,7 @@ html {
 }
 
 body {
-    color: #fffbfa;
+    color: var(--color-3);
     font-size: 1rem
 }
 
@@ -361,37 +410,37 @@ body, button, input, select, textarea {
 }
 
 a {
-    color: #84b082;
+    color: var(--color-2);
     text-decoration: none
 }
 
 a:hover, a:active {
     outline: 0;
-    color: #ce796b;
+    color: var(--color-4);
     text-decoration: underline
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     clear: both;
-    color: #fffbfa;
+    color: var(--color-3);
     font-family: Fira Sans, serif;
     font-weight: 600
 }
 
 .powerful {
-    color: #284b63;
+    color: var(--color-1);
 }
 
 .at-tags {
-    color: #284b63;
+    color: var(--color-1);
 }
 
 .feature-text {
-    color: #284b63;
+    color: var(--color-1);
 }
 
 .feature-question {
-    color: #ce796b;
+    color: var(--color-4);
     font-weight: bold;
 }
 
@@ -479,7 +528,7 @@ h4, h5, h6, .h4, .h5, .h6 {
 }
 
 .text-dark {
-    color: #284b63;
+    color: var(--color-1);
 }
 
 .text-light a {
@@ -487,7 +536,7 @@ h4, h5, h6, .h4, .h5, .h6 {
 }
 
 .text-light h1, .text-light h2, .text-light h3, .text-light h4, .text-light h5, .text-light h6, .text-light .h1, .text-light .h2, .text-light .h3, .text-light .h4, .text-light .h5, .text-light .h6 {
-    color: #fff !important
+    color: var(--color-white) !important
 }
 
 .text-sm {
@@ -527,7 +576,7 @@ dfn, cite, em, i {
 }
 
 blockquote {
-    color: #537891;
+    color: var(--color-1-light);
     font-style: italic;
     margin-top: 24px;
     margin-bottom: 24px;
@@ -547,10 +596,10 @@ blockquote p {
 }
 
 address {
-    color: #284b63;
+    color: var(--color-1);
     border-width: 1px 0;
     border-style: solid;
-    border-color: #669abd;
+    border-color: var(--color-1-light);
     padding: 24px 0;
     margin: 0 0 24px
 }
@@ -651,8 +700,8 @@ button, input, select, textarea, label {
     text-transform: uppercase;
     line-height: 16px;
     text-decoration: none;
-    background-color: #fffbfa;
-    color: #4950F6 !important;
+    background-color: var(--color-3);
+    color: var(--color-1) !important;
     border: none;
     height: auto;
     left: 8px;
@@ -680,11 +729,11 @@ button, input, select, textarea, label {
 }
 
 .text-primary {
-    color: #4950F6
+    color: var(--color-1);
 }
 
 .text-secondary {
-    color: #FF6381
+    color: var(--color-4)
 }
 
 .has-top-divider {
@@ -699,7 +748,7 @@ button, input, select, textarea, label {
     width: 100%;
     display: block;
     height: 1px;
-    background: #669abd;
+    background: var(--color-1-light);
     background: linear-gradient(to right, rgba(210, 218, 240, 0.1) 0, rgba(210, 218, 240, 0.6) 50%, rgba(210, 218, 240, 0.1) 100%)
 }
 
@@ -715,7 +764,7 @@ button, input, select, textarea, label {
     width: 100%;
     display: block;
     height: 1px;
-    background: #669abd;
+    background: var(--color-1-light);
     background: linear-gradient(to right, rgba(210, 218, 240, 0.1) 0, rgba(210, 218, 240, 0.6) 50%, rgba(210, 218, 240, 0.1) 100%)
 }
 
@@ -1092,12 +1141,12 @@ button, input, select, textarea, label {
 }
 
 .input, .textarea {
-    background-color: #fffbfa;
+    background-color: var(--color-3);
     border-width: 1px;
     border-style: solid;
-    border-color: #669abd;
+    border-color: var(--color-1-light);
     border-radius: 2px;
-    color: #284b63;
+    color: var(--color-1);
     max-width: 100%;
     width: 100%
 }
@@ -1132,7 +1181,7 @@ button, input, select, textarea, label {
 
 .input:active, .input:focus, .textarea:active, .textarea:focus {
     outline: none;
-    border-color: #4950F6
+    border-color: var(--color-1);
 }
 
 .input[disabled], .textarea[disabled] {
@@ -1197,8 +1246,8 @@ button, input, select, textarea, label {
     text-transform: uppercase;
     line-height: 16px;
     text-decoration: none !important;
-    background-color: #fff;
-    color: #284B63 !important;
+    background-color: var(--color-white);
+    color: var(--color-1) !important;
     border: none;
     border-radius: 2px;
     cursor: pointer;
@@ -1223,16 +1272,16 @@ button, input, select, textarea, label {
 }
 
 .button-primary {
-    color: #fff !important;
+    color: var(--color-white) !important;
     transition: background .15s ease
 }
 
 .button-primary {
-    background: #ce796b
+    background: var(--color-4);
 }
 
 .button-primary:hover {
-    background: #a35c52
+    background: var(--color-4-dark);
 }
 
 .button-block {
@@ -1286,7 +1335,7 @@ button, input, select, textarea, label {
 }
 
 .header-links a:not(.button):hover, .header-links a:not(.button):active {
-    color: #fff
+    color: var(--color-white);
 }
 
 @media (min-width: 641px) {
@@ -1418,8 +1467,8 @@ button, input, select, textarea, label {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #284b63;
-    background: linear-gradient(to bottom, #284b63, #a35c52)
+    background: var(--color-1);
+    background: linear-gradient(to bottom, var(--color-1), #a35c52)
 }**/
 
 /** .features::before {
@@ -1429,8 +1478,8 @@ button, input, select, textarea, label {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #284b63;
-    background: linear-gradient(to top, #a35c52, #284b63)
+    background: var(--color-1);
+    background: linear-gradient(to top, #a35c52, var(--color-1))
 } **/
 
 /**.testimonials::before {
@@ -1440,8 +1489,8 @@ button, input, select, textarea, label {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #284b63;
-    background: linear-gradient(to bottom, #284b63, #a35c52)
+    background: var(--color-1);
+    background: linear-gradient(to bottom, var(--color-1), #a35c52)
 } **/
 
 .features-wrap {
@@ -1494,13 +1543,13 @@ button, input, select, textarea, label {
     width: 88px;
     height: 88px;
     border-radius: 50%;
-    background-color: #81b37f;
+    background-color: var(--color-2);
 }
 
 .feature-icon::before {
     content: '';
     display: block;
-    background: #284b63;
+    background: var(--color-1);
     width: 64px;
     height: 64px;
     position: absolute;
@@ -1516,8 +1565,13 @@ button, input, select, textarea, label {
 
 @media (min-width: 641px) {
     .features .section-paragraph {
-        padding-left: 72px;
+        padding-left: 40px;
         padding-right: 72px
+    }
+
+    .features .how-paragraph {
+      padding-left: 40px;
+      padding-right: 40px;
     }
     .features-wrap {
         padding-top: 24px;
@@ -1696,7 +1750,7 @@ button, input, select, textarea, label {
 
 .newsletter {
     position: relative;
-    background-color: #84b082
+    background-color: var(--color-2);
 }
 
 .newsletter::before {
@@ -1725,10 +1779,11 @@ button, input, select, textarea, label {
         padding-left: 72px;
         padding-right: 72px
     }
+
 }
 
 .is-boxed {
-    background: #284b63
+    background: var(--color-1);
 }
 
 .body-wrap {
@@ -1768,8 +1823,8 @@ main {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0px;
-    color: #284b63;
-    background-color: #84b082
+    color: var(--color-1);
+    background-color: var(--color-2);
 }
 
 .site-footer::before {
@@ -1784,12 +1839,12 @@ main {
 }
 
 .site-footer a {
-    color: #284b63;
+    color: var(--color-1);
     text-decoration: none
 }
 
 .site-footer a:hover, .site-footer a:active {
-    color: #fffbfa;
+    color: var(--color-3);
     text-decoration: underline
 }
 
@@ -1802,7 +1857,7 @@ main {
 }
 
 .site-footer-inner.has-top-divider::before {
-    background: #284b63;
+    background: var(--color-1);
     background: linear-gradient(to right, rgba(86, 86, 120, 0.1) 0, rgba(86, 86, 120, 0.6) 50%, rgba(86, 86, 120, 0.1) 100%)
 }
 
