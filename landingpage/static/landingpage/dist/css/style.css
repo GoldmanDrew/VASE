@@ -1,9 +1,20 @@
 :root {
   --color-1: #284b63; /** blue **/
+  --color-1-light: #3b617a;
+  --color-1-dark: #162936;
   --color-2: #84b082; /** green **/
+  --color-2-light: #b6dbb4;
+  --color-2-medium: #9fc49d;
+  --color-2-dark: #6c946a;
   --color-3: #fffbfa; /** white **/
+  --color-3-dark: #ffd8cd;
   --color-4: #ce796b; /** pink **/
+  --color-4-light: #e6a297;
+  --color-4-dark: #b8685c;
   --color-5: #e7e7e7; /** gray **/
+  --color-5-dark: #d4d4d4;
+  --color-black: #000;
+  --color-white: #fff;
 }
 
 body {
@@ -21,7 +32,7 @@ hr.dotted {
   position: sticky;
   top: 0;
   background-color: var(--color-2);  /*whichever you want*/
-  color: #fff;
+  color: var(--color-white);
   z-index: 1;
 }
 
@@ -30,7 +41,7 @@ hr.dotted {
 }
 
 .navbar-light {
-    color: #fff;
+    color: var(--color-white);
 }
 
 article, aside, footer, header, nav, section {
@@ -117,7 +128,7 @@ dfn {
 
 mark {
     background-color: #ff0;
-    color: #000
+    color: var(--color-black);
 }
 
 small {
@@ -153,7 +164,7 @@ img {
 }
 
 svg:not(:root) {
-    overflow: hidden
+    overflow: visible;
 }
 
 button, input, optgroup, select, textarea {
@@ -267,7 +278,7 @@ hr {
     border: 0;
     display: block;
     height: 1px;
-    background: #669abd;
+    background: var(--color-1-light);
     background: linear-gradient(to right, rgba(210, 218, 240, 0.1) 0, rgba(210, 218, 240, 0.6) 50%, rgba(210, 218, 240, 0.1) 100%);
     margin-top: 24px;
     margin-bottom: 24px
@@ -332,7 +343,7 @@ table {
 }
 
 tr {
-    border-bottom: 1px solid #669abd
+    border-bottom: 1px solid var(--color-1-light)
 }
 
 th {
@@ -404,7 +415,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .feature-question {
-    color: #ce796b;
+    color: var(--color-4);
     font-weight: bold;
 }
 
@@ -500,7 +511,7 @@ h4, h5, h6, .h4, .h5, .h6 {
 }
 
 .text-light h1, .text-light h2, .text-light h3, .text-light h4, .text-light h5, .text-light h6, .text-light .h1, .text-light .h2, .text-light .h3, .text-light .h4, .text-light .h5, .text-light .h6 {
-    color: #fff !important
+    color: var(--color-white) !important
 }
 
 .text-sm {
@@ -540,7 +551,7 @@ dfn, cite, em, i {
 }
 
 blockquote {
-    color: #537891;
+    color: var(--color-1-light);
     font-style: italic;
     margin-top: 24px;
     margin-bottom: 24px;
@@ -563,7 +574,7 @@ address {
     color: var(--color-1);
     border-width: 1px 0;
     border-style: solid;
-    border-color: #669abd;
+    border-color: var(--color-1-light);
     padding: 24px 0;
     margin: 0 0 24px
 }
@@ -665,7 +676,7 @@ button, input, select, textarea, label {
     line-height: 16px;
     text-decoration: none;
     background-color: var(--color-3);
-    color: #4950F6 !important;
+    color: var(--color-1) !important;
     border: none;
     height: auto;
     left: 8px;
@@ -693,11 +704,11 @@ button, input, select, textarea, label {
 }
 
 .text-primary {
-    color: #4950F6
+    color: var(--color-1);
 }
 
 .text-secondary {
-    color: #FF6381
+    color: var(--color-4)
 }
 
 .has-top-divider {
@@ -712,7 +723,7 @@ button, input, select, textarea, label {
     width: 100%;
     display: block;
     height: 1px;
-    background: #669abd;
+    background: var(--color-1-light);
     background: linear-gradient(to right, rgba(210, 218, 240, 0.1) 0, rgba(210, 218, 240, 0.6) 50%, rgba(210, 218, 240, 0.1) 100%)
 }
 
@@ -728,7 +739,7 @@ button, input, select, textarea, label {
     width: 100%;
     display: block;
     height: 1px;
-    background: #669abd;
+    background: var(--color-1-light);
     background: linear-gradient(to right, rgba(210, 218, 240, 0.1) 0, rgba(210, 218, 240, 0.6) 50%, rgba(210, 218, 240, 0.1) 100%)
 }
 
@@ -1108,7 +1119,7 @@ button, input, select, textarea, label {
     background-color: var(--color-3);
     border-width: 1px;
     border-style: solid;
-    border-color: #669abd;
+    border-color: var(--color-1-light);
     border-radius: 2px;
     color: var(--color-1);
     max-width: 100%;
@@ -1145,7 +1156,7 @@ button, input, select, textarea, label {
 
 .input:active, .input:focus, .textarea:active, .textarea:focus {
     outline: none;
-    border-color: #4950F6
+    border-color: var(--color-1);
 }
 
 .input[disabled], .textarea[disabled] {
@@ -1210,7 +1221,7 @@ button, input, select, textarea, label {
     text-transform: uppercase;
     line-height: 16px;
     text-decoration: none !important;
-    background-color: #fff;
+    background-color: var(--color-white);
     color: var(--color-1) !important;
     border: none;
     border-radius: 2px;
@@ -1236,7 +1247,7 @@ button, input, select, textarea, label {
 }
 
 .button-primary {
-    color: #fff !important;
+    color: var(--color-white) !important;
     transition: background .15s ease
 }
 
@@ -1245,7 +1256,7 @@ button, input, select, textarea, label {
 }
 
 .button-primary:hover {
-    background: #a35c52
+    background: var(--color-4-dark);
 }
 
 .button-block {
@@ -1299,7 +1310,7 @@ button, input, select, textarea, label {
 }
 
 .header-links a:not(.button):hover, .header-links a:not(.button):active {
-    color: #fff
+    color: var(--color-white);
 }
 
 @media (min-width: 641px) {
@@ -1432,8 +1443,8 @@ button, input, select, textarea, label {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #284b63;
-    background: linear-gradient(to bottom, #284b63, #a35c52)
+    background: var(--color-1);
+    background: linear-gradient(to bottom, var(--color-1), #a35c52)
 }**/
 
 /** .features::before {
@@ -1443,8 +1454,8 @@ button, input, select, textarea, label {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #284b63;
-    background: linear-gradient(to top, #a35c52, #284b63)
+    background: var(--color-1);
+    background: linear-gradient(to top, #a35c52, var(--color-1))
 } **/
 
 /**.testimonials::before {
@@ -1454,8 +1465,8 @@ button, input, select, textarea, label {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #284b63;
-    background: linear-gradient(to bottom, #284b63, #a35c52)
+    background: var(--color-1);
+    background: linear-gradient(to bottom, var(--color-1), #a35c52)
 } **/
 
 .features-wrap {
@@ -1508,7 +1519,7 @@ button, input, select, textarea, label {
     width: 88px;
     height: 88px;
     border-radius: 50%;
-    background-color: #81b37f;
+    background-color: var(--color-2);
 }
 
 .feature-icon::before {
