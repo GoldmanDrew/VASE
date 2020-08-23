@@ -1,4 +1,10 @@
 faqdictionary = {
+    "What is Unibursal?":
+    "Unibursal is a way for UVA students to rank things (we're starting with undergrad classes) in a dynamic way, just like the stock market. You can think about it as buying a token when you think its rank is going to rise, or sell it when you think it's high enough.",
+
+    "What is a token?":
+    "A token is something that represents an undergrad class. It's Unibursal's way of quantifying opinion. When you buy a token, you're Liking or Upvoting the class it represents (pushing its price up in relation to the other tokens). When you and others buy and sell tokens representing what you think/thought about the class, the market arrives at a ranking of classes that represents how everyone thinks.",
+
     "What value do I get from holding a token? Why would I want to buy one? What do I get?":
     "You have valuable information - your opinion. You can exchange that for a token, effectively quantifying that opinion, and pushing up the price of the token as a result (buy a token to move up the price slightly, buy a lot of tokens to move up the price a lot). We think of it as literally voting with your money. If an opinion turns out to be a popular one (say, a certain course gets ranked higher and higher as more people buy its tokens), then people who voted their opinion earlier on by buying a token, can sell at a profit. These tokens aren’t financial assets with underlying cash flows, which is to say that they don’t hold value in the traditional stock market sense, but we hope the above, plus the perfect liquidity of tokens (see the next question) give an effective reason for participating in this exchange.",
 

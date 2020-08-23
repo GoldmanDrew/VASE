@@ -9,6 +9,7 @@
 	{% load crispy_forms_tags %}
 
 	<title>Unibursal</title>
+	<link rel="icon" type="image/png" href="{% static 'landingpage/dist/images/icon.png' %}"/>
 
 	<style>
 		@font-face {
@@ -101,7 +102,8 @@
 
 	<!-- navigation bar-->
 	<nav class="navbar navbar-expand-md navbar-dark">
-		<a class="navbar-brand" href="#">Logo</a>
+		<a href="/"><img class="navbar-brand" src="{% static 'landingpage/dist/images/icon.png' %}"
+			alt="Unibursal"></img></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -216,8 +218,9 @@
 					<div class="container">
 						<div class="hero-inner">
 							<div class="hero-copy text-center form-div">
-								<h1 class="hero-title mt-0 main-title">Welcome to Unibursal</h1>
-								<p class="hero-paragraph">Buy and sell shares of UVA classes!</p>
+								<h1 class="hero-title mt-0 main-title"><span style="color: #e7e7e7">Welcome to</span>
+									<span style="color: #fffbfa">Uni</span><span style="color: #e7e7e7">bursal</span></h1>
+								<p class="hero-paragraph">Buy and sell tokens of UVA classes!</p>
 
 								<!-- added -->
 								<div class="container-fluid text-center form-div">
