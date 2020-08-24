@@ -96,8 +96,7 @@
 
 {% block javascript %}
   <script>
-    var all_prices = JSON.parse('{{all_tokens_json|safe}}');
-    console.log(all_prices);
+    var all_prices = JSON.parse('{{all_tokens_history_json|safe}}');
   </script>
   <script src="{% static 'dashboard/dashboard.js' %}"></script>
 {% endblock %}

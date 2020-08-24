@@ -5,14 +5,16 @@ from django.urls import reverse
 class Token(models.Model):
     Name = models.CharField(max_length=255, primary_key = True, null=False)
     Ticker = models.CharField(max_length=4)
-    Supply = models.FloatField()
+    TokenSupply = models.FloatField()
+    CashSupply = models.FloatField()
     Price = models.FloatField()
-    Time = models.DateTimeField(auto_now_add=True)
+    TimeUpdated = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.Name
 
     class Meta:
+        managed = False
         db_table = 'tokens'
 
 
@@ -26,6 +28,7 @@ class UserShare(models.Model):
         return self.User
 
     class Meta:
+        managed = False
         db_table = 'UserShares'
 
 
@@ -36,6 +39,7 @@ class Order(models.Model):
     TargetToken = models.ForeignKey(Token, on_delete=models.CASCADE, null=False, related_name="target_token")
     Quantity = models.FloatField()
     Filled = models.CharField(max_length=1, null=False)
+    OrderTime = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return str(self.OrderID)
@@ -44,7 +48,19 @@ class Order(models.Model):
         return "/order/"
 
     class Meta:
+        managed = False
         db_table = 'orders'
+
+
+class TokenHistory(models.Model):
+    ID = models.AutoField(primary_key = True, null=False)
+    Token = models.ForeignKey(Token, on_delete=models.CASCADE)
+    Time = models.DateTimeField(auto_now_add=True)
+    Price = models.FloatField()
+
+    class Meta:
+        managed = False
+        db_table = 'tokenHistory'
 
 
 class FAQ(models.Model):

@@ -21,19 +21,15 @@ $('#class-modal').on('shown.bs.modal', function (event) {
     data:{"class":classname},
     dataType: 'json',
     success: function(data){
-      console.log(data);
       var ctx = document.getElementById('myChart').getContext('2d');
       var graph_data = [];
       var time = [];
-      console.log(data);
       for(price in data){
         var curr_date = new Date(data[price]["fields"]["Time"]);
         var curr_price = data[price]["fields"]["Price"];
         time.push(curr_date);
         graph_data.push({"x": curr_date, "y": curr_price});
       }
-      console.log(time);
-      console.log(graph_data);
       var myChart = new Chart(ctx, {
           type: 'line',
           data: {
@@ -93,7 +89,7 @@ $('#class-modal').on('shown.bs.modal', function (event) {
 var price_data = {};
 var time = [];
 for(price in all_prices){
-  var curr_name = all_prices[price]["pk"];
+  var curr_name = all_prices[price]["fields"]["Token"];
   var curr_date = new Date(all_prices[price]["fields"]["Time"]);
   var curr_price = all_prices[price]["fields"]["Price"];
   time.push(curr_date);
@@ -104,7 +100,6 @@ for(price in all_prices){
     price_data[curr_name]= [{"x": curr_date, "y": curr_price}];
   }
 }
-console.log(price_data)
 
 var ctx2 = document.getElementById('all_chart').getContext('2d');
 window.allChart = new Chart(ctx2, {
@@ -163,7 +158,6 @@ function populate_data(){
   allChart.data.datasets = [];
   for (var name in price_data) {
       var checkbox_html = document.getElementById("check_"+ name);
-      console.log(name);
       var class_name = document.getElementById("label_"+name).innerHTML;
       if(checkbox_html.checked){
         var red = Math.floor(Math.random() * Math.floor(256));
