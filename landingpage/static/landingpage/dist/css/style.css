@@ -54,7 +54,19 @@
   --color-white: #fff; **/
 }
 
+@font-face {
+  font-family: 'Overpass Bold';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Overpass'), url('../fonts/Overpass-Bold.ttf') format('opentype');
+}
 
+@font-face {
+  font-family: 'Overpass SemiBold';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Overpass'), url('../fonts/Overpass-SemiBold.ttf') format('opentype');
+}
 
 body {
     margin: 0;
@@ -74,7 +86,7 @@ hr.dotted {
 .navbar-nav {
   padding-left: 52em;
 }
-  
+
 .navbar-light {
     color: var(--color-white);
 }
