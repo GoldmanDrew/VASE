@@ -19,6 +19,7 @@
   --color-white: #fff; **/
 
 /** oxford blue, dark sea green, snow, rose ebony, saffron **/
+/** swapped colors for --color-4 and --color-4-light **/
   --color-1: #011638;
   --color-1-light: #03317d;
   --color-1-dark: #010a19;
@@ -28,8 +29,8 @@
   --color-2-dark: #517d4f;
   --color-3: #fffbfa;
   --color-3-dark: #ffebe6;
-  --color-4: #70484a;
-  --color-4-light: #a57376;
+  --color-4: #a57376;
+  --color-4-light: #70484a;
   --color-4-dark: #4e3233;
   --color-5: #70484a;
   --color-5-dark: #aa8709;
