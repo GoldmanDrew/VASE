@@ -51,7 +51,7 @@ $accordion-content-margin-top:                  $global-margin !default;
     display: block;
     font-size: $accordion-title-font-size;
     line-height: $accordion-title-line-height;
-    color: $accordion-title-color;
+    color: $accordion-title-color; 
     @if(mixin-exists(hook-accordion-title)) {@include hook-accordion-title();}
 }
 
@@ -98,7 +98,7 @@ $accordion-content-margin-top:                  $global-margin !default;
 // ========================================================================
 
 $inverse-accordion-title-color:              $inverse-global-emphasis-color !default;
-$inverse-accordion-title-hover-color:        $inverse-global-color !default;
+$inverse-accordion-title-hover-color: #84b082;       $inverse-global-color !default;
 
 
 
