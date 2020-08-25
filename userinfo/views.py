@@ -10,8 +10,10 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 def agentDisplay(request):
-    current_agent = Agent.objects.get(Agent=request.user)
-    current_agent_shares = AgentShare.objects.filter(Agent=current_agent)
+    current_user = request.user
+    current_username = request.user.username
+    current_email = request.user.email
+    current_user_shares = UserShare.objects.filter(User=current_email)
 
     if request.method == "POST":
         form_user = UpdateUserForm(request.POST, instance=request.user)
@@ -22,33 +24,37 @@ def agentDisplay(request):
                 update_session_auth_hash(request, form_pass.user)
 
                 user = form_user.save(commit=False)
-                if form_user.cleaned_data['username'] != "":
-                    current_agent.Agent = form_user.cleaned_data['username']
-                    current_agent.save()
-                else:
-                    user.username = current_agent.Agent
+                if form_user.cleaned_data['username'] == "":
+                    user.username = current_username
 
-                if form_user.cleaned_data['email'] != "":
-                    current_agent.Email = form_user.cleaned_data['email']
-                    current_agent.save()
+                email = form_user.cleaned_data['email']
+                if email != "":
+                    if email[email.find('@'):] != '@virginia.edu':
+                        messages.error(request, "Please enter a valid UVA email address")
+                    else:
+                        for user_shares in current_user_shares:
+                            user_shares.User = form_user.cleaned_data['email']
+                            user_shares.save()
                 else:
-                    user.email = current_agent.Email
+                    user.email = current_email
 
                 user.save()
                 return redirect('/userinfo/')
         elif form_user.is_valid():
             user = form_user.save(commit=False)
-            if form_user.cleaned_data['username'] != "":
-                current_agent.Agent = form_user.cleaned_data['username']
-                current_agent.save()
-            else:
-                user.username = current_agent.Agent
+            if form_user.cleaned_data['username'] == "":
+                user.username = current_username
 
-            if form_user.cleaned_data['email'] != "":
-                current_agent.Email = form_user.cleaned_data['email']
-                current_agent.save()
+            email = form_user.cleaned_data['email']
+            if email != "":
+                if email[email.find('@'):] != '@virginia.edu':
+                    messages.error(request, "Please enter a valid UVA email address")
+                else:
+                    for user_shares in current_user_shares:
+                        user_shares.User = form_user.cleaned_data['email']
+                        user_shares.save()
             else:
-                user.email = current_agent.Email
+                user.email = current_email
 
             user.save()
             return redirect('/userinfo/')
@@ -58,9 +64,9 @@ def agentDisplay(request):
         form_pass = PassChangeForm(user=request.user)
 
     context = {
-        "current_agent": current_agent,
-        "current_agent_shares": current_agent_shares,
+        "current_user": current_user,
+        "current_user_shares": current_user_shares,
         "form_user": form_user,
         "form_pass": form_pass
     }
-    return render(request, "userinfo/yourinfo.html", context )
+    return render(request, "userinfo/YourInfo.html", context)

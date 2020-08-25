@@ -1,12 +1,15 @@
 
 .section-formatting{
   margin: 3rem 3rem 7rem;
+  background-color: #284B63;
 }
 
 .container-formatting{
   margin-right: 0rem;
   margin-left: 0rem;
   max-width: 100%!important;
+  background-color: #284B63;
+
 }
 
 .class-cards{
@@ -84,9 +87,10 @@
 }
 
 .class-checkboxes{
-  padding-left: 60px;
+  padding: 0px;
   width: 100%;
   overflow-y: scroll;
+  background-color: #284B63;
 }
 
 #checkbox-list{
@@ -95,8 +99,14 @@
 
 .form-checkboxes{
   height: inherit;
+  width: inherit;
 }
 
 .white {
-    color: #fffbfa;
+  color: #fffbfa;
+}
+
+.bg-row{
+  background-color: #284B63;
+  margin: 0px;
 }
