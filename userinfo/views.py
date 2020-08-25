@@ -69,4 +69,4 @@ def agentDisplay(request):
         "form_user": form_user,
         "form_pass": form_pass
     }
-    return render(request, "userinfo/yourinfo.html", context)
+    return render(request, "userinfo/YourInfo.html", context)
