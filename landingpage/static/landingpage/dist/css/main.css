@@ -1,21 +1,59 @@
 /*! system-font.css v2.0.2 | CC0-1.0 License | github.com/jonathantneal/system-font-css */
 :root {
-  --color-1: #284b63; /** blue **/
+  /** indigo dye, dark sea green, snow, new york pink, platinum **/
+  /** --color-1: #284b63;
   --color-1-light: #3b617a;
   --color-1-dark: #162936;
-  --color-2: #84b082; /** green **/
+  --color-2: #84b082;
   --color-2-light: #b6dbb4;
   --color-2-medium: #9fc49d;
   --color-2-dark: #6c946a;
-  --color-3: #fffbfa; /** white **/
+  --color-3: #fffbfa;
   --color-3-dark: #ffd8cd;
-  --color-4: #ce796b; /** pink **/
+  --color-4: #ce796b;
   --color-4-light: #e6a297;
   --color-4-dark: #b8685c;
-  --color-5: #e7e7e7; /** gray **/
+  --color-5: #e7e7e7;
   --color-5-dark: #d4d4d4;
   --color-black: #000;
+  --color-white: #fff; **/
+
+/** oxford blue, dark sea green, snow, rose ebony, saffron **/
+/** swapped colors for --color-4 and --color-4-light **/
+  --color-1: #011638;
+  --color-1-light: #03317d;
+  --color-1-dark: #010a19;
+  --color-2: #84b082;
+  --color-2-light: #d1e2d0;
+  --color-2-medium: #a3c4a1;
+  --color-2-dark: #517d4f;
+  --color-3: #fffbfa;
+  --color-3-dark: #ffebe6;
+  --color-4: #ce796b;
+  --color-4-light: #70484a;
+  --color-4-dark: #4e3233;
+  --color-5: #70484a;
+  --color-5-dark: #aa8709;
+  --color-black: #000;
   --color-white: #fff;
+
+/** indogo dye, dark sea green, snow, international chicago golden gate bridge, black **/
+  /** --color-1: #284b63;
+  --color-1-light: #3b617a;
+  --color-1-dark: #162936;
+  --color-2: #84b082;
+  --color-2-light: #d1e2d0;
+  --color-2-medium: #a3c4a1;
+  --color-2-dark: #517d4f;
+  --color-3: #fffbfa;
+  --color-3-dark: #ffebe6;
+  --color-4: #bb4430;
+  --color-4-light: #d56f5d;
+  --color-4-dark: #8e3425;
+  --color-5: #000;
+  --color-5-dark: #000;
+  --color-black: #000;
+  --color-white: #fff; **/
 }
 
 @font-face {
