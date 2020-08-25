@@ -1,5 +1,5 @@
 from django.db import models
-# Create your models here.
+# Create your models here.managed = True
 from django.urls import reverse
 
 class Token(models.Model):
@@ -14,29 +14,29 @@ class Token(models.Model):
         return self.Name
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'tokens'
 
 
 class UserShare(models.Model):
     ID = models.AutoField(primary_key = True, null=False)
     User = models.CharField(max_length=255)
-    Token = models.ForeignKey(Token, on_delete=models.CASCADE)
+    Token = models.ForeignKey(Token, on_delete=models.CASCADE, null=True, db_column="Token")
     Quantity = models.FloatField()
 
     def __int__(self):
         return self.User
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'UserShares'
 
 
 class Order(models.Model):
     OrderID = models.AutoField(primary_key = True, null=False)
     User = models.CharField(max_length=255)
-    SourceToken = models.ForeignKey(Token, on_delete=models.CASCADE, null=False, related_name="source_token")
-    TargetToken = models.ForeignKey(Token, on_delete=models.CASCADE, null=False, related_name="target_token")
+    SourceToken = models.ForeignKey(Token, on_delete=models.CASCADE, null=True, related_name="source_token", db_column="SourceToken")
+    TargetToken = models.ForeignKey(Token, on_delete=models.CASCADE, null=True, related_name="target_token", db_column="TargetToken")
     Quantity = models.FloatField()
     Filled = models.CharField(max_length=1, null=False)
     OrderTime = models.DateTimeField(auto_now_add=True)
@@ -48,18 +48,18 @@ class Order(models.Model):
         return "/order/"
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'orders'
 
 
 class TokenHistory(models.Model):
     ID = models.AutoField(primary_key = True, null=False)
-    Token = models.ForeignKey(Token, on_delete=models.CASCADE)
+    Token = models.ForeignKey(Token, on_delete=models.CASCADE, null=True, db_column="Token")
     Time = models.DateTimeField(auto_now_add=True)
     Price = models.FloatField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'tokenHistory'
 
 
