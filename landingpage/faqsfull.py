@@ -1,6 +1,6 @@
 faqdictionary = {
     "What is Unibursal?":
-    "Unibursal is a way for UVA students to rank things (we're starting with undergrad classes) in a dynamic way, just like the stock market. You can think about it as buying a token when you think its rank is going to rise, or sell it when you think it's high enough.",
+    "Unibursal is a way for UVA students to rank things (we're starting with undergrad classes) in a dynamic way, just like the stock market. You can think about it as buying a token representing a class when you think its rank is going to rise, or selling it when you think it's high enough.",
 
     "What is a token?":
     "A token is something that represents an undergrad class. It's Unibursal's way of quantifying opinion. When you buy a token, you're Liking or Upvoting the class it represents (pushing its price up in relation to the other tokens). When you and others buy and sell tokens representing what you think/thought about the class, the market arrives at a ranking of classes that represents how everyone thinks.",
@@ -12,7 +12,7 @@ faqdictionary = {
     "We guarantee it. And this isn’t some kind of market-speak. The unique protocol that we use means that you literally can’t buy a token that you wouldn’t be able to sell - the tokens are perfectly liquid. Shoot us an email if you want to see the math. On our platform, there doesn’t need to be a token-buyer on the other end if you’re selling, and there doesn’t need to be a token-seller if you’re buying. You’re effectively exercising a vote with a token here, not holding onto financial securities.",
 
     "Why should I trust you?":
-    "This is probably a great time to introduce ourselves. I’m Som, a cofounder, and a second-year at UVA studying economics and computer science. Have any concerns? Want to chat and determine for yourself whether you can trust me? Email me at sm2pvm@virginia.edu.",
+    "This is probably a great time to introduce ourselves (pretend we're talking to you). I’m Som, a cofounder, and a second-year at UVA studying economics and computer science. Have any concerns? Want to chat and determine for yourself whether you can trust me? Email me at sm2pvm@virginia.edu. I’m Kevin, another cofounder, and a second-year studying computer science and math. Feel free to reach out with any concerns - ki4km@virginia.edu.",
 
     "Can I use Unibursal without buying or selling tokens?":
     "If you don’t buy/sell tokens, your opinion isn’t recorded in the market and in prices. But if you want to just see what other students think, you can still use Unibursal without buying/selling.",

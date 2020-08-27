@@ -54,7 +54,7 @@
 			color: #c0ccda;
 		}
 	</style>
-	<!--  END - We recommend to place the above code in head tag of your website html -->
+	<!--  END -->
 
 	<link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet">
 	<!-- <link rel="stylesheet" href="dist/css/style.css"> -->
@@ -108,7 +108,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-			<ul class="navbar-nav">
+			<ul class="navbar-nav ml-auto mr-64">
 				<li class="nav-item">
 					<a class="nav-link" href="#subscribe">Subscribe</a>
 				</li>
@@ -119,15 +119,14 @@
 					<a class="nav-link" href="#faq">FAQ</a>
 				</li>
 			</ul>
-
-			<!-- <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'landingpage:logout_url' %}">Logout</a>
-          </li>
-        </ul> -->
-
 		</div>
 	</nav>
+
+	<!-- <nav class="navbar">
+		<a class="navbar-brand" href="#">
+		  <img src="{% static 'landingpage/dist/images/icon.png' %}" width="30" height="30" alt="">
+		</a>
+	  </nav> -->
 
 	<div id="content">
 		{% if messages %}
@@ -189,7 +188,7 @@
 												<stop stop-color="var(--color-1)" stop-opacity="0" offset="100%" />
 											</linearGradient>
 										</defs>
-										<g fill="none" fill-rule="evenodd">
+										<!-- <g fill="none" fill-rule="evenodd">
 											<path
 												d="M31.12 7.482C28.327 19.146 19.147 28.326 7.483 31.121A12.04 12.04 0 0 1 .88 24.518C3.674 12.854 12.854 3.674 24.518.879a12.04 12.04 0 0 1 6.603 6.603z"
 												fill="var(--color-1)" />
@@ -204,7 +203,7 @@
 													d="M24.518 31.12C12.854 28.327 3.674 19.147.879 7.483A12.015 12.015 0 0 1 3.46 3.57L28.47 28.5a12.016 12.016 0 0 1-3.951 2.62z"
 													fill="url(#logo-c)" />
 											</g>
-										</g>
+										</g> -->
 									</svg>
 								</a>
 							</h1>
@@ -218,7 +217,8 @@
 					<div class="container">
 						<div class="hero-inner">
 							<div class="hero-copy text-center form-div">
-								<h1 class="hero-title mt-0 main-title"><span style="color: #e7e7e7">Welcome to</span>
+								<h1 class="hero-title mt-0 main-title"><span
+										style="color: #e7e7e7; font-family: 'Overpass SemiBold';">Welcome to</span>
 									<span style="color: #fffbfa; font-family: 'Overpass Bold';">Uni</span><span
 										style="color: #e7e7e7; font-family: 'Overpass SemiBold';">bursal</span></h1>
 								<p class="hero-paragraph">Buy and sell tokens of UVA classes!</p>
@@ -232,7 +232,7 @@
 								<div class="sib-form" style="text-align: left; background-color: transparent;">
 									<div id="sib-form-container" class="sib-form-container">
 										<div id="error-message" class="sib-form-message-panel"
-											style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
+											style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
 											<div
 												class="sib-form-message-panel__text sib-form-message-panel__text--center">
 												<svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
@@ -246,7 +246,7 @@
 										</div>
 										<div></div>
 										<div id="success-message" class="sib-form-message-panel"
-											style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
+											style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
 											<div
 												class="sib-form-message-panel__text sib-form-message-panel__text--center">
 												<svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
@@ -266,8 +266,8 @@
 												action="https://0ef92e60.sibforms.com/serve/MUIEAPHWiHRGT3Z2oxCcqW1b2Ybr2B3Z0ItqPQJuC0k85NP70M3TzbRwxdlQ29EF4WIJyVUZWIfWltlOTGa-rEv4TArUmhCV1RhLjJhdHBmY2DlHUWZght-ylWSlzisOxiEDb1J_h1p7O8m3uhD6_evot12zxixv5vCiOYUpyFHH-cGPF-Q9Mwt7HtgecOP20wOy917VAgPEtW48"
 												data-type="subscription">
 												<div class="text-center" style="padding: 8px 0;">
-													<h6>Join our early-access mailing list! Be the first to know
-														about our progress.</h6>
+													<h6>Join our early-access mailing list! Be the first to use
+														Unibursal.</h6>
 													<div class="sib-input sib-form-block">
 														<div class="form__entry entry_block">
 															<div class="form__label-row form__label-row--horizontal">
@@ -281,10 +281,10 @@
 															</div>
 
 															<label class="entry__error entry__error--primary"
-																style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+																style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
 															</label>
 															<label class="entry__specification"
-																style="font-size:12px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#3E4857;">
+																style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#3E4857;">
 															</label>
 														</div>
 													</div>
@@ -598,7 +598,7 @@
 													<text font-family="AppleColorEmoji, Apple Color Emoji"
 														font-size="19" fill="var(--color-1-dark)"
 														transform="translate(28 221)">
-														<tspan x="17" y="36">🤗</tspan>
+														<tspan x="17" y="36"></tspan>
 													</text>
 												</g>
 												<g class="anime-element fadeleft-animation">
@@ -611,7 +611,7 @@
 													<text font-family="AppleColorEmoji, Apple Color Emoji"
 														font-size="16" fill="var(--color-1-dark)"
 														transform="translate(325 257)">
-														<tspan x="13" y="31">👋</tspan>
+														<tspan x="13" y="31"></tspan>
 													</text>
 												</g>
 											</g>
@@ -632,24 +632,31 @@
 									<h2 class="section-title mt-0 powerful">The <span
 											class="feature-question">What</span></h2>
 									<p class="section-paragraph powerful">We’re UVA undergrad students building the
-										<i>first-ever</i> marketplace of opinions. Using our unique market-based platform
+										<i>first-ever</i> marketplace of opinions. Using our unique market-based
+										platform
 										(think of something like the stock market), you and other UVA students can
-										participate by using tokens and demand-supply economics (explained below in the
-										How section) to rank *anything*. But we want to start small, and we want to
+										participate by using tokens <b><i><a href="#faq">(what is a token?)</a></i></b>
+										and demand-supply economics (explained below in the
+										How section) to rank <i>anything</i>. But we want to start small, and we want to
 										prove it works while adding value to the UVA community.
 									</p>
 									<br>
 									<p class="section-paragraph powerful">So the very first opinion asset ranked on
-										<b>Unibursal</b> will be something you’re all too familiar with as a student - UVA
+										<b>Unibursal</b> will be something you’re all too familiar with as a student -
+										UVA
 										courses. You can do this by buying tokens of a UVA course when you think its
 										ranking should be higher (sort of like a weighted upvote, depending on how many
 										you buy), and then selling them when you think they’re at their peak (a weighted
 										downvote). If you, and everyone you know does this, then we’ll arrive at a
 										ranking that represents the opinions of everyone - and as opinions change
 										constantly, depending on the latest information, the market will reflect that.
-										Notice that we did say you need to spend money to vote on <b>Unibursal</b>. You might
-										have some reservations, understandably, but we hope our FAQ helps answer those -
-										and if it doesn’t, ask us another question!
+										Notice that we did say you need to spend money to vote on <b>Unibursal</b>. You
+										might
+										have some reservations, understandably, but we hope our <b><a
+												href="#faq">FAQ</a></b> helps answer those -
+										and if it doesn’t, ask us <b><a
+												href="mailto:unibursal@email.virginia.edu?subject=Unibursal Question">another
+												question!</a></b>
 									</p>
 								</div>
 							</div>
@@ -685,10 +692,12 @@
 										<h4 class="feature-title h3-mobile mb-8 powerful">To Quantify Opinion</h4>
 										<p class="text-sm feature-text">You know what your own opinion is on the classes
 											you’ve taken, and probably that of a few friends and strangers on Reddit,
-											but it’s hard to gauge what *all* your peers think about any class at any
+											but it’s hard to gauge what <i>all</i> your peers think about any class at
+											any
 											given moment (like after a professor drops a surprise quiz??) - and simple
-											Like or Upvote/Downvote systems don’t tell the whole story (did you think
-											the class wasn’t bad, liked it, or loved it?). We’re trying to go somewhere
+											Like or Upvote/Downvote systems don’t tell the whole story (did you find
+											the class ok but not bad, did you like it, did you <b><i><u>love</u></i></b>
+											it?). We’re trying to go somewhere
 											nobody has really gone before, by connecting people’s opinions in a
 											comprehensive, dynamic way that just makes sense.
 										</p>
@@ -723,7 +732,8 @@
 											RateMyProfessors but we built this partly because they, and other
 											review-based systems don’t tell the full story - none of the people we’ve
 											asked have ever left a review on them despite enjoying/disliking certain
-											classes and professors. So at the very least, we want this to be a tool for
+											classes and professors. We certainly haven't. So at the very least, we want
+											this to be a tool for
 											sharing information that other review-based websites have missed.
 										</p>
 									</div>
@@ -756,7 +766,8 @@
 										</h4>
 										<p class="text-sm feature-text">You make a lot of choices based on simple facts,
 											but you probably also make a lot of choices based on other people’s opinions
-											- what movie to watch, and oftentimes, what class to take. We hope <b>Unibursal</b>
+											- what movie to watch, what party to go to, and oftentimes, what class to take. We hope
+											<b>Unibursal</b>
 											helps you make those decisions and take those actions based on an accurate
 											view of what the community’s opinion is. And we hope that those of you with
 											an opinion to offer choose to participate - you have a chance to profit!
@@ -786,13 +797,16 @@
 												</g>
 											</svg>
 										</div>
-										<h4 class="feature-title h3-mobile mb-8 powerful">...To Help You Answer</h4>
-										<p class="text-sm feature-text">
-											1) What do you think about __?
+										<h4 class="feature-title h3-mobile mb-8 powerful">And...</h4>
+										<p class="text-sm feature-text">We’ll do <i>everything</i> soon, but right now
+											we just want
+											to be able to answer these 3 questions: <br><br>
+											1) What do <i>you</i> think about this class?
 											<br>
-											2) What does UVA think about __?
+											2) What does the <i>rest</i> of UVA think?
 											<br>
-											3) How can you use that information?
+											3) Can you make any decision or take any action based on that
+											information?
 											<br>
 											<br>
 											If you've got an answer to those questions - or want one - we want you to
@@ -824,14 +838,10 @@
 										<h1 class="powerful how-headings">01</h1>
 									</div>
 									<div class="text-left col-11">
-										<p class="section-paragraph powerful">In the <b><a
-													href="https://www.investopedia.com/articles/investing/082614/how-stock-market-works.asp">stock
-													market</a></b>, you usually buy a share of a company
-											when you think its value is going to go up. When enough people do that, its
-											demand
-											goes up, raising its price. Through supply-demand economics, the market
-											arrives at a
-											price.</p>
+										<p class="section-paragraph powerful">Buy a token of a class when you have a
+											positive opinion of a class and think others do too, pushing its price up.
+											<b><i><a href="#faq">What value do I get from holding a token?</a></i></b>
+										</p>
 									</div>
 								</div>
 
@@ -840,15 +850,12 @@
 										<h1 class="powerful how-headings">02</h1>
 									</div>
 									<div class="text-left col-11">
-										<p class="section-paragraph powerful">We think this is powerful when applied to
-											opinions because you, as an individual,
-											can exercise a weighted upvote (a demand-side push) on a token that
-											represents
-											something like a course, pushing its price up and ranking it higher, or you
-											can
-											exercise a downvote whenever you think it has reached a high enough rank and
-											want to
-											sell it, pushing its price ever-so-slightly down.</p>
+										<p class="section-paragraph powerful">Sell the token when you feel that it’s
+											accurately ranked compared to other classes on the market (or simply, when
+											you don’t think its price is going to go up further). <b><i><a
+														href="#faq">How do I know I’ll be
+														able to actually sell a token once I’ve bought it?</a></i></b>
+										</p>
 									</div>
 								</div>
 
@@ -1020,16 +1027,17 @@
 					</div>
 				</section> -->
 
-		<!-- <section class="newsletter section text-dark">
-					<div class="container-sm">
-						<div class="newsletter-inner section-inner">
-							<div class="newsletter-header text-center">
-								<h2 class="section-title mt-0">Stay in the know</h2>
-								<p class="section-paragraph">Lorem ipsum is common placeholder text used to demonstrate
-									the
-									graphic elements of a document or visual presentation.</p>
-							</div>
-							<div class="footer-form newsletter-form field field-grouped">
+		<section class="newsletter section text-dark">
+			<div class="container-sm">
+				<div class="newsletter-inner section-inner">
+					<div class="newsletter-header text-center">
+						<h2 class="section-title mt-0">Stay in the know</h2>
+						<a href="/"><img class="mx-auto d-block mb-32"
+								src="{% static 'landingpage/dist/images/footericon.png' %}" alt="Unibursal"></img></a>
+					</div>
+
+
+					<!-- <div class="footer-form newsletter-form field field-grouped">
 								<div class="control control-expanded">
 									<input class="input" type="email" name="email"
 										placeholder="Your best email&hellip;">
@@ -1038,55 +1046,25 @@
 									<a class="button button-primary button-block button-shadow" href="#">Early
 										access</a>
 								</div>
-							</div>
-						</div>
+							</div> -->
+					<div class="text-center">
+						<a href="#EMAIL">
+							<button style="height: 40%;"
+								class="mx-auto faq-title button button-primary button-block submit-button">Get Early
+								Access</button>
+						</a>
 					</div>
-				</section> -->
+				</div>
+			</div>
+		</section>
 		</main>
 
 		<footer class="site-footer">
 			<div class="container">
 				<div class="site-footer-inner has-top-divider">
 					<div class="brand footer-brand">
-						<a href="#">
-							<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-								<title>April</title>
-								<defs>
-									<linearGradient x1="114.674%" y1="39.507%" x2="-52.998%" y2="39.507%"
-										id="logo-footer-a">
-										<stop stop-color="var(--color-4)" offset="0%" />
-										<stop stop-color="var(--color-4)" stop-opacity="0" offset="100%" />
-									</linearGradient>
-									<linearGradient x1="93.05%" y1="19.767%" x2="15.034%" y2="85.765%"
-										id="logo-footer-b">
-										<stop stop-color="var(--color-4)" offset="0%" />
-										<stop stop-color="var(--color-4-light)" offset="100%" />
-									</linearGradient>
-									<linearGradient x1="32.716%" y1="-20.176%" x2="32.716%" y2="148.747%"
-										id="logo-footer-c">
-										<stop stop-color="var(--color-1)" offset="0%" />
-										<stop stop-color="var(--color-1)" stop-opacity="0" offset="100%" />
-									</linearGradient>
-								</defs>
-								<g fill="none" fill-rule="evenodd">
-									<path
-										d="M31.12 7.482C28.327 19.146 19.147 28.326 7.483 31.121A12.04 12.04 0 0 1 .88 24.518C3.674 12.854 12.854 3.674 24.518.879a12.04 12.04 0 0 1 6.603 6.603z"
-										fill="var(--color-1)" />
-									<path
-										d="M28.874 3.922l-24.91 24.99a12.026 12.026 0 0 1-3.085-4.394C3.674 12.854 12.854 3.674 24.518.879a12.025 12.025 0 0 1 4.356 3.043z"
-										fill="url(#logo-footer-a)" />
-									<g opacity=".88">
-										<path
-											d="M31.12 24.518a12.04 12.04 0 0 1-6.602 6.603C12.854 28.326 3.674 19.146.879 7.482A12.04 12.04 0 0 1 7.482.88c11.664 2.795 20.844 11.975 23.639 23.639z"
-											fill="url(#logo-footer-b)" />
-										<path
-											d="M24.518 31.12C12.854 28.327 3.674 19.147.879 7.483A12.015 12.015 0 0 1 3.46 3.57L28.47 28.5a12.016 12.016 0 0 1-3.951 2.62z"
-											fill="url(#logo-footer-c)" />
-									</g>
-								</g>
-							</svg>
-						</a>
 					</div>
+
 					<ul class="footer-links list-reset">
 						<li>
 							<a href="mailto:unibursal@email.virginia.edu">Contact Us</a>
@@ -1094,15 +1072,9 @@
 						<li>
 							<a href="#">About us</a>
 						</li>
-						<li>
-							<a href="#">FAQ's</a>
-						</li>
-						<li>
-							<a href="#">Support</a>
-						</li>
 					</ul>
 					<ul class="footer-social-links list-reset">
-						<li>
+						<!-- <li>
 							<a href="#">
 								<span class="screen-reader-text">Facebook</span>
 								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -1111,8 +1083,8 @@
 										fill="var(--color-3)" />
 								</svg>
 							</a>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="#">
 								<span class="screen-reader-text">Twitter</span>
 								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -1121,8 +1093,8 @@
 										fill="var(--color-3)" />
 								</svg>
 							</a>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="#">
 								<span class="screen-reader-text">Google</span>
 								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -1131,9 +1103,9 @@
 										fill="var(--color-3)" />
 								</svg>
 							</a>
-						</li>
+						</li> -->
 					</ul>
-					<div class="footer-copyright">&copy; 2020 Unibursal, all rights reserved</div>
+					<div class="footer-copyright">&copy; Unibursal</div>
 				</div>
 			</div>
 
