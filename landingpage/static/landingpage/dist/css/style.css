@@ -79,13 +79,14 @@ hr.dotted {
 }
 
 .navbar {
-    background-color: var(--color-2);
+    background-color: none;
+    /* background-color: var(--color-2); */
     /*whichever you want*/
     color: #fff;
 }
 
 .navbar-nav {
-  padding-left: 52em;
+  padding-left: 0em;
 }
 
 .navbar-light {
@@ -122,6 +123,7 @@ hr.dotted {
 }
 
 .navbar-brand {
+    width: 30%;
     height: auto;
 }
 
