@@ -2,6 +2,8 @@
 {% load crispy_forms_tags %}
 
 {% block form %}
+<div style="display: none">
+  <!-- delete this div wrapper to redisplay login -->
   <form action="" method="post">
     {% csrf_token %}
     <!-- Inner Divs -->
@@ -17,7 +19,7 @@
             </div>
           </div>
 
-           <div class="p-2">
+          <div class="p-2">
             <div class="form-group">
               {{ form.password|as_crispy_field }}
             </div>
@@ -30,12 +32,12 @@
 
     <!-- Place Order Button -->
     <div class="control text-center">
-    <button type="submit" class="button button-primary button-block submit-button">Login</button>
+      <button type="submit" class="button button-primary button-block submit-button">Login</button>
     </div>
 
   </form>
-
-<br>
-<p>Don't have an account? Register <a href="{% url 'landingpage:register_url' %}">Here</a>!</p>
+  <br>
+  <p>Don't have an account? Register <a href="{% url 'landingpage:register_url' %}">Here</a>!</p>
+</div>
 
 {% endblock form %}
