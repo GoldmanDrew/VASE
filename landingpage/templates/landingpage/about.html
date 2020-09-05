@@ -1,0 +1,72 @@
+{% extends 'landingpage/base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock %}
+
+{% block main %}
+<section class="hero section" id="subscribe">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-title-2 form-div text-center">
+                <h1 class="hero-title mt-0 main-title">About Us</h1>
+                <!-- <p class="hero-paragraph">A token-based marketplace of opinions</p> -->
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block body %}
+<section class="features section feature-fill" id="about">
+    <div class="container">
+        <div class="features-inner section-inner">
+            <div class="features-header text-center">
+                <div class="container-sm">
+                    <p class="section-paragraph powerful"><b>Our mission is to efficiently quantify opinion in a dynamic
+                            way.</b> <br><br>A couple of months ago, Unibursal, this idea of a stock exchange-esque
+                        marketplace
+                        for <i>opinions</i> was just a crazy idea. Don't get us wrong, it's still just as crazy, but
+                        since then the
+                        two of us have been building, validating our idea with smart people, and building some more. And
+                        now, we
+                        can honestly say that there is <b><i><a target="blank"
+                                    href="https://www.dictionary.com/browse/literally#:~:text=without%20exaggeration%20or%20inaccuracy">literally</a></i></b>
+                        nothing else out there like Unibursal. Here's a little bit about us:
+                    </p>
+                    <br><br>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div
+                                    style="background-image: url({% static 'landingpage/dist/images/headshot-som.png' %}); background-size: cover; height: 350px; width: 350px; background-color: black; border-radius: 100%; margin-bottom: 100px; margin-left: -100px; float: left;">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h3 class="powerful">Som Mohapatra</h3>
+                                <h4 class="powerful m-0">Cofounder</h4>
+                                <p class="powerful"><br>UVA 2023. Economics and Computer Science. I'm An RA at Dillard
+                                    and an analyst at the McIntire Investment Institute and Global Markets Group UVA
+                                    clubs. You can find me directly at <a
+                                        href="mailto:sm2pvm@virginia.edu">sm2pvm@virginia.edu</a> and (804)476-2867</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="powerful">Kevin Ivey</h3>
+                                <h4 class="powerful m-0">Cofounder</h4>
+                                <p class="powerful"><br>Also UVA 2023. Computer Science and Math. I interned at Amazon over the summer in its Payments division. Feel free to reach out to me at <a
+                                    href="mailto:ki4km@virginia.edu">ki4km@virginia.edu</a> and (347)762-3113.</p>
+                            </div>
+                            <div class="col">
+                                <div
+                                    style="background-image: url({% static 'landingpage/dist/images/headshot-kevin.jpg' %}); background-size: cover; height: 350px; width: 350px; background-color: black; border-radius: 100%; margin-bottom: 100px; margin-right: -100px; float: left;">
+                                    <img></img>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

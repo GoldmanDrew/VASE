@@ -21,8 +21,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegistrationForm     # imports the format for Login/Register
 from .faqsfull import faqdictionary
 
-
-
 def login_request(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
@@ -53,6 +51,8 @@ def logout_request(request):
     messages.success(request, "Logged out successfully")
     return redirect("landingpage:login_url")
 
+def about(request):
+    return render(request, "landingpage/about.html")
 
 class RegisterView(View):
     form_class = RegistrationForm

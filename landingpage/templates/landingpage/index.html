@@ -10,52 +10,6 @@
 
 	<title>Unibursal</title>
 	<link rel="icon" type="image/png" href="{% static 'landingpage/dist/images/icon.png' %}" />
-
-	<style>
-		@font-face {
-			font-display: block;
-			font-family: Roboto;
-			src: url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
-		}
-
-		@font-face {
-			font-display: fallback;
-			font-family: Roboto;
-			font-weight: 600;
-			src: url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-		}
-
-		@font-face {
-			font-display: fallback;
-			font-family: Roboto;
-			font-weight: 700;
-			src: url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-		}
-
-		#sib-container input:-ms-input-placeholder {
-			text-align: left;
-			font-family: "Helvetica", sans-serif;
-			color: #c0ccda;
-		}
-
-		#EMAIL {
-			color: #000000;
-		}
-
-		#sib-container input::placeholder {
-			text-align: left;
-			font-family: "Helvetica", sans-serif;
-			color: #c0ccda;
-		}
-
-		#sib-container textarea::placeholder {
-			text-align: left;
-			font-family: "Helvetica", sans-serif;
-			color: #c0ccda;
-		}
-	</style>
-	<!--  END -->
-
 	<link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet">
 	<!-- <link rel="stylesheet" href="dist/css/style.css"> -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -69,8 +23,6 @@
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- <link rel="stylesheet" href="{% static 'landingpage/index.css' %}"> -->
 	<!-- <link rel="import" href="{% static 'landingpage/faqstest.js' %}"> -->
-	<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
 	<!-- <script type="text/javascript" src="{% static 'landingpage/src/faqslist.js' %}"></script> -->
 
 
@@ -110,6 +62,9 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav ml-auto mr-64">
 				<li class="nav-item">
+					<a class="nav-link" href="/about-us/">About Us</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="#subscribe">Subscribe</a>
 				</li>
 				<li class="nav-item">
@@ -121,12 +76,6 @@
 			</ul>
 		</div>
 	</nav>
-
-	<!-- <nav class="navbar">
-		<a class="navbar-brand" href="#">
-		  <img src="{% static 'landingpage/dist/images/icon.png' %}" width="30" height="30" alt="">
-		</a>
-	  </nav> -->
 
 	<div id="content">
 		{% if messages %}
@@ -227,10 +176,11 @@
 								<div class="container-fluid text-center form-div">
 									{% block form %} {% endblock form %}
 								</div>
-								
+
 								<!-- Email form -->
-								<iframe src="https://cdn.forms-content.sg-form.com/d570c437-ed63-11ea-99b5-0284c13a2419" height="390" width="540" 
-										title="SendGrid Early-Access Signup"></iframe>
+								<iframe id="EMAIL"
+									src="https://cdn.forms-content.sg-form.com/d570c437-ed63-11ea-99b5-0284c13a2419"
+									height="390" width="540" title="SendGrid Early-Access Signup"></iframe>
 								<!-- Form END-->
 
 							</div>
@@ -539,29 +489,29 @@
 						</div>
 					</div>
 				</section>
-
-
 				<section class="features section feature-fill" id="about">
 					<div class="container">
 						<div class="features-inner section-inner">
 							<div class="features-header text-center">
-								<div class="container-sm">
+								<div class="container-sm" id="whatModule">
 									<h2 class="section-title mt-0 powerful">The <span
 											class="feature-question">What</span></h2>
-									<p class="section-paragraph powerful">We’re UVA undergrad students building the
+									<p class="section-paragraph powerful">We’re a couple of <b><a href="/about-us/">UVA
+												undergrad students</a></b> building the
 										first-ever marketplace of opinions. Using our unique market-based
 										platform
 										(think of something like the stock market, but not for shares of companies), you
-										and other UVA students use tokens <b><i><a href="#faq">(what is a
-													token?)</a></i></b>
-										and demand-supply economics (explained below in the
-										How section) to rank <i>anything</i>. But we want to start small, and we want to
-										prove it works while adding value to the UVA community.
+										and other UVA students use <b><i><a href="#faq">tokens</a></i></b>
+										and demand-supply economics to rank <i>anything</i>. But we want to start small,
+										and we want to prove it works while adding value to the UVA community.
 									</p>
 									<br>
 									<p class="section-paragraph powerful">So the very first opinion asset ranked on
 										<b>Unibursal</b> will be something you’re all too familiar with - UVA
-										courses. When you think a UVA course should be ranked higher, you buy tokens of
+										courses. </p>
+									<p class="section-paragraph powerful collapse" id="whatCollapse"
+										aria-expanded="false">
+										When you think a UVA course should be ranked higher, you buy tokens of
 										that course - sort of like a weighted upvote, depending on how many you buy -
 										and
 										then selling them when you think they’re at their peak (a weighted
@@ -574,7 +524,12 @@
 												href="#faq">FAQ</a></b> to learn more, or reach out to us with <b><a
 												href="mailto:unibursal@email.virginia.edu?subject=Unibursal Question">another
 												question!</a></b>
+
+										<br>
+										<br>
 									</p>
+									<a role="button" class="collapsed" data-toggle="collapse" href="#whatCollapse"
+										aria-expanded="false" aria-controls="whatCollapse"></a>
 								</div>
 							</div>
 							<hr class="dotted">
@@ -584,7 +539,7 @@
 									class="feature-question">Why</span></h2>
 							<div class="features-wrap">
 								<div class="feature text-center is-revealing">
-									<div class="feature-inner">
+									<div class="feature-inner" id="whyModule-1">
 										<div class="feature-icon">
 											<!-- <svg width="88" height="88" xmlns="http://www.w3.org/2000/svg">
 												<g fill="none" fill-rule="nonzero">
@@ -607,9 +562,11 @@
 											</svg>
 										</div>
 										<h4 class="feature-title h3-mobile mb-8 powerful">To Quantify Opinion</h4>
-										<p class="text-sm feature-text">You know what your own opinion is on the classes
+										<p class="text-sm feature-text mb-0">You know what your own
+											opinion is on the classes
 											you’ve taken, and maybe you know the opinion of a few friends and strangers
-											on Reddit, but it’s pretty much impossible to gauge what <i>all</i> your
+											on Reddit, but it’s pretty much impossible to gauge </p>
+										<p class="text-sm feature-text collapse" id="whyCollapse-1">what <i>all</i> your
 											peers think about any class at
 											any given moment (like after a professor drops a surprise quiz??) - and
 											simple <i>Like</i> and <i>Upvote/Downvote</i> systems don’t tell the whole
@@ -618,11 +575,13 @@
 											nobody has gone before, connecting people’s opinions in a
 											comprehensive, dynamic way that just makes sense.
 										</p>
+										<a role="button" class="collapsed" data-toggle="collapse" href="#whyCollapse-1"
+											aria-expanded="false" aria-controls="whyCollapse-1"></a>
 									</div>
 								</div>
 
 								<div class="feature text-center is-revealing">
-									<div class="feature-inner">
+									<div class="feature-inner" id="whyModule-2">
 										<div class="feature-icon">
 											<!-- <svg width="88" height="88" xmlns="http://www.w3.org/2000/svg">
 												<g fill="none" fill-rule="nonzero">
@@ -645,10 +604,12 @@
 											</svg>
 										</div>
 										<h4 class="feature-title h3-mobile mb-8 powerful">To Share Information</h4>
-										<p class="text-sm feature-text">Listen, we love theCourseForum and
+										<p class="text-sm feature-text mb-0">Listen, we love theCourseForum and
 											RateMyProfessors but part of the reason we built this platform is because
 											they, and other
-											review-based systems don’t tell the full story - none of the people we’ve
+											review-based systems don’t tell the full story - </p>
+										<p class="text-sm feature-text collapse" id="whyCollapse-2">none of the people
+											we’ve
 											asked have ever left a review on them despite enjoying or disliking a number
 											of
 											classes and professors. So at the very least, we hope the unique structure
@@ -656,11 +617,13 @@
 											that
 											other review-based websites have missed.
 										</p>
+										<a role="button" class="collapsed" data-toggle="collapse" href="#whyCollapse-2"
+											aria-expanded="false" aria-controls="whyCollapse-2"></a>
 									</div>
 								</div>
 
 								<div class="feature text-center is-revealing">
-									<div class="feature-inner">
+									<div class="feature-inner" id="whyModule-3">
 										<div class="feature-icon">
 											<!-- <svg width="88" height="88" xmlns="http://www.w3.org/2000/svg">
 												<g fill="none" fill-rule="nonzero">
@@ -684,19 +647,24 @@
 										</div>
 										<h4 class="feature-title h3-mobile mb-8 powerful">To Empower Decision-Making
 										</h4>
-										<p class="text-sm feature-text">You make a lot of choices based on simple facts,
+										<p class="text-sm feature-text mb-0">You make a lot of choices based on simple
+											facts,
 											but you also make a lot of choices based on other people’s opinions
-											- what shows to binge, where to get dinner, what party to go to, and
+											- </p>
+										<p class="text-sm feature-text collapse" id="whyCollapse-3">what shows to binge,
+											where to get dinner, what party to go to, and
 											oftentimes, what class to take. We hope
 											<b>Unibursal</b>
 											helps you make those decisions based on an accurate
 											view of the community’s opinion. And if you do have an opinion to offer, you
 											have a chance to profit!
 										</p>
+										<a role="button" class="collapsed" data-toggle="collapse" href="#whyCollapse-3"
+											aria-expanded="false" aria-controls="whyCollapse-3"></a>
 									</div>
 								</div>
 								<div class="feature text-center is-revealing" style="visibility: visible;">
-									<div class="feature-inner">
+									<div class="feature-inner" id="whyModule-4">
 										<div class="feature-icon">
 											<!-- <svg width="88" height="88" xmlns="http://www.w3.org/2000/svg">
 												<g fill="none" fill-rule="nonzero">
@@ -718,10 +686,12 @@
 												</g>
 											</svg>
 										</div>
-										<h4 class="feature-title h3-mobile mb-8 powerful">And...</h4>
-										<p class="text-sm feature-text">We’ve set our sights on gauging all sorts of
+										<h4 class="feature-title h3-mobile mb-8 powerful">And More</h4>
+										<p class="text-sm feature-text">We’ve set our sights
+											on gauging all sorts of
 											ideas and opinions soon, but right now our focus is on answering these
-											course-related questions: <br><br>
+											course-related questions:</p>
+										<p class="text-sm feature-text collapse" id="whyCollapse-4">
 											1) What do <i>you</i> think about this class?
 											<br>
 											2) What does the <i>rest</i> of UVA think about it?
@@ -733,6 +703,8 @@
 											If you've got an answer to those questions - or want one - we want you to
 											join <b>Unibursal</b>
 										</p>
+										<a role="button" class="collapsed" data-toggle="collapse" href="#whyCollapse-4"
+											aria-expanded="false" aria-controls="whyCollapse-4"></a>
 									</div>
 								</div>
 							</div>
@@ -759,8 +731,53 @@
 										<h1 class="powerful how-headings">01</h1>
 									</div>
 									<div class="text-left col-11">
+										<svg viewBox="-1500 200 500 500" width="70" height="70"
+											xmlns="http://www.w3.org/2000/svg">
+											<g>
+												<title>background</title>
+												<rect fill="none" id="canvas_background" height="602" width="802" y="-1"
+													x="-1" />
+											</g>
+											<g>
+												<title>Layer 1</title>
+												<path id="svg_1" fill="#a3c4a1"
+													d="m407.35938,327.44141c26.28906,-34.27735 40.57031,-76.2461 40.64062,-119.44141l0,48c-0.07812,42.82031 -14.12109,84.44531 -40,118.55859l0,-46.55859l-0.64062,-0.55859zm0,0" />
+												<path id="svg_2" fill="#84b082"
+													d="m408,328l0,46.55859c-11.43359,15.31641 -24.89062,29.01563 -40,40.72266l0,-47.28125l-0.39844,-0.48047c14.98047,-11.52734 28.35157,-25.00781 39.75782,-40.07812l0.64062,0.55859zm0,0" />
+												<path id="svg_3" fill="#517d4f"
+													d="m224,0c123.67969,0 224,93.12109 224,208c-0.07031,43.19531 -14.35156,85.16406 -40.64062,119.44141c-11.40625,15.07031 -24.77735,28.55078 -39.75782,40.07812c-12.27343,9.64453 -25.54687,17.9336 -39.60156,24.71875c-15.32422,7.47266 -31.41797,13.24219 -48,17.20313c-36.82031,8.74609 -75.17969,8.74609 -112,0c-16.58203,-3.96094 -32.67578,-9.73047 -48,-17.20313c-14.05078,-6.78515 -27.32812,-15.07422 -39.60156,-24.71875c-14.98047,-11.52734 -28.35156,-25.00781 -39.75781,-40.07812c-26.28907,-34.27735 -40.57032,-76.2461 -40.64063,-119.44141c0,-114.87891 100.32031,-208 224,-208zm0,0" />
+												<path id="svg_4" fill="#a3c4a1"
+													d="m368,368l0,47.28125c-12.36719,9.71484 -25.75,18.05469 -39.92187,24.87891l-0.07813,-0.16016l0,-47.76172c14.05469,-6.78515 27.32813,-15.07422 39.60156,-24.71875l0.39844,0.48047zm0,0" />
+												<path id="svg_5" fill="#84b082"
+													d="m328,440l0.07813,0.16016c-15.23829,7.47265 -31.25391,13.23828 -47.75782,17.19922l-0.32031,-1.35938l0,-46.55859c16.58203,-3.96094 32.67578,-9.73047 48,-17.20313l0,47.76172zm0,0" />
+												<path id="svg_6" fill="#a3c4a1"
+													d="m280.32031,457.35938c-18.44531,4.42187 -37.35156,6.64843 -56.32031,6.64062l0,-48c18.85938,0.03516 37.66016,-2.16797 56,-6.55859l0,46.55859l0.32031,1.35938zm0,0" />
+												<path id="svg_7" fill="#84b082"
+													d="m224,416l0,48c-18.96875,0.00781 -37.87109,-2.21875 -56.32031,-6.64062l0.32031,-1.35938l0,-46.55859c18.33984,4.39062 37.14063,6.59375 56,6.55859zm0,0" />
+												<path id="svg_8" fill="#a3c4a1"
+													d="m168,409.44141l0,46.55859l-0.32031,1.35938c-16.50391,-3.96094 -32.51953,-9.72657 -47.75781,-17.19922l0.07812,-0.16016l0,-47.76172c15.32422,7.47266 31.41797,13.24219 48,17.20313zm0,0" />
+												<path id="svg_9" fill="#84b082"
+													d="m80.39844,367.51953c12.27344,9.64453 25.55078,17.9336 39.60156,24.71875l0,47.76172l-0.07812,0.16016c-14.15235,-6.85157 -27.53516,-15.19141 -39.92188,-24.87891l0,-47.28125l0.39844,-0.48047zm0,0" />
+												<path id="svg_10" fill="#a3c4a1"
+													d="m40.64063,327.44141c11.40625,15.07031 24.77734,28.55078 39.75781,40.07812l-0.39844,0.48047l0,47.28125c-15.10937,-11.70703 -28.56641,-25.40625 -40,-40.72266l0,-46.55859l0.64063,-0.55859zm0,0" />
+												<path id="svg_11" fill="#84b082"
+													d="m0,208c0.07031,43.19531 14.35156,85.16406 40.64063,119.44141l-0.64063,0.55859l0,46.55859c-25.87891,-34.11328 -39.92187,-75.73828 -40,-118.55859l0,-48zm0,0" />
+												<path id="svg_12" fill="#011638"
+													d="m400,208c0,-88.36719 -78.79687,-160 -176,-160s-176,71.63281 -176,160s78.79688,160 176,160s176,-71.63281 176,-160zm0,0" />
+												<g id="svg_13" fill="#ffcb5a">
+													<path fill="#03317d" id="svg_14"
+														d="m333.94531,301.83203l-10.9375,-11.66406c9.34766,-8.71094 17.26953,-18.83984 23.46485,-30.01563l14.01562,7.69532c-6.99609,12.66015 -15.95703,24.13281 -26.54297,33.98437zm0,0" />
+													<path fill="#03317d" id="svg_15"
+														d="m224,344c-83.81641,0 -152,-61.00781 -152,-136s68.18359,-136 152,-136s152,61.00781 152,136l-16,0c0,-66.16797 -61.00781,-120 -136,-120s-136,53.83203 -136,120s61.00781,120 136,120c26.6875,0.12891 52.91016,-6.94922 75.90234,-20.49609l8.19532,13.7539c-25.47266,15.01563 -54.52735,22.875 -84.09766,22.74219zm0,0" />
+												</g>
+												<path stroke="null" id="svg_23"
+													d="m162.5,109.7396l68.5,-108.23957l68.5,108.23957l-34.25,0l0,108.7604l-68.5,0l0,-108.7604l-34.25,0z"
+													stroke-opacity="null" stroke-width="NaN" fill="#ce796b" />
+											</g>
+										</svg>
 										<p class="section-paragraph powerful">Buy a token of a class that you have a
-											positive opinion of and that you think others do too. This pushes its price up.
+											positive opinion of and that you think others do too. This pushes its price
+											up.
 											<b><i><a href="#faq">What value do I get from holding a token?</a></i></b>
 										</p>
 									</div>
@@ -771,7 +788,55 @@
 										<h1 class="powerful how-headings">02</h1>
 									</div>
 									<div class="text-left col-11">
-										<p class="section-paragraph powerful">Sell the token when you feel that the class is
+										<svg viewBox="-1500 200 500 500" width="70" height="70"
+											xmlns="http://www.w3.org/2000/svg">
+
+											<g>
+												<title>background</title>
+												<rect fill="none" id="canvas_background" height="468" width="451" y="-1"
+													x="-1" />
+											</g>
+											<g>
+												<title>Layer 1</title>
+												<path id="svg_1" fill="#a3c4a1"
+													d="m408.35938,328.44141c26.28906,-34.27735 40.57031,-76.2461 40.64062,-119.44141l0,48c-0.07812,42.82031 -14.12109,84.44531 -40,118.55859l0,-46.55859l-0.64062,-0.55859zm0,0" />
+												<path id="svg_2" fill="#84b082"
+													d="m409,329l0,46.55859c-11.43359,15.31641 -24.89062,29.01563 -40,40.72266l0,-47.28125l-0.39844,-0.48047c14.98047,-11.52734 28.35157,-25.00781 39.75782,-40.07812l0.64062,0.55859zm0,0" />
+												<path id="svg_3" fill="#517d4f"
+													d="m225,1c123.67969,0 224,93.12109 224,208c-0.07031,43.19531 -14.35156,85.16406 -40.64062,119.44141c-11.40625,15.07031 -24.77735,28.55078 -39.75782,40.07812c-12.27343,9.64453 -25.54687,17.9336 -39.60156,24.71875c-15.32422,7.47266 -31.41797,13.24219 -48,17.20313c-36.82031,8.74609 -75.17969,8.74609 -112,0c-16.58203,-3.96094 -32.67578,-9.73047 -48,-17.20313c-14.05078,-6.78515 -27.32812,-15.07422 -39.60156,-24.71875c-14.98047,-11.52734 -28.35156,-25.00781 -39.75781,-40.07812c-26.28907,-34.27735 -40.57032,-76.2461 -40.64063,-119.44141c0,-114.87891 100.32031,-208 224,-208zm0,0" />
+												<path id="svg_4" fill="#a3c4a1"
+													d="m369,369l0,47.28125c-12.36719,9.71484 -25.75,18.05469 -39.92187,24.87891l-0.07813,-0.16016l0,-47.76172c14.05469,-6.78515 27.32813,-15.07422 39.60156,-24.71875l0.39844,0.48047zm0,0" />
+												<path id="svg_5" fill="#84b082"
+													d="m329,441l0.07813,0.16016c-15.23829,7.47265 -31.25391,13.23828 -47.75782,17.19922l-0.32031,-1.35938l0,-46.55859c16.58203,-3.96094 32.67578,-9.73047 48,-17.20313l0,47.76172zm0,0" />
+												<path id="svg_6" fill="#a3c4a1"
+													d="m281.32031,458.35938c-18.44531,4.42187 -37.35156,6.64843 -56.32031,6.64062l0,-48c18.85938,0.03516 37.66016,-2.16797 56,-6.55859l0,46.55859l0.32031,1.35938zm0,0" />
+												<path id="svg_7" fill="#84b082"
+													d="m225,417l0,48c-18.96875,0.00781 -37.87109,-2.21875 -56.32031,-6.64062l0.32031,-1.35938l0,-46.55859c18.33984,4.39062 37.14063,6.59375 56,6.55859zm0,0" />
+												<path id="svg_8" fill="#a3c4a1"
+													d="m169,410.44141l0,46.55859l-0.32031,1.35938c-16.50391,-3.96094 -32.51953,-9.72657 -47.75781,-17.19922l0.07812,-0.16016l0,-47.76172c15.32422,7.47266 31.41797,13.24219 48,17.20313zm0,0" />
+												<path id="svg_9" fill="#84b082"
+													d="m81.39844,368.51953c12.27344,9.64453 25.55078,17.9336 39.60156,24.71875l0,47.76172l-0.07812,0.16016c-14.15235,-6.85157 -27.53516,-15.19141 -39.92188,-24.87891l0,-47.28125l0.39844,-0.48047zm0,0" />
+												<path id="svg_10" fill="#a3c4a1"
+													d="m41.64063,328.44141c11.40625,15.07031 24.77734,28.55078 39.75781,40.07812l-0.39844,0.48047l0,47.28125c-15.10937,-11.70703 -28.56641,-25.40625 -40,-40.72266l0,-46.55859l0.64063,-0.55859zm0,0" />
+												<path id="svg_11" fill="#84b082"
+													d="m1,209c0.07031,43.19531 14.35156,85.16406 40.64063,119.44141l-0.64063,0.55859l0,46.55859c-25.87891,-34.11328 -39.92187,-75.73828 -40,-118.55859l0,-48zm0,0" />
+												<path id="svg_12" fill="#011638"
+													d="m401,209c0,-88.36719 -78.79687,-160 -176,-160s-176,71.63281 -176,160s78.79688,160 176,160s176,-71.63281 176,-160zm0,0" />
+												<g id="svg_13" fill="#ffcb5a">
+													<path fill="#03317d" id="svg_14"
+														d="m334.94531,302.83203l-10.9375,-11.66406c9.34766,-8.71094 17.26953,-18.83984 23.46485,-30.01563l14.01562,7.69532c-6.99609,12.66015 -15.95703,24.13281 -26.54297,33.98437zm0,0" />
+													<path fill="#03317d" id="svg_15"
+														d="m225,345c-83.81641,0 -152,-61.00781 -152,-136s68.18359,-136 152,-136s152,61.00781 152,136l-16,0c0,-66.16797 -61.00781,-120 -136,-120s-136,53.83203 -136,120s61.00781,120 136,120c26.6875,0.12891 52.91016,-6.94922 75.90234,-20.49609l8.19532,13.7539c-25.47266,15.01563 -54.52735,22.875 -84.09766,22.74219zm0,0" />
+												</g>
+												<path stroke="null"
+													transform="rotate(-180 227.50000000000003,317.9999694824219) "
+													id="svg_23"
+													d="m151.00001,317.71314l76.5,-119.21317l76.5,119.21317l-38.25,0l0,119.7868l-76.49999,0l0,-119.7868l-38.25,0z"
+													stroke-opacity="null" stroke-width="NaN" fill="#ce796b" />
+											</g>
+										</svg>
+										<p class="section-paragraph powerful">Sell the token when you feel that the
+											class is
 											accurately ranked compared to other classes on the market - or simply, when
 											you don’t think its price is going to go up any further. <b><i><a
 														href="#faq">How do I know I’ll be
@@ -785,6 +850,128 @@
 										<h1 class="powerful how-headings">03</h1>
 									</div>
 									<div class="text-left col-11">
+										<svg viewBox="-1100 -350 500 500" width="70" height="70"
+											xmlns="http://www.w3.org/2000/svg">
+											<g>
+												<title>background</title>
+												<rect x="-1" y="-1" width="451" height="468" id="canvas_background"
+													fill="none" />
+											</g>
+
+											<g>
+												<title>Layer 1</title>
+												<path
+													d="m408.35938,328.44141c26.28906,-34.27735 40.57031,-76.2461 40.64062,-119.44141l0,48c-0.07812,42.82031 -14.12109,84.44531 -40,118.55859l0,-46.55859l-0.64062,-0.55859zm0,0"
+													fill="#a3c4a1" id="svg_1" />
+												<path
+													d="m409,329l0,46.55859c-11.43359,15.31641 -24.89062,29.01563 -40,40.72266l0,-47.28125l-0.39844,-0.48047c14.98047,-11.52734 28.35157,-25.00781 39.75782,-40.07812l0.64062,0.55859zm0,0"
+													fill="#84b082" id="svg_2" />
+												<path
+													d="m225,1c123.67969,0 224,93.12109 224,208c-0.07031,43.19531 -14.35156,85.16406 -40.64062,119.44141c-11.40625,15.07031 -24.77735,28.55078 -39.75782,40.07812c-12.27343,9.64453 -25.54687,17.9336 -39.60156,24.71875c-15.32422,7.47266 -31.41797,13.24219 -48,17.20313c-36.82031,8.74609 -75.17969,8.74609 -112,0c-16.58203,-3.96094 -32.67578,-9.73047 -48,-17.20313c-14.05078,-6.78515 -27.32812,-15.07422 -39.60156,-24.71875c-14.98047,-11.52734 -28.35156,-25.00781 -39.75781,-40.07812c-26.28907,-34.27735 -40.57032,-76.2461 -40.64063,-119.44141c0,-114.87891 100.32031,-208 224,-208zm0,0"
+													fill="#517d4f" id="svg_3" />
+												<path
+													d="m369,369l0,47.28125c-12.36719,9.71484 -25.75,18.05469 -39.92187,24.87891l-0.07813,-0.16016l0,-47.76172c14.05469,-6.78515 27.32813,-15.07422 39.60156,-24.71875l0.39844,0.48047zm0,0"
+													fill="#a3c4a1" id="svg_4" />
+												<path
+													d="m329,441l0.07813,0.16016c-15.23829,7.47265 -31.25391,13.23828 -47.75782,17.19922l-0.32031,-1.35938l0,-46.55859c16.58203,-3.96094 32.67578,-9.73047 48,-17.20313l0,47.76172zm0,0"
+													fill="#84b082" id="svg_5" />
+												<path
+													d="m281.32031,458.35938c-18.44531,4.42187 -37.35156,6.64843 -56.32031,6.64062l0,-48c18.85938,0.03516 37.66016,-2.16797 56,-6.55859l0,46.55859l0.32031,1.35938zm0,0"
+													fill="#a3c4a1" id="svg_6" />
+												<path
+													d="m225,417l0,48c-18.96875,0.00781 -37.87109,-2.21875 -56.32031,-6.64062l0.32031,-1.35938l0,-46.55859c18.33984,4.39062 37.14063,6.59375 56,6.55859zm0,0"
+													fill="#84b082" id="svg_7" />
+												<path
+													d="m169,410.44141l0,46.55859l-0.32031,1.35938c-16.50391,-3.96094 -32.51953,-9.72657 -47.75781,-17.19922l0.07812,-0.16016l0,-47.76172c15.32422,7.47266 31.41797,13.24219 48,17.20313zm0,0"
+													fill="#a3c4a1" id="svg_8" />
+												<path
+													d="m81.39844,368.51953c12.27344,9.64453 25.55078,17.9336 39.60156,24.71875l0,47.76172l-0.07812,0.16016c-14.15235,-6.85157 -27.53516,-15.19141 -39.92188,-24.87891l0,-47.28125l0.39844,-0.48047zm0,0"
+													fill="#84b082" id="svg_9" />
+												<path
+													d="m41.64063,328.44141c11.40625,15.07031 24.77734,28.55078 39.75781,40.07812l-0.39844,0.48047l0,47.28125c-15.10937,-11.70703 -28.56641,-25.40625 -40,-40.72266l0,-46.55859l0.64063,-0.55859zm0,0"
+													fill="#a3c4a1" id="svg_10" />
+												<path
+													d="m1,209c0.07031,43.19531 14.35156,85.16406 40.64063,119.44141l-0.64063,0.55859l0,46.55859c-25.87891,-34.11328 -39.92187,-75.73828 -40,-118.55859l0,-48zm0,0"
+													fill="#84b082" id="svg_11" />
+												<path
+													d="m401,209c0,-88.36719 -78.79687,-160 -176,-160s-176,71.63281 -176,160s78.79688,160 176,160s176,-71.63281 176,-160zm0,0"
+													fill="#011638" id="svg_12" />
+												<g fill="#ffcb5a" id="svg_13">
+													<path
+														d="m334.94531,302.83203l-10.9375,-11.66406c9.34766,-8.71094 17.26953,-18.83984 23.46485,-30.01563l14.01562,7.69532c-6.99609,12.66015 -15.95703,24.13281 -26.54297,33.98437zm0,0"
+														id="svg_14" fill="#03317d" />
+													<path
+														d="m225,345c-83.81641,0 -152,-61.00781 -152,-136s68.18359,-136 152,-136s152,61.00781 152,136l-16,0c0,-66.16797 -61.00781,-120 -136,-120s-136,53.83203 -136,120s61.00781,120 136,120c26.6875,0.12891 52.91016,-6.94922 75.90234,-20.49609l8.19532,13.7539c-25.47266,15.01563 -54.52735,22.875 -84.09766,22.74219zm0,0"
+														id="svg_15" fill="#03317d" />
+												</g>
+												<path stroke="null"
+													transform="rotate(61 326.9999694824218,145.49995422363284) "
+													fill="#ce796b" stroke-width="NaN" stroke-opacity="null"
+													d="m243.12793,145.18863l83.87205,-129.3942l83.87205,129.3942l-41.93602,0l0,130.01682l-83.87204,0l0,-130.01682l-41.93602,0l-0.00001,0z"
+													id="svg_23" />
+											</g>
+										</svg>
+										<svg viewBox="-1900 150 500 500" width="70" height="70"
+											xmlns="http://www.w3.org/2000/svg">
+											<g>
+												<title>background</title>
+												<rect x="-1" y="-1" width="451" height="468" id="canvas_background"
+													fill="none" />
+											</g>
+
+											<g>
+												<title>Layer 1</title>
+												<path
+													d="m408.35938,328.44141c26.28906,-34.27735 40.57031,-76.2461 40.64062,-119.44141l0,48c-0.07812,42.82031 -14.12109,84.44531 -40,118.55859l0,-46.55859l-0.64062,-0.55859zm0,0"
+													fill="#a3c4a1" id="svg_1" />
+												<path
+													d="m409,329l0,46.55859c-11.43359,15.31641 -24.89062,29.01563 -40,40.72266l0,-47.28125l-0.39844,-0.48047c14.98047,-11.52734 28.35157,-25.00781 39.75782,-40.07812l0.64062,0.55859zm0,0"
+													fill="#84b082" id="svg_2" />
+												<path
+													d="m225,1c123.67969,0 224,93.12109 224,208c-0.07031,43.19531 -14.35156,85.16406 -40.64062,119.44141c-11.40625,15.07031 -24.77735,28.55078 -39.75782,40.07812c-12.27343,9.64453 -25.54687,17.9336 -39.60156,24.71875c-15.32422,7.47266 -31.41797,13.24219 -48,17.20313c-36.82031,8.74609 -75.17969,8.74609 -112,0c-16.58203,-3.96094 -32.67578,-9.73047 -48,-17.20313c-14.05078,-6.78515 -27.32812,-15.07422 -39.60156,-24.71875c-14.98047,-11.52734 -28.35156,-25.00781 -39.75781,-40.07812c-26.28907,-34.27735 -40.57032,-76.2461 -40.64063,-119.44141c0,-114.87891 100.32031,-208 224,-208zm0,0"
+													fill="#517d4f" id="svg_3" />
+												<path
+													d="m369,369l0,47.28125c-12.36719,9.71484 -25.75,18.05469 -39.92187,24.87891l-0.07813,-0.16016l0,-47.76172c14.05469,-6.78515 27.32813,-15.07422 39.60156,-24.71875l0.39844,0.48047zm0,0"
+													fill="#a3c4a1" id="svg_4" />
+												<path
+													d="m329,441l0.07813,0.16016c-15.23829,7.47265 -31.25391,13.23828 -47.75782,17.19922l-0.32031,-1.35938l0,-46.55859c16.58203,-3.96094 32.67578,-9.73047 48,-17.20313l0,47.76172zm0,0"
+													fill="#84b082" id="svg_5" />
+												<path
+													d="m281.32031,458.35938c-18.44531,4.42187 -37.35156,6.64843 -56.32031,6.64062l0,-48c18.85938,0.03516 37.66016,-2.16797 56,-6.55859l0,46.55859l0.32031,1.35938zm0,0"
+													fill="#a3c4a1" id="svg_6" />
+												<path
+													d="m225,417l0,48c-18.96875,0.00781 -37.87109,-2.21875 -56.32031,-6.64062l0.32031,-1.35938l0,-46.55859c18.33984,4.39062 37.14063,6.59375 56,6.55859zm0,0"
+													fill="#84b082" id="svg_7" />
+												<path
+													d="m169,410.44141l0,46.55859l-0.32031,1.35938c-16.50391,-3.96094 -32.51953,-9.72657 -47.75781,-17.19922l0.07812,-0.16016l0,-47.76172c15.32422,7.47266 31.41797,13.24219 48,17.20313zm0,0"
+													fill="#a3c4a1" id="svg_8" />
+												<path
+													d="m81.39844,368.51953c12.27344,9.64453 25.55078,17.9336 39.60156,24.71875l0,47.76172l-0.07812,0.16016c-14.15235,-6.85157 -27.53516,-15.19141 -39.92188,-24.87891l0,-47.28125l0.39844,-0.48047zm0,0"
+													fill="#84b082" id="svg_9" />
+												<path
+													d="m41.64063,328.44141c11.40625,15.07031 24.77734,28.55078 39.75781,40.07812l-0.39844,0.48047l0,47.28125c-15.10937,-11.70703 -28.56641,-25.40625 -40,-40.72266l0,-46.55859l0.64063,-0.55859zm0,0"
+													fill="#a3c4a1" id="svg_10" />
+												<path
+													d="m1,209c0.07031,43.19531 14.35156,85.16406 40.64063,119.44141l-0.64063,0.55859l0,46.55859c-25.87891,-34.11328 -39.92187,-75.73828 -40,-118.55859l0,-48zm0,0"
+													fill="#84b082" id="svg_11" />
+												<path
+													d="m401,209c0,-88.36719 -78.79687,-160 -176,-160s-176,71.63281 -176,160s78.79688,160 176,160s176,-71.63281 176,-160zm0,0"
+													fill="#011638" id="svg_12" />
+												<g fill="#ffcb5a" id="svg_13">
+													<path
+														d="m334.94531,302.83203l-10.9375,-11.66406c9.34766,-8.71094 17.26953,-18.83984 23.46485,-30.01563l14.01562,7.69532c-6.99609,12.66015 -15.95703,24.13281 -26.54297,33.98437zm0,0"
+														id="svg_14" fill="#03317d" />
+													<path
+														d="m225,345c-83.81641,0 -152,-61.00781 -152,-136s68.18359,-136 152,-136s152,61.00781 152,136l-16,0c0,-66.16797 -61.00781,-120 -136,-120s-136,53.83203 -136,120s61.00781,120 136,120c26.6875,0.12891 52.91016,-6.94922 75.90234,-20.49609l8.19532,13.7539c-25.47266,15.01563 -54.52735,22.875 -84.09766,22.74219zm0,0"
+														id="svg_15" fill="#03317d" />
+												</g>
+												<path stroke="null"
+													transform="rotate(138 310.00000000000006,293.49993896484375) "
+													fill="#ce796b" stroke-width="NaN" stroke-opacity="null"
+													d="m223.15534,293.18221l86.84463,-132.0643l86.84463,132.0643l-43.42232,0l0,132.69976l-86.84462,0l0,-132.69976l-43.42232,0l-0.00001,0z"
+													id="svg_23" />
+											</g>
+										</svg>
 										<p class="section-paragraph powerful">When enough people participate in voting
 											their opinions (buying and selling tokens),
 											our unique interpretation of a <b><a target="blank"
@@ -801,7 +988,6 @@
 						</div>
 					</div>
 				</section>
-
 				<section class="section" id="faq">
 					<!-- <div class="container uk-section"> -->
 					<div class="features-inner section-inner uk-container uk-container-small">
@@ -832,11 +1018,10 @@
 						</div>
 
 					</div>
-		</div>
-		</section>
+				</section>
 
 
-		<!-- <section class="testimonials section">
+				<!-- <section class="testimonials section">
 					<div class="testimonials-shape testimonials-shape-1">
 						<svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
 							<defs>
@@ -947,54 +1132,51 @@
 					</div>
 				</section> -->
 
-		<section class="newsletter section text-dark">
-			<div class="container-sm">
-				<div class="newsletter-inner section-inner">
-					<div class="newsletter-header text-center">
-						<h2 class="section-title mt-0">Stay in the know</h2>
-						<a href="/"><img class="mx-auto d-block mb-32"
-								src="{% static 'landingpage/dist/images/footericon.png' %}" alt="Unibursal"></img></a>
+				<section class="newsletter section text-dark">
+					<div class="container-sm">
+						<div class="newsletter-inner section-inner">
+							<div class="newsletter-header text-center">
+								<h2 class="section-title mt-0">Stay in the know</h2>
+								<a href="/"><img class="mx-auto d-block mb-32"
+										src="{% static 'landingpage/dist/images/footericon.png' %}"
+										alt="Unibursal"></img></a>
+							</div>
+							<!-- <div class="control control-expanded">
+						<input class="input" type="email" name="email" placeholder="Your best email&hellip;">
 					</div>
-
-
-					<!-- <div class="footer-form newsletter-form field field-grouped">
-								<div class="control control-expanded">
-									<input class="input" type="email" name="email"
-										placeholder="Your best email&hellip;">
-								</div>
-								<div class="control">
-									<a class="button button-primary button-block button-shadow" href="#">Early
-										access</a>
-								</div>
-							</div> -->
-					<div class="text-center">
-						<a href="#EMAIL">
-							<button style="height: 40%;"
-								class="mx-auto faq-title button button-primary button-block submit-button">Get Early
-								Access</button>
-						</a>
+					<div class="control">
+						<a class="button button-primary button-block button-shadow" href="#">Early
+							access</a>
+					</div> -->
+						</div>
+						<div class="text-center">
+							<a href="#EMAIL">
+								<button
+									class="mb-64 mx-auto faq-title button button-primary button-block submit-button">Get
+									Early
+									Access</button>
+							</a>
+						</div>
 					</div>
-				</div>
-			</div>
-		</section>
-		</main>
+				</section>
+			</main>
 
-		<footer class="site-footer">
-			<div class="container">
-				<div class="site-footer-inner has-top-divider">
-					<div class="brand footer-brand">
-					</div>
+			<footer class="site-footer">
+				<div class="container">
+					<div class="site-footer-inner has-top-divider">
+						<div class="brand footer-brand">
+						</div>
 
-					<ul class="footer-links list-reset">
-						<li>
-							<a href="mailto:unibursal@email.virginia.edu">Contact Us</a>
-						</li>
-						<li>
-							<a href="#">About us</a>
-						</li>
-					</ul>
-					<ul class="footer-social-links list-reset">
-						<!-- <li>
+						<ul class="footer-links list-reset">
+							<li>
+								<a href="mailto:unibursal@email.virginia.edu">Contact Us</a>
+							</li>
+							<li>
+								<a href="/about-us/">About us</a>
+							</li>
+						</ul>
+						<ul class="footer-social-links list-reset">
+							<!-- <li>
 							<a href="#">
 								<span class="screen-reader-text">Facebook</span>
 								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -1004,7 +1186,7 @@
 								</svg>
 							</a>
 						</li> -->
-						<!-- <li>
+							<!-- <li>
 							<a href="#">
 								<span class="screen-reader-text">Twitter</span>
 								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -1014,7 +1196,7 @@
 								</svg>
 							</a>
 						</li> -->
-						<!-- <li>
+							<!-- <li>
 							<a href="#">
 								<span class="screen-reader-text">Google</span>
 								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -1024,55 +1206,12 @@
 								</svg>
 							</a>
 						</li> -->
-					</ul>
-					<div class="footer-copyright">&copy; Unibursal</div>
+						</ul>
+						<div class="footer-copyright">&copy; Unibursal</div>
+					</div>
 				</div>
-			</div>
-
-	</div>
-	<!-- START - We recommend to place the below code in footer or bottom of your website html  -->
-	<script>
-		window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-
-		window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Invalid information. Please try again.";
-
-		window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
-
-		window.GENERIC_INVALID_MESSAGE = "Invalid information. Please try again.";
-
-
-
-
-		window.translation = {
-			common: {
-				selectedList: '{quantity} list selected',
-				selectedLists: '{quantity} lists selected'
-			}
-		};
-
-		var AUTOHIDE = Boolean(0);
-	</script>
-	<script src="https://sibforms.com/forms/end-form/build/main.js"></script>
-	<!-- END - We recommend to place the above code in footer or bottom of your website html  -->
-	<!-- <script>
-	window.onscroll = function() {myFunction()};
-
-	// Get the navbar
-	var navbar = document.getElementById("navbar");
-
-	// Get the offset position of the navbar
-	var sticky = navbar.offsetTop;
-
-	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-	function myFunction() {
-	  if (window.pageYOffset >= sticky) {
-	    navbar.classList.add("sticky")
-	  } else {
-	    navbar.classList.remove("sticky");
-	  }
-	}
-</script> -->
-	<script src="{% static 'landingpage/dist/js/main.min.js' %}"></script>
+			</footer>
+			<script src="{% static 'landingpage/dist/js/main.min.js' %}"></script>
 </body>
 
 </html>
