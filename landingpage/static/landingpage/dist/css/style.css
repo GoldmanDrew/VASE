@@ -118,6 +118,17 @@ hr.dotted {
     transform: translate(0, -50%)
 }
 
+.headshot {
+    background-size: cover;
+    height: 350px;
+    width: 350px;
+    background-color: black;
+    border-radius: 100%;
+    margin-bottom: 100px;
+    /* margin-left: -100px; */
+    float: left;
+}
+
 .navbar-brand {
     width: 30%;
     height: auto;
@@ -561,6 +572,19 @@ h4, h5, h6, .h4, .h5, .h6 {
         font-size: 22px;
         line-height: 32px;
         letter-spacing: -0.1px
+    }
+}
+
+.overview {
+    width: 150%;
+    margin-left: -25%;
+}
+
+@media (max-width: 1070px) {
+    .overview {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
     }
 }
 
