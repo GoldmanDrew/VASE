@@ -564,6 +564,19 @@ h4, h5, h6, .h4, .h5, .h6 {
     }
 }
 
+.overview {
+    width: 150%;
+    margin-left: -25%;
+}
+
+@media (max-width: 1070px) {
+    .overview {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+
 @media (max-width: 640px) {
     .h1-mobile {
         font-size: 40px;
