@@ -118,6 +118,17 @@ hr.dotted {
     transform: translate(0, -50%)
 }
 
+.headshot {
+    background-size: cover;
+    height: 350px;
+    width: 350px;
+    background-color: black;
+    border-radius: 100%;
+    margin-bottom: 100px;
+    /* margin-left: -100px; */
+    float: left;
+}
+
 .navbar-brand {
     width: 30%;
     height: auto;
