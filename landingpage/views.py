@@ -20,6 +20,7 @@ from django.views.generic import View
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegistrationForm     # imports the format for Login/Register
 from .faqsfull import faqdictionary
+from .getcontacts import *
 
 def login_request(request):
     if request.method == "POST":
@@ -41,7 +42,7 @@ def login_request(request):
     form = AuthenticationForm()
     # return render(request, "landingpage/index.html", {'form': form})
 
-    context = {"faqdictionary" : faqdictionary , 'form': form }
+    context = {"faqdictionary" : faqdictionary , 'form': form, "contacts":contacts}
 
     return render(request, "landingpage/login_form.html", context)
 
