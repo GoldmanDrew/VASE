@@ -129,6 +129,11 @@ hr.dotted {
     float: left;
 }
 
+.spotbanner {
+    color: var(--color-4);
+    font-weight: bold;
+}
+
 .navbar-brand {
     width: 30%;
     height: auto;
