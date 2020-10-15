@@ -1,6 +1,6 @@
 :root {
-  /** indigo dye, dark sea green, snow, new york pink, platinum **/
-  /** --color-1: #284b63;
+    /** indigo dye, dark sea green, snow, new york pink, platinum **/
+    /** --color-1: #284b63;
   --color-1-light: #3b617a;
   --color-1-dark: #162936;
   --color-2: #84b082;
@@ -16,28 +16,26 @@
   --color-5-dark: #d4d4d4;
   --color-black: #000;
   --color-white: #fff; **/
-
-/** oxford blue, dark sea green, snow, rose ebony, saffron **/
-/** swapped colors for --color-4 and --color-4-light **/
-  --color-1: #011638;
-  --color-1-light: #03317d;
-  --color-1-dark: #010a19;
-  --color-2: #84b082;
-  --color-2-light: #d1e2d0;
-  --color-2-medium: #a3c4a1;
-  --color-2-dark: #517d4f;
-  --color-3: #fffbfa;
-  --color-3-dark: #ffebe6;
-  --color-4: #ce796b;
-  --color-4-light: #70484a;
-  --color-4-dark: #4e3233;
-  --color-5: #70484a;
-  --color-5-dark: #aa8709;
-  --color-black: #000;
-  --color-white: #fff;
-
-/** indogo dye, dark sea green, snow, international chicago golden gate bridge, black **/
-  /** --color-1: #284b63;
+    /** oxford blue, dark sea green, snow, rose ebony, saffron **/
+    /** swapped colors for --color-4 and --color-4-light **/
+    --color-1: #011638;
+    --color-1-light: #03317d;
+    --color-1-dark: #010a19;
+    --color-2: #84b082;
+    --color-2-light: #d1e2d0;
+    --color-2-medium: #a3c4a1;
+    --color-2-dark: #517d4f;
+    --color-3: #fffbfa;
+    --color-3-dark: #ffebe6;
+    --color-4: #ce796b;
+    --color-4-light: #70484a;
+    --color-4-dark: #4e3233;
+    --color-5: #70484a;
+    --color-5-dark: #aa8709;
+    --color-black: #000;
+    --color-white: #fff;
+    /** indogo dye, dark sea green, snow, international chicago golden gate bridge, black **/
+    /** --color-1: #284b63;
   --color-1-light: #3b617a;
   --color-1-dark: #162936;
   --color-2: #84b082;
@@ -56,17 +54,17 @@
 }
 
 @font-face {
-  font-family: 'Overpass Bold';
-  font-style: normal;
-  font-weight: bold;
-  src: local('Overpass'), url('../fonts/Overpass-Bold.ttf') format('opentype');
+    font-family: 'Overpass Bold';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Overpass'), url('../fonts/Overpass-Bold.ttf') format('opentype');
 }
 
 @font-face {
-  font-family: 'Overpass SemiBold';
-  font-style: normal;
-  font-weight: bold;
-  src: local('Overpass'), url('../fonts/Overpass-SemiBold.ttf') format('opentype');
+    font-family: 'Overpass SemiBold';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Overpass'), url('../fonts/Overpass-SemiBold.ttf') format('opentype');
 }
 
 body {
@@ -86,7 +84,7 @@ hr.dotted {
 }
 
 .navbar-nav {
-  padding-left: 0em;
+    padding-left: 0em;
 }
 
 .navbar-light {
@@ -94,32 +92,46 @@ hr.dotted {
 }
 
 .how-left-justified {
-  /** position: relative;
+    /** position: relative;
   top: -100px; **/
-  position: relative;
-  left: -2%;
-  width: 62%;
+    position: relative;
+    left: -2%;
+    width: 62%;
 }
 
 .how-right-justified {
-  /** position: relative;
+    /** position: relative;
   top: -200px; **/
-  width: 62%;
-  position: relative;
-  margin-left: 50%;
+    width: 62%;
+    position: relative;
+    margin-left: 50%;
 }
 
 .how-numbers {
-  position: relative;
-
+    position: relative;
 }
 
 .how-headings {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%)
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%)
+}
 
+.headshot {
+    background-size: cover;
+    height: 350px;
+    width: 350px;
+    background-color: black;
+    border-radius: 100%;
+    margin-bottom: 100px;
+    /* margin-left: -100px; */
+    float: left;
+}
+
+.spotbanner {
+    color: var(--color-4);
+    font-weight: bold;
 }
 
 .navbar-brand {
@@ -156,6 +168,14 @@ article, aside, footer, header, nav, section {
     margin-right: auto;
 }
 
+#whatModule a.collapsed::after, #whyModule-1 a.collapsed::after, #whyModule-2 a.collapsed::after, #whyModule-3 a.collapsed::after, #whyModule-4 a.collapsed::after {
+    content: '+ Show More';
+}
+
+#whatModule>a:not(.collapsed)::after, #whyModule-1>a:not(.collapsed)::after, #whyModule-2>a:not(.collapsed)::after, #whyModule-3>a:not(.collapsed)::after, #whyModule-4>a:not(.collapsed)::after {
+    content: '- Show Less';
+}
+
 h1 {
     font-size: 2em;
     margin: 0.67em 0
@@ -181,6 +201,7 @@ pre {
 }
 
 a {
+    font-weight: bold;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
 }
@@ -556,6 +577,19 @@ h4, h5, h6, .h4, .h5, .h6 {
         font-size: 22px;
         line-height: 32px;
         letter-spacing: -0.1px
+    }
+}
+
+.overview {
+    width: 150%;
+    margin-left: -25%;
+}
+
+@media (max-width: 1070px) {
+    .overview {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
     }
 }
 
@@ -1478,7 +1512,13 @@ button, input, select, textarea, label {
         top: -40px;
         left: -20px;
         padding-right: 48px;
-        min-width: 512px
+        min-width: 512px;
+    }
+    .hero-title-2 {
+        position: relative;
+        top: -40px;
+        min-width: 512px;
+        font-size: 40px;
     }
     .hero-form {
         margin: 0
@@ -1583,9 +1623,15 @@ button, input, select, textarea, label {
     padding: /** 48px 24px 72px **/
     20px;
     text-align: center;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+    mix-blend-mode: multiply;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-.feature-inner::before {
+/* .feature-inner::before { // if you want to uncomment this, need to remove the last 6 lines from .feature-inner {}
     content: '';
     position: absolute;
     top: 0;
@@ -1593,8 +1639,8 @@ button, input, select, textarea, label {
     bottom: 0;
     left: 0;
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
-    mix-blend-mode: multiply
-}
+    mix-blend-mode: multiply;
+} */
 
 .feature-icon {
     position: relative;
@@ -1627,10 +1673,9 @@ button, input, select, textarea, label {
         padding-left: 40px;
         padding-right: 72px
     }
-
     .features .how-paragraph {
-      padding-left: 40px;
-      padding-right: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
     .features-wrap {
         padding-top: 24px;
@@ -1838,7 +1883,6 @@ button, input, select, textarea, label {
         padding-left: 72px;
         padding-right: 72px
     }
-
 }
 
 .is-boxed {
