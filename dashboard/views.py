@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.core import serializers
 
 def classview(request):
-    all_tokens = Token.objects.all()
+    all_tokens = Token.objects.exclude(Ticker="Cash")
 
     all_token_history = TokenHistory.objects.all()
     all_tokens_history_json = serializers.serialize('json', all_token_history)
