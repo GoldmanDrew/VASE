@@ -2,103 +2,116 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block title %}Classes{% endblock %}
+{% block title %}Dashboard{% endblock %}
 {% load static %}
 
 {% block body %}
-<link rel="stylesheet" type="text/css" href="{% static 'dashboard/dashboard.css' %}"/>
+<script type="text/javascript" src="{% static 'dashboard/dygraph.js' %}"></script>
+<link rel="stylesheet" src="{% static 'dashboard/dygraph.css' %}" />
 
+<link rel="stylesheet" type="text/css" href="{% static 'dashboard/dashboard.css' %}" />
+
+{% block javascript %}
+<script>
+  var all_prices = JSON.parse('{{all_tokens_history_json|safe}}');
+</script>
+{% endblock %}
+
+
+
+<br>
 <section class="section section-formatting">
-  <div class="container container-formatting" id="classview">
-    <div class="row bg-row">
-      <div class = "col-lg-10 col-md-12">
-        <canvas id="all_chart" class="all-price-chart"></canvas>
+  <div class="container container-formatting">
+    <div class="row justify-content-center">
+      <div class="col-sm-11 text-center">
+        <div id="graphdiv"></div>
       </div>
-      <div class="d-none d-lg-block col-lg-2" style="background-color: #284B63;">
-        <div id="checkbox-list" class= "form-checkboxes">
-          <h4 class="white" style = "padding-bottom: 10px;">Filter</h4>
-          <form action="" id="checkbox-form-id">
-            {% for classes in all_tokens %}
-              <div class="form-group">
-                <input type="checkbox" class="form-check-input" id="check_{{classes.Name}}" checked>
-                <label class="form-check-label white" id="label_{{classes.Name}}" for="check_{{classes.Ticker}}">{{classes.Name}}</label>
-              </div>
-            {% endfor %}
-          </form>
-        </div>
+      <div class="col-sm-1 text-center">
+        <div id="labels"></div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm-12 justify-content-center d-flex pt-3">
+        <p id="display"><b>Display:&nbsp;</b>
+          {% for classes in all_tokens %}
+          <input type="checkbox" id="{{forloop.counter0}}" onclick="showtoken(this)" checked="">
+          <label for="{{forloop.counter0}}">{{classes.Name}}</label>
+          &nbsp;
+          {% endfor %}
+        </p>
+      </div>
+    </div>
+  </div>
 
-    <div class="container bg-white">
+  <script type="text/javascript" src="{% static 'dashboard/dashboard.js' %}"></script>
+
+  <script type="text/javascript">
+  </script>
+</section>
+
+
+<section class="section section-formatting">
+  <div class="container bg-white">
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Code</th>
-          <th scope="col">Class</th>
+          <th scope="col">Ticker</th>
+          <th scope="col">Token</th>
           <th scope="col">Latest Price</th>
           <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
         {% for classes in all_tokens %}
-          <tr>
-            <td>{{classes.Ticker}}</td>
-            <td>{{classes.Name}}</td>
-            <td>Get Latest Price</td>
-            <td>
-              <button id="{{classes.Name}}_Buy" type="button" class="btn bg-success"
-              data-toggle="modal" data-target="#class-modal">Buy</button>
-              <button id="{{classes.Name}}_Sell" type="button" class="btn bg-danger"
-              data-toggle="modal" data-target="#class-modal">Sell</button>
-            </td>
-          </tr>
+        <tr>
+          <td>{{classes.Ticker}}</td>
+          <td>{{classes.Name}}</td>
+          <td>{{classes.Price|floatformat:2}}</td>
+          <td>
+            <button id="{{classes.Name}}_Buy" type="button" class="btn bg-success" data-toggle="modal"
+              data-target="#class-modal">Buy</button>
+            <button id="{{classes.Name}}_Sell" type="button" class="btn bg-danger" data-toggle="modal"
+              data-target="#class-modal">Sell</button>
+          </td>
+        </tr>
         {% endfor %}
       </tbody>
     </table>
-    </div>
+  </div>
 
-    <div class="modal fade class-modal" id="class-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog class-modal-box" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="modal-label"></h3>
-            <button onclick="redirect()" type="submit" class="btn btn-primary ml-5">Buy/Sell</button>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body class-modal-body">
-            <div class="container">
-              <div class="row">
-                <form style="width: 100%;">
-                  <div style="width: 32.5%; display: inline-block">
-                    insert price input
-                  </div>
-                  <div id="buy-sell-label" style="width: 32.5%; display: inline-block">
-                    Quantity to Buy
-                  </div>
-                  <div style="width: 32.5%; display: inline-block">
-                    price*quantity
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Confirm</button>
-                </form>
-              </div>
+  <div class="modal fade class-modal" id="class-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog class-modal-box" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-label"></h3>
+          <button onclick="redirect()" type="submit" class="btn btn-primary ml-5">Buy/Sell</button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body class-modal-body">
+          <div class="container">
+            <div class="row">
+              <form style="width: 100%;">
+                <div style="width: 32.5%; display: inline-block">
+                  insert price input
+                </div>
+                <div id="buy-sell-label" style="width: 32.5%; display: inline-block">
+                  Quantity to Buy
+                </div>
+                <div style="width: 32.5%; display: inline-block">
+                  price*quantity
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" id="PlaceOrderButton">Confirm</button>
+              </form>
             </div>
-            <canvas id="myChart" class="price-chart"></canvas>
-            <br>
           </div>
+          <canvas id="myChart" class="price-chart"></canvas>
+          <br>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-{% block javascript %}
-  <script>
-    var all_prices = JSON.parse('{{all_tokens_history_json|safe}}');
-  </script>
-  <script src="{% static 'dashboard/dashboard.js' %}"></script>
-{% endblock %}
-
 {% endblock body %}

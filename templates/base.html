@@ -1,10 +1,9 @@
 <html>
 
 <head>
-  <title>{% block title %}VASE{% endblock %}</title>
+  <title>{% block title %}{% endblock %}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
   {% load static %}
   {% block css %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -13,36 +12,20 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-
-    <style>
-        body {
-        background-color: #284B63;
-        }
-
-        .navbar
-        {
-            background-color:#84b082;
-            color: #fff;
-        }
-
-        .navbar-light {
-            color: #fff;
-        }
-
-    </style>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script> -->
+  <link rel="stylesheet" href="{% static 'landingpage/dist/css/style.css' %}"> <!-- for the landingpage -->
 </head>
 
-<body>
+<body class="maincolor">
   <!-- navigation bar-->
-  <nav class="navbar navbar-expand-md navbar-dark">
+  <!-- <nav class="navbar navbar-expand-md navbar-dark">
     <a class="navbar-brand" href="#">Logo</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -58,6 +41,30 @@
             Account</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{% url 'landingpage:logout_url' %}">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <a href="/"><img class="navbar-brand" src="{% static 'landingpage/dist/images/icon.png' %}"
+        alt="Unibursal"></img></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto mr-64">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'dashboard:dashboard-index' %}">Dashboard</a>
+        </li>
+        <li class="nav-item dropdown mr-5">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Account</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{% url 'landingpage:logout_url' %}">Logout</a>
+            <a class="dropdown-item" href="{% url 'userinfo:userinfo-display' %}">Account Info</a>
           </div>
         </li>
       </ul>

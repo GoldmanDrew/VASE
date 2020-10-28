@@ -1885,7 +1885,7 @@ button, input, select, textarea, label {
     }
 }
 
-.is-boxed {
+.maincolor {
     background: var(--color-1);
 }
 
